@@ -11,12 +11,66 @@ extern "C" {
 #include <stdbool.h>
 #include <stdint.h>
 
+
+#define MAX_HISTORY_SIZE 256
+#define LL 0
+#define LG 1
+#define GL 2
+#define GG 3
+
+
+//global variable 
+char hist_mask;
+char global_history;
+int BTB_size;
+int status; //type of branch predictor (LL=0, LG=1, GL=2, GG=3)
+
+
+
 /* A structure to return information about the currect simulator state */
 typedef struct {
 	unsigned flush_num;           // Machine flushes
 	unsigned br_num;      	      // Number of branch instructions
 	unsigned size;		      // Theoretical allocated BTB and branch predictor size
 } SIM_stats;
+
+typedef struct {
+    int prediction_arr[MAX_HISTORY_SIZE]; 
+	//each index in the array matches a specific history
+	//values: SNT WNT WT ST ( 0 1 2 3 )
+} PredictionTable;
+
+// BTB line (local history)
+typedef struct {
+    unsigned int line_pc;
+	unsigned int tag;    // identifying the branch
+	bool validation_bit;
+	unsigned int target;
+    char history_place; 
+	PredictionTable* pred_t;
+} BTB_line;
+
+
+/*
+typedef struct {
+	int tag;          
+	int target;      	      
+	bool validation_bit;	
+	char history;
+	char hist_mask;
+	int prediction;
+	des_table* d_t;
+} BTB_line;
+typedef struct {
+	int tag;          
+	int target;      	      
+	bool validation_bit;	
+	char history;
+	char hist_mask;
+	int prediction;
+	des_table* d_t;
+} BTB_line;
+*/
 
 /*************************************************************************/
 /* The following functions should be implemented in your bp.c (or .cpp) */

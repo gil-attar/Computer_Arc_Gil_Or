@@ -11,21 +11,15 @@ extern "C" {
 #include <stdbool.h>
 #include <stdint.h>
 
-
 #define MAX_HISTORY_SIZE 256
 #define LL 0
 #define LG 1
 #define GL 2
 #define GG 3
-
-
-//global variable 
-char hist_mask;
-char global_history;
-int BTB_size;
-int status; //type of branch predictor (LL=0, LG=1, GL=2, GG=3)
-
-
+#define SNT 0
+#define WNT 1
+#define WT 2
+#define ST 3
 
 /* A structure to return information about the currect simulator state */
 typedef struct {
@@ -35,7 +29,7 @@ typedef struct {
 } SIM_stats;
 
 typedef struct {
-    int prediction_arr[MAX_HISTORY_SIZE]; 
+    unsigned prediction_arr[MAX_HISTORY_SIZE]; 
 	//each index in the array matches a specific history
 	//values: SNT WNT WT ST ( 0 1 2 3 )
 } PredictionTable;
@@ -50,27 +44,15 @@ typedef struct {
 	PredictionTable* pred_t;
 } BTB_line;
 
-
-/*
-typedef struct {
-	int tag;          
-	int target;      	      
-	bool validation_bit;	
-	char history;
-	char hist_mask;
-	int prediction;
-	des_table* d_t;
-} BTB_line;
-typedef struct {
-	int tag;          
-	int target;      	      
-	bool validation_bit;	
-	char history;
-	char hist_mask;
-	int prediction;
-	des_table* d_t;
-} BTB_line;
-*/
+//global variable 
+unsigned char hist_mask;
+unsigned char global_history;
+unsigned* global_fsm_table; //for GG/LG
+BTB_line* BTB_table; //local histories
+int BTB_size;
+int status; //type of branch predictor (LL=0, LG=1, GL=2, GG=3)
+bool  isShared;
+int tagSize;
 
 /*************************************************************************/
 /* The following functions should be implemented in your bp.c (or .cpp) */

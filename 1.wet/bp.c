@@ -3,15 +3,45 @@
 
 #include "bp_api.h"
 
+// get_index: takes pc adress and maps it to a btb line for the branch
+int get_index(uint32_t pc, unsigned btbSize){
+	int bits_num = log2(BTB_size);
+	unsigned int main_mask = 0x0 - 1; //mask = 0xFF...
+	
+	main_mask = main_mask >> 32 - 2 - bits_num;
+	
+	int index = pc&main_mask;
+	index = index >>2;
+	return index;
+}
 
-//creating global BTB for access from every function
+//get_tag: take pc and returns tag
+unsigned int get_tag(uint32_t pc, unsigned btbSize){
+	int num_zeros_left = 2 + log2(btbSize) //number of bits to remove from the left
+	unsigned int left_mask = (0x0-1) << num_zeros_left;
+	
+	int num_zeros_right = 32 - tagSize - num_zeros_left;
+	uint32_t right_mask = ((uint32_t)0xFFFFFFFF) >> num_zeros_right;
 
+	unsigned int tag = pc&left_mask&right_mask;
+	tag = tag >> num_zeros_left;
+	return tag;
+}
 
 int BP_init(unsigned btbSize, unsigned historySize, unsigned tagSize, unsigned fsmState,
 			bool isGlobalHist, bool isGlobalTable, int Shared){
 	
+	/* ===TO DO===
+		> consider tag size
+		> consider L/Gshare
+		>check GL if correct
+		>validation bit false
+	*/
+
 	//----config global variable----			
 	BTB_size = btbSize; 
+	isShared = Shared;
+	tagSize =tagSize;
 
 	if(isGlobalHist && isGlobalTable){
 		status = GG;
@@ -22,67 +52,155 @@ int BP_init(unsigned btbSize, unsigned historySize, unsigned tagSize, unsigned f
 	}else{
 		status = LL;
 	}
-	//--------
+
+	//history mask: will help considering the right amount of history bits
+	hist_mask = 0b11111111 >> historySize; //will put zeros from the left
+	//-----------------------------
 	
 
-	//-----creating structs-----
-	if(status == LL | status== LG){
-		//creating BTB table: each branch has it's own history
-		BTB_line* BTB_table = malloc(btbSize*sizeof(BTB_line));
+	//creating structs
+	switch(status){
+		case LL:
+			//creating BTB table
+			BTB_table = malloc(btbSize*sizeof(BTB_line));
+			if(!BTB_table) return 1; //mallic failed
 
-		if(!BTB_table){
-			return 1; //malloc fail
-		}
-	}
-
-	//creatin fsm table/tables
-	if(status == LL | status = GL){
-		//creating fsm: local history tables
-		for(int i = 0; i<btbSize; i++){
-			BTB_table->i->pred_t = malloc(MAX_HISTORY_SIZE*sizeof(int));
-			if(!BTB_table->i->pred_t){
-				return 1;
+			//creating fsm: local fsm table (one table for each branch)
+			for(int i = 0; i<btbSize; i++){
+				
+				BTB_table->i->pred_t = malloc(MAX_HISTORY_SIZE*sizeof(unsigned));
+				if(!BTB_table->i->pred_t) return 1;
+				
+				//filling the table with initial state
+				for(j=0; j<MAX_HISTORY_SIZE; j++){
+					BTB_table->i->pred_t->j = fsmState;
+				}
 			}
-		}
-	}
 
-	//-------------------
+			break;
+		case LG:
+			//creating BTB table
+			BTB_table = malloc(btbSize*sizeof(BTB_line));
+			if(!BTB_table) return -1; //mallic failed
+
+			//creating fsm: global table
+			global_fsm_table = malloc(MAX_HISTORY_SIZE*sizeof(unsigned));
+			if(!global_fsm_table) return -1;
+
+			for(j=0; j<MAX_HISTORY_SIZE; j++){
+				global_fsm_table->j = fsmState;
+			}
+
+			break;
+		
+		case GG:
+			//global history initiation
+			global_history = 0b00000000;
+
+			//global fsm initiation
+			global_fsm_table = malloc(MAX_HISTORY_SIZE*sizeof(unsigned));
+			if(!global_fsm_table) return -1;
+
+			for(j=0; j<MAX_HISTORY_SIZE; j++){
+				global_fsm_table->j = fsmState;
+			}
+
+			break;
+	
+		case GL: 
+				//global history initiation
+				global_history = 0b00000000;
+
+				//creating BTB table in order to map each branch to it's BTB
+				//we won't consider local histories
+				BTB_table = malloc(btbSize*sizeof(BTB_line));
+				if(!BTB_table) return -1; //malloc failed
+				
+				//local fsm initiation
+				for(int i = 0; i<btbSize; i++){
+					BTB_table->i->pred_t = malloc(MAX_HISTORY_SIZE*sizeof(unsigned));
+					if(!BTB_table->i->pred_t) return 1;
+					
+					//filling the table with initial state
+					for(j=0; j<MAX_HISTORY_SIZE; j++){
+						BTB_table->i->pred_t->j = fsmState;
+					}
+				}
+
+			break;
+	}
 
 			
-	return -1;
+	return 0;
 }
+
 
 bool BP_predict(uint32_t pc, uint32_t *dst){
 	bool is_in=false;
 	int index = -1;
 	for (int i=0; i<BTB_size; i++){
-		if (pc == BTB_table[i].line_pc && BTB_table[i].validation_bit == true){
+		//perhaps the if condition need to consider share mid/lsb/notshare. easy fix if so - split to 3 ifs and manuver the pc value to go for the correct tag and thats how we get the index
+		if (BTB_table[i] != NULL && get_tag(pc) == BTB_table[i].tag && BTB_table[i].validation_bit == true){ //perhaps the null check in a line befor
 			index = i;
 			is_in = true;
 		}
 	}
-	if (is_in){ //known branch. now need to check if to jump or not. different check for every status
-		if (status == LL){
-
+	//hist_mask - consider it who which place to go in the table
+	if (is_in){ //we known its branch. now need to check if to jump or not. different check for every status
+		if (status == LL &&
+			(BTB_table[index].pred_t[BTB_table[index].(history_place&hist_mask)] == ST || BTB_table[index].pred_t[BTB_table[index].(history_place&hist_mask)] == WT)){  //perharps syntax isnt good
+			*dst = BTB_table[index].target;
+			return true;
 		}
-		else if (status == LG){
-
+		//local hist global table
+		else if (status == LG &&
+			(global_fsm_table[BTB_table[index].(history_place&hist_mask)] == ST || global_fsm_table[BTB_table[index].(history_place&hist_mask)] == WT)){ 
+			*dst = BTB_table[index].target;
+			return true;
 		}
-		else if (status == GL){
-			
+		// global hist local table
+		else if (status == GL &&
+			(BTB_table[index].pred_t[global_history&hist_mask] == ST || BTB_table[index].pred_t[global_history&hist_mask] == WT)){	//perharps syntax isnt good
+			*dst = BTB_table[index].target;
+			return true;
 		}
-		else if (status == GG){
-			
+		else if (status == GG &&
+			(global_fsm_table[global_history&hist_mask] == ST || global_fsm_table[global_history&hist_mask] == WT)){
+			*dst = BTB_table[index].target;
+			return true;
 		}
 	}
 	*dst = pc + 4;
 	return false;
 }
-	
-	return false;
-}
 
 void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
+	
+	update_count++;
+	unsigned int target_tag = get_tag(pc)
+	int target_index = get_index(pc)
+
+	BTB_table[target_index].validation_bit=true;
+	BTB_table[target_index].target = targetPc;
+	
+	if (status == GG){
+		if (taken && pred_dst == targetPc){ //was right
+			if(global_fsm_table[global_history&hist_mask] != ST){
+				global_fsm_table[global_history&hist_mask]++;
+				global_history << 1
+				global_history += 1;
+			}
+		}
+		else if(!taken && pred_dst == targetPc){ //was wrong
+		
+		} else if(taken && pred_dst != targetPc){ //was wrong
+
+		} else if(!taken && pred_dst != targetPc){ //was right
+		
+		} else if{
+			
+		}
+		BTB_table[index].
 
 
 

@@ -5,12 +5,11 @@
 
 // get_index: takes pc adress and maps it to a btb line for the branch
 int get_index(uint32_t pc, unsigned btbSize){
-	int bits_num = log2(BTB_size);
+	int bits_num = log2(btbSize);
 	unsigned int main_mask = 0x0 - 1; //mask = 0xFF...
 	
 	main_mask = main_mask >> 32 - 2 - bits_num;
-	
-	int index = pc&main_mask;
+	int index = pc & main_mask;
 	index = index >>2;
 	return index;
 }
@@ -55,6 +54,8 @@ int BP_init(unsigned btbSize, unsigned historySize, unsigned tagSize, unsigned f
 
 	//history mask: will help considering the right amount of history bits
 	hist_mask = 0b11111111 >> historySize; //will put zeros from the left
+	//perhaps need to change to: hist_mask = (1 << historySize) - 1;
+
 	//-----------------------------
 	
 
@@ -68,12 +69,18 @@ int BP_init(unsigned btbSize, unsigned historySize, unsigned tagSize, unsigned f
 			//creating fsm: local fsm table (one table for each branch)
 			for(int i = 0; i<btbSize; i++){
 				
-				BTB_table->i->pred_t = malloc(MAX_HISTORY_SIZE*sizeof(unsigned));
-				if(!BTB_table->i->pred_t) return 1;
+				BTB_table[i].pred_t = malloc(MAX_HISTORY_SIZE*sizeof(unsigned));
+				if(!BTB_table[i].pred_t) return 1;
 				
+				// gil added, need to check with or:
+				BTB_table[i].validation_bit = false;
+				BTB_table[i].tag = 0;
+				BTB_table[i].target = 0;
+				//
+
 				//filling the table with initial state
-				for(j=0; j<MAX_HISTORY_SIZE; j++){
-					BTB_table->i->pred_t->j = fsmState;
+				for(int j=0; j<MAX_HISTORY_SIZE; j++){
+					BTB_table[i].pred_t[j] = fsmState;
 				}
 			}
 
@@ -82,13 +89,20 @@ int BP_init(unsigned btbSize, unsigned historySize, unsigned tagSize, unsigned f
 			//creating BTB table
 			BTB_table = malloc(btbSize*sizeof(BTB_line));
 			if(!BTB_table) return -1; //mallic failed
-
+			
 			//creating fsm: global table
 			global_fsm_table = malloc(MAX_HISTORY_SIZE*sizeof(unsigned));
 			if(!global_fsm_table) return -1;
 
-			for(j=0; j<MAX_HISTORY_SIZE; j++){
-				global_fsm_table->j = fsmState;
+			// gil added, need to check with or: also we might need a for loop
+			BTB_table[i].validation_bit = false;
+			BTB_table[i].tag = 0;
+			BTB_table[i].target = 0;
+			// perhaps need without [0]
+			//why the BTB table isnt big?
+
+			for(int j=0; j<MAX_HISTORY_SIZE; j++){
+				global_fsm_table[j] = fsmState;
 			}
 
 			break;
@@ -96,13 +110,22 @@ int BP_init(unsigned btbSize, unsigned historySize, unsigned tagSize, unsigned f
 		case GG:
 			//global history initiation
 			global_history = 0b00000000;
-
+			
 			//global fsm initiation
 			global_fsm_table = malloc(MAX_HISTORY_SIZE*sizeof(unsigned));
 			if(!global_fsm_table) return -1;
+			
+			// gil added, need to check with or: also we might need a for loop
+			BTB_table[i].validation_bit = false;
+			BTB_table[i].tag = 0;
+			BTB_table[i].target = 0;
+			// perhaps need without [0]
+			// perhaps also make the history to poinf for the global fsm?
+			//why there is no BTB table?
 
-			for(j=0; j<MAX_HISTORY_SIZE; j++){
-				global_fsm_table->j = fsmState;
+
+			for(int j=0; j<MAX_HISTORY_SIZE; j++){
+				global_fsm_table[j] = fsmState;
 			}
 
 			break;
@@ -118,23 +141,29 @@ int BP_init(unsigned btbSize, unsigned historySize, unsigned tagSize, unsigned f
 				
 				//local fsm initiation
 				for(int i = 0; i<btbSize; i++){
-					BTB_table->i->pred_t = malloc(MAX_HISTORY_SIZE*sizeof(unsigned));
-					if(!BTB_table->i->pred_t) return 1;
+					BTB_table[i].pred_t = malloc(MAX_HISTORY_SIZE*sizeof(unsigned));
+					if(!BTB_table[i].pred_t) return 1;
 					
+					// gil added, need to check with or:
+					BTB_table[i].validation_bit = false;
+					BTB_table[i].tag = 0;
+					BTB_table[i].target = 0;
+					//perhaps also make the history to poinf for the global fsm?
+
+
 					//filling the table with initial state
-					for(j=0; j<MAX_HISTORY_SIZE; j++){
-						BTB_table->i->pred_t->j = fsmState;
+					for(int j=0; j<MAX_HISTORY_SIZE; j++){
+						BTB_table[i].pred_t[j] = fsmState;
 					}
 				}
 
 			break;
 	}
 
-			
 	return 0;
 }
 
-
+//need to consider using share also
 bool BP_predict(uint32_t pc, uint32_t *dst){
 	bool is_in=false;
 	int index = -1;

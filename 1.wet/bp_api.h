@@ -10,6 +10,7 @@ extern "C" {
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <math.h>
 
 #define MAX_HISTORY_SIZE 256
 #define LL 0
@@ -20,6 +21,12 @@ extern "C" {
 #define WNT 1
 #define WT 2
 #define ST 3
+
+#define NONE 0
+#define LSB 1
+#define MID 2
+
+
 
 /* A structure to return information about the currect simulator state */
 typedef struct {
@@ -50,8 +57,11 @@ unsigned char global_history;
 unsigned* global_fsm_table; //for GG/LG
 BTB_line* BTB_table; //local histories
 int BTB_size;
+int flush_count;
+int update_count;
+
 int status; //type of branch predictor (LL=0, LG=1, GL=2, GG=3)
-bool  isShared;
+int isShared; //0 = none, 1 = lsb, 2 = mid
 int tagSize;
 
 /*************************************************************************/

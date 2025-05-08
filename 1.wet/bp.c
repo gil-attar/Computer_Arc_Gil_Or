@@ -2,8 +2,64 @@
 /* This file should hold your implementation of the predictor simulator */
 
 #include "bp_api.h"
+#include <math.h>
+
+#define MAX_HISTORY_SIZE 256
+//history, fsm
+#define LL 0
+#define LG 1
+#define GL 2
+#define GG 3
+#define SNT 0
+#define WNT 1
+#define WT 2
+#define ST 3
+
+#define NONE 0
+#define LSB 1
+#define MID 2
+
+
+//function declaretion
+int get_index(uint32_t pc, unsigned btbSize);
+unsigned int get_tag(uint32_t pc, unsigned btbSize);
+
+
+
+typedef struct {
+    unsigned prediction_arr[MAX_HISTORY_SIZE]; 
+	//each index in the array matches a specific history
+	//values: SNT WNT WT ST ( 0 1 2 3 )
+} PredictionTable;
+
+// BTB line (local history)
+typedef struct {
+    unsigned int line_pc;
+	unsigned int tag;    // identifying the branch
+	bool validation_bit;
+	uint32_t target;
+    char history_place; 
+	PredictionTable* pred_t;
+} BTB_line;
+
+//global variable 
+unsigned char hist_mask;
+unsigned char global_history;
+unsigned* global_fsm_table; //for GG/LG
+BTB_line* BTB_table; //local histories
+int BTB_size;
+int flush_count;
+int update_count;
+int start_fsm_state
+
+int status; //type of branch predictor (LL=0, LG=1, GL=2, GG=3)
+int isShared; //0 = none, 1 = lsb, 2 = mid
+int tagSize;
+
 
 // get_index: takes pc adress and maps it to a btb line for the branch
+
+//need to consider using share also - NEED FIX !!!
 int get_index(uint32_t pc, unsigned btbSize){
 	int bits_num = log2(btbSize);
 	unsigned int main_mask = 0x0 - 1; //mask = 0xFF...
@@ -41,6 +97,7 @@ int BP_init(unsigned btbSize, unsigned historySize, unsigned tagSize, unsigned f
 	BTB_size = btbSize; 
 	isShared = Shared;
 	tagSize =tagSize;
+	start_fsm_state = fsmState;
 
 	if(isGlobalHist && isGlobalTable){
 		status = GG;
@@ -163,20 +220,51 @@ int BP_init(unsigned btbSize, unsigned historySize, unsigned tagSize, unsigned f
 	return 0;
 }
 
-//need to consider using share also
 bool BP_predict(uint32_t pc, uint32_t *dst){
 	bool is_in=false;
-	int index = -1;
-	for (int i=0; i<BTB_size; i++){
-		//perhaps the if condition need to consider share mid/lsb/notshare. easy fix if so - split to 3 ifs and manuver the pc value to go for the correct tag and thats how we get the index
-		if (BTB_table[i] != NULL && get_tag(pc) == BTB_table[i].tag && BTB_table[i].validation_bit == true){ //perhaps the null check in a line befor
-			index = i;
+	int index = get_index(pc);
+	int curr_tag = get_tag(pc);
+	int prediction;
+	//check if there is valid prediction
+	if (BTB_table[index].tag != NULL){
+		if (BTB_table[index].tag == curr_tag && BTB_table[index].validation_bit == true){
 			is_in = true;
 		}
 	}
+	if (is_in == false){
+		*dst = pc + 4;
+		return false;	
+	} 	
+	//we known its in BTB. now need to check if to jump or not. different check for every status	
 	//hist_mask - consider it who which place to go in the table
-	if (is_in){ //we known its branch. now need to check if to jump or not. different check for every status
-		if (status == LL &&
+	//this syntax is 99% bad... theoretical: btb -> history -> correct line in history
+	if (status == LL){
+		prediction = BTB_table[index].pred_t[BTB_table[index].history_place & hist_mask];
+	}
+	if (status == LG){
+		prediction = global_fsm_table[BTB_table[index].history_place & hist_mask];
+	}
+	if (status == GL){
+		prediction = BTB_table[index].pred_t[global_history & hist_mask];
+	}
+	if (status == GG){
+		prediction = global_fsm_table[global_history & hist_mask];
+	}
+
+	if (prediction == WT || prediction == ST){
+		*dst = BTB_table[index].target;
+		return true
+	}
+	else{
+		*dst = pc + 4;
+		return false;
+	}
+}
+
+
+	//first ver, might come in handy
+	/*
+	if (status == LL &&
 			(BTB_table[index].pred_t[BTB_table[index].(history_place&hist_mask)] == ST || BTB_table[index].pred_t[BTB_table[index].(history_place&hist_mask)] == WT)){  //perharps syntax isnt good
 			*dst = BTB_table[index].target;
 			return true;
@@ -199,14 +287,92 @@ bool BP_predict(uint32_t pc, uint32_t *dst){
 			return true;
 		}
 	}
-	*dst = pc + 4;
-	return false;
-}
+	*/
 
 void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 	
 	update_count++;
-	unsigned int target_tag = get_tag(pc)
+
+	int index = get_index(pc);
+	unsigned int curr_tag = get_tag(pc);
+	bool is_in = false;
+	if (curr_tag == BTB_table[index].tag && BTB_table[index].validation_bit == true)
+		is_in =true;
+	
+	int history_index;
+	PredictionTable* pred_table = BTB_table[index].pred_t;
+	switch (status) {
+		case GG:
+			history_index = global_history & hist_mask;
+			if (is_in == true){
+				if (taken && global_fsm_table[history_index] < ST)
+					global_fsm_table[history_index]++;
+				else if (!taken && global_fsm_table[history_index] > SNT)
+					global_fsm_table[history_index]--;
+			}
+			else{
+				global_fsm_table[history_index] = start_fsm_state;
+			}
+			break;
+
+		case GL:
+			history_index = global_history & hist_mask;
+			if (is_in == true){
+				if (taken && pred_table[history_index] < ST)
+					pred_table[history_index]++;
+				else if (!taken && pred_table[history_index] > SNT)
+					pred_table[history_index]--;
+			}
+			else{
+				pred_table[history_index] = start_fsm_state;
+			}
+			break;
+
+		case LG:
+			history_index = BTB_table[index].history_place & hist_mask;
+			if (is_in == true){
+				if (taken && global_fsm_table[history_index] < ST)
+					global_fsm_table[history_index]++;
+				else if (!taken && global_fsm_table[history_index] > SNT)
+					global_fsm_table[history_index]--;
+			}
+			else{
+				global_fsm_table[history_index] = start_fsm_state;
+			}
+			break;
+
+		case LL:
+			history_index = BTB_table[index].history_place & hist_mask;
+			if (is_in == true){
+				if (taken && pred_table[history_index] < ST)
+					pred_table[history_index]++;
+				else if (!taken && pred_table[history_index] > SNT)
+					pred_table[history_index]--;
+			}
+			else{
+				pred_table[history_index] = start_fsm_state;
+			}
+			break;
+	}
+	if (is_in == false || (taken == true && pred_dst = pc+4) || (taken == false && pred_dst = targetPc) )
+		flush_count++;
+
+	//update BTB line
+	BTB_table[index].tag = curr_tag;
+	BTB_table[index].target = targetPc;
+	BTB_table[index].validation_bit = true;
+	BTB_table[index].line_pc = pc;
+	
+	// === Update History === not exactly sure how to do it, need to see what is going on
+	if (status == GG || status == GL) {
+		global_history = ((global_history << 1) | (taken ? 1 : 0)) & ((1 << MAX_HISTORY_SIZE) - 1);
+	} else {
+		BTB_table[index].history_place = ((BTB_table[index].history_place << 1) | (taken ? 1 : 0)) & ((1 << MAX_HISTORY_SIZE) - 1);
+	}
+}
+
+	
+/*	unsigned int target_tag = get_tag(pc)
 	int target_index = get_index(pc)
 
 	BTB_table[target_index].validation_bit=true;
@@ -236,6 +402,8 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 	
 	return;
 }
+*/
+
 
 void BP_GetStats(SIM_stats *curStats){
 

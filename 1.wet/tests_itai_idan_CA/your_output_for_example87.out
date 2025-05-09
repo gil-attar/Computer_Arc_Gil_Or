@@ -1,0 +1,97 @@
+0x73fa564 
+ 
+ pred: val bit is = 0
+N 0x73fa568
+update: local history index befor is = 0
+update: history index after is = 1
+0x10f8 
+ 
+ pred: val bit is = 0
+N 0x10fc
+update: local history index befor is = 0
+update: history index after is = 0
+0xd59bd244 
+ 
+ pred: val bit is = 0
+N 0xd59bd248
+update: local history index befor is = 0
+update: history index after is = 1
+0x618f63c8 
+ 
+ pred: val bit is = 0
+N 0x618f63cc
+update: local history index befor is = 0
+update: history index after is = 1
+0x4c8 
+ 
+ pred: val bit is = 1
+pred: shared index is = 1
+T 0xbec
+update: local history index befor is = 1
+update: history index after is = 3
+0x618f63c8 
+ 
+ pred: val bit is = 1
+pred: shared index is = 3
+T 0x7099f8
+update: local history index befor is = 3
+update: history index after is = 6
+0x71274 
+ 
+ pred: val bit is = 0
+N 0x71278
+update: local history index befor is = 0
+update: history index after is = 0
+0x73c3c 
+ 
+ pred: val bit is = 0
+N 0x73c40
+update: local history index befor is = 0
+update: history index after is = 1
+0x9fc4 
+ 
+ pred: val bit is = 1
+pred: shared index is = 1
+T 0x29c8
+update: local history index befor is = 1
+update: history index after is = 3
+0xb3068 
+ 
+ pred: val bit is = 0
+N 0xb306c
+update: local history index befor is = 0
+update: history index after is = 0
+0xf4084da4 
+ 
+ pred: val bit is = 0
+N 0xf4084da8
+update: local history index befor is = 0
+update: history index after is = 0
+0xa1cc 
+ 
+ pred: val bit is = 0
+N 0xa1d0
+update: local history index befor is = 0
+update: history index after is = 1
+0x80c4 
+ 
+ pred: val bit is = 1
+pred: shared index is = 3
+T 0xc64924
+update: local history index befor is = 3
+update: history index after is = 6
+0xa968 
+ 
+ pred: val bit is = 1
+pred: shared index is = 0
+T 0xb075c
+update: local history index befor is = 0
+update: history index after is = 1
+0xb274 
+ 
+ pred: val bit is = 1
+pred: shared index is = 0
+T 0xce44624
+update: local history index befor is = 0
+update: history index after is = 0
+flush_num: 5, br_num: 15, size: 1152b

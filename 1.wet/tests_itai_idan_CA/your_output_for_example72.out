@@ -1,0 +1,111 @@
+0xe0814 
+ 
+ pred: val bit is = 0
+N 0xe0818
+update: global history index befor is = 0
+update: history index after is = 1
+0xe0814 
+ 
+ pred: val bit is = 1
+pred: shared index is = 1
+T 0x8aee14
+update: global history index befor is = 1
+update: history index after is = 3
+0xe0814 
+ 
+ pred: val bit is = 1
+pred: shared index is = 3
+T 0x8aee14
+update: global history index befor is = 3
+update: history index after is = 6
+0x38fefa8 
+ 
+ pred: val bit is = 0
+N 0x38fefac
+update: global history index befor is = 6
+update: history index after is = 4
+0x38fefa8 
+ 
+ pred: val bit is = 1
+pred: shared index is = 4
+T 0x2f54
+update: global history index befor is = 4
+update: history index after is = 0
+0x38fefa8 
+ 
+ pred: val bit is = 1
+pred: shared index is = 0
+T 0x2f54
+update: global history index befor is = 0
+update: history index after is = 1
+0x38fefa8 
+ 
+ pred: val bit is = 1
+pred: shared index is = 1
+T 0x2f54
+update: global history index befor is = 1
+update: history index after is = 3
+0x38fefa8 
+ 
+ pred: val bit is = 1
+pred: shared index is = 3
+N 0x38fefac
+update: global history index befor is = 3
+update: history index after is = 7
+0xe0814 
+ 
+ pred: val bit is = 1
+pred: shared index is = 7
+T 0x8aee14
+update: global history index befor is = 7
+update: history index after is = 6
+0x38fefa8 
+ 
+ pred: val bit is = 1
+pred: shared index is = 6
+N 0x38fefac
+update: global history index befor is = 6
+update: history index after is = 5
+0x38fefa8 
+ 
+ pred: val bit is = 1
+pred: shared index is = 5
+T 0x2f54
+update: global history index befor is = 5
+update: history index after is = 3
+0xe0814 
+ 
+ pred: val bit is = 1
+pred: shared index is = 3
+T 0x8aee14
+update: global history index befor is = 3
+update: history index after is = 6
+0xe0814 
+ 
+ pred: val bit is = 1
+pred: shared index is = 6
+T 0x8aee14
+update: global history index befor is = 6
+update: history index after is = 4
+0x38fefa8 
+ 
+ pred: val bit is = 1
+pred: shared index is = 4
+N 0x38fefac
+update: global history index befor is = 4
+update: history index after is = 1
+0x38fefa8 
+ 
+ pred: val bit is = 1
+pred: shared index is = 1
+T 0x2f54
+update: global history index befor is = 1
+update: history index after is = 3
+0x38fefa8 
+ 
+ pred: val bit is = 1
+pred: shared index is = 3
+N 0x38fefac
+update: global history index befor is = 3
+update: history index after is = 7
+flush_num: 10, br_num: 16, size: 1491b

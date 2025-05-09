@@ -1,0 +1,1723 @@
+0xa738 
+ 
+ pred: val bit is = 0
+N 0xa73c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0x3285368 
+ 
+ pred: val bit is = 0
+N 0x328536c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0x3285368 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 1
+T 0x11c
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0xadfc00 
+ 
+ pred: val bit is = 0
+N 0xadfc04
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0xcafc3c 
+ 
+ pred: val bit is = 0
+N 0xcafc40
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0x6540 
+ 
+ pred: val bit is = 1
+N 0x6544
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0xd62840 
+ 
+ pred: val bit is = 1
+N 0xd62844
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0xa738 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 2
+T 0xc908
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 0
+update: history index after is = 1
+0xbdc 
+ 
+ pred: val bit is = 1
+N 0xbe0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0x108 
+ 
+ pred: val bit is = 1
+N 0x10c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 1
+0xbdc 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 2
+T 0x4a1c508
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 1
+update: history index after is = 2
+0xa738 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 0
+T 0xc908
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 2
+update: history index after is = 0
+0xf4594c 
+ 
+ pred: val bit is = 0
+N 0xf45950
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0xadfc00 
+ 
+ pred: val bit is = 1
+N 0xadfc04
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0x67a90 
+ 
+ pred: val bit is = 0
+N 0x67a94
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0x3285368 
+ 
+ pred: val bit is = 1
+N 0x328536c
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0x67a90 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 3
+T 0x1fff4f0
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0xadfc00 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 3
+T 0xcce14
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 3
+update: history index after is = 2
+0x399cb4 
+ 
+ pred: val bit is = 0
+N 0x399cb8
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 1
+0xadfc00 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 1
+T 0xcce14
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 1
+update: history index after is = 3
+0xa738 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 1
+T 0xc908
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 3
+update: history index after is = 2
+0xf4594c 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 1
+T 0xda90
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 2
+update: history index after is = 1
+0xa738 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 3
+T 0xc908
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 1
+update: history index after is = 2
+0x3285368 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 0
+T 0x11c
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 2
+update: history index after is = 1
+0xa738 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 3
+N 0xa73c
+update: GL fsm befor is = 1
+update: GL fsm after is = 0
+update: global history index befor is = 1
+update: history index after is = 2
+0x45beb60 
+ 
+ pred: val bit is = 1
+N 0x45beb64
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0x108 
+ 
+ pred: val bit is = 1
+N 0x10c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0x78fbec 
+ 
+ pred: val bit is = 1
+N 0x78fbf0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0x399cb4 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 3
+T 0x213c278
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 2
+update: history index after is = 0
+0xd62840 
+ 
+ pred: val bit is = 1
+N 0xd62844
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0x45beb60 
+ 
+ pred: val bit is = 1
+N 0x45beb64
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0xa738 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 2
+T 0xc908
+update: GL fsm befor is = 3
+update: GL fsm after is = 3
+update: global history index befor is = 0
+update: history index after is = 1
+0xbdc 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 2
+N 0xbe0
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0xf4594c 
+ 
+ pred: val bit is = 1
+N 0xf45950
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x399cb4 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 3
+N 0x399cb8
+update: GL fsm befor is = 1
+update: GL fsm after is = 0
+update: global history index befor is = 2
+update: history index after is = 0
+0xa738 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 2
+T 0xc908
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0x6540 
+ 
+ pred: val bit is = 1
+N 0x6544
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0xadfc00 
+ 
+ pred: val bit is = 1
+N 0xadfc04
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0x26dfac 
+ 
+ pred: val bit is = 1
+N 0x26dfb0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0xcafc3c 
+ 
+ pred: val bit is = 1
+N 0xcafc40
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0x3285368 
+ 
+ pred: val bit is = 1
+N 0x328536c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0xbdc 
+ 
+ pred: val bit is = 1
+N 0xbe0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0xbdc 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 0
+T 0x4a1c508
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0x66efd8 
+ 
+ pred: val bit is = 1
+N 0x66efdc
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0xd62840 
+ 
+ pred: val bit is = 1
+N 0xd62844
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x26dfac 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 1
+T 0x3a2bec
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0xcafc3c 
+ 
+ pred: val bit is = 1
+N 0xcafc40
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0x399cb4 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 0
+T 0x213c278
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 1
+update: history index after is = 3
+0x78fbec 
+ 
+ pred: val bit is = 1
+N 0x78fbf0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0x26dfac 
+ 
+ pred: val bit is = 1
+N 0x26dfb0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x3285368 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 0
+T 0x11c
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0x66efd8 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 2
+T 0x185c618
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 0
+update: history index after is = 1
+0xf7d2e0 
+ 
+ pred: val bit is = 1
+N 0xf7d2e4
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0x26dfac 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 1
+T 0x3a2bec
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 2
+update: history index after is = 0
+0x78fbec 
+ 
+ pred: val bit is = 1
+N 0x78fbf0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0xd62840 
+ 
+ pred: val bit is = 1
+N 0xd62844
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0x26dfac 
+ 
+ pred: val bit is = 1
+N 0x26dfb0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0x108 
+ 
+ pred: val bit is = 1
+N 0x10c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0xf7d2e0 
+ 
+ pred: val bit is = 1
+N 0xf7d2e4
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 1
+0xa738 
+ 
+ pred: val bit is = 1
+N 0xa73c
+update: GL fsm befor is = 0
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0xf7d2e0 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 3
+T 0xbb6dd6ec
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 3
+update: history index after is = 2
+0xcafc3c 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 1
+T 0x4875381c
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 2
+update: history index after is = 0
+0xd62840 
+ 
+ pred: val bit is = 1
+N 0xd62844
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0x66efd8 
+ 
+ pred: val bit is = 1
+N 0x66efdc
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0xadfc00 
+ 
+ pred: val bit is = 1
+N 0xadfc04
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x66efd8 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 0
+N 0x66efdc
+update: GL fsm befor is = 1
+update: GL fsm after is = 0
+update: global history index befor is = 2
+update: history index after is = 0
+0x3285368 
+ 
+ pred: val bit is = 1
+N 0x328536c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0xa738 
+ 
+ pred: val bit is = 1
+N 0xa73c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0x78fbec 
+ 
+ pred: val bit is = 1
+N 0x78fbf0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0x26dfac 
+ 
+ pred: val bit is = 1
+N 0x26dfb0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x3285368 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 0
+T 0x11c
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 2
+update: history index after is = 1
+0xd62840 
+ 
+ pred: val bit is = 1
+N 0xd62844
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0xf7d2e0 
+ 
+ pred: val bit is = 1
+N 0xf7d2e4
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x45beb60 
+ 
+ pred: val bit is = 1
+N 0x45beb64
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0x26dfac 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 3
+T 0x3a2bec
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 0
+update: history index after is = 0
+0xcafc3c 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 3
+T 0x4875381c
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 0
+update: history index after is = 1
+0x108 
+ 
+ pred: val bit is = 1
+N 0x10c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0x78fbec 
+ 
+ pred: val bit is = 1
+N 0x78fbf0
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0x108 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 2
+T 0x991228
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 0
+update: history index after is = 0
+0xf4594c 
+ 
+ pred: val bit is = 1
+N 0xf45950
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0x66efd8 
+ 
+ pred: val bit is = 1
+N 0x66efdc
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0xadfc00 
+ 
+ pred: val bit is = 1
+N 0xadfc04
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0xf4594c 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 1
+T 0xda90
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 2
+update: history index after is = 1
+0x399cb4 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 0
+T 0x213c278
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0x3285368 
+ 
+ pred: val bit is = 1
+N 0x328536c
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 1
+0x66efd8 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 3
+T 0x185c618
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 1
+update: history index after is = 2
+0xadfc00 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 2
+T 0xcce14
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 2
+update: history index after is = 1
+0x108 
+ 
+ pred: val bit is = 1
+N 0x10c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0xadfc00 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 2
+T 0xcce14
+update: GL fsm befor is = 3
+update: GL fsm after is = 3
+update: global history index befor is = 2
+update: history index after is = 1
+0xbdc 
+ 
+ pred: val bit is = 1
+N 0xbe0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0x66efd8 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 0
+N 0x66efdc
+update: GL fsm befor is = 0
+update: GL fsm after is = 1
+update: global history index befor is = 2
+update: history index after is = 1
+0xd62840 
+ 
+ pred: val bit is = 1
+N 0xd62844
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0x67a90 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 3
+T 0x1fff4f0
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x399cb4 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 3
+N 0x399cb8
+update: GL fsm befor is = 0
+update: GL fsm after is = 1
+update: global history index befor is = 2
+update: history index after is = 1
+0x66efd8 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 3
+N 0x66efdc
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0x6540 
+ 
+ pred: val bit is = 1
+N 0x6544
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x78fbec 
+ 
+ pred: val bit is = 1
+N 0x78fbf0
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 1
+0xbdc 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 2
+T 0x4a1c508
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 1
+update: history index after is = 2
+0x26dfac 
+ 
+ pred: val bit is = 1
+N 0x26dfb0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0x26dfac 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 3
+T 0x3a2bec
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 0
+update: history index after is = 0
+0xa738 
+ 
+ pred: val bit is = 1
+N 0xa73c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0x108 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 3
+T 0x991228
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 1
+update: history index after is = 3
+0x399cb4 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 2
+T 0x213c278
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 3
+update: history index after is = 2
+0x67a90 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 2
+T 0x1fff4f0
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 2
+update: history index after is = 0
+0x45beb60 
+ 
+ pred: val bit is = 1
+N 0x45beb64
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0x3285368 
+ 
+ pred: val bit is = 1
+N 0x328536c
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0x399cb4 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 0
+T 0x213c278
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 1
+update: history index after is = 3
+0x45beb60 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 3
+T 0xdd3970
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0x67a90 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 3
+T 0x1fff4f0
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0xf7d2e0 
+ 
+ pred: val bit is = 1
+N 0xf7d2e4
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0x6540 
+ 
+ pred: val bit is = 1
+N 0x6544
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0x67a90 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 3
+T 0x1fff4f0
+update: GL fsm befor is = 3
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0x78fbec 
+ 
+ pred: val bit is = 1
+N 0x78fbf0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x78fbec 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 1
+T 0x29c4
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 2
+update: history index after is = 0
+0x3285368 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 2
+T 0x11c
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 0
+update: history index after is = 1
+0xbdc 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 2
+N 0xbe0
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0x399cb4 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 2
+N 0x399cb8
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0xd62840 
+ 
+ pred: val bit is = 1
+N 0xd62844
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0xf4594c 
+ 
+ pred: val bit is = 1
+N 0xf45950
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0x66efd8 
+ 
+ pred: val bit is = 1
+N 0x66efdc
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0x26dfac 
+ 
+ pred: val bit is = 1
+N 0x26dfb0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0x45beb60 
+ 
+ pred: val bit is = 1
+N 0x45beb64
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0x45beb60 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 0
+T 0xdd3970
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 0
+update: history index after is = 0
+0x3285368 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 2
+T 0x11c
+update: GL fsm befor is = 3
+update: GL fsm after is = 3
+update: global history index befor is = 0
+update: history index after is = 1
+0x26dfac 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 2
+T 0x3a2bec
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 1
+update: history index after is = 2
+0x66efd8 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 0
+N 0x66efdc
+update: GL fsm befor is = 1
+update: GL fsm after is = 0
+update: global history index befor is = 2
+update: history index after is = 0
+0xa738 
+ 
+ pred: val bit is = 1
+N 0xa73c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0x3285368 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 3
+T 0x11c
+update: GL fsm befor is = 3
+update: GL fsm after is = 3
+update: global history index befor is = 1
+update: history index after is = 3
+0x3285368 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 1
+T 0x11c
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0xbdc 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 0
+T 0x4a1c508
+update: GL fsm befor is = 3
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0x45beb60 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 3
+T 0xdd3970
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0xf7d2e0 
+ 
+ pred: val bit is = 1
+N 0xf7d2e4
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x45beb60 
+ 
+ pred: val bit is = 1
+N 0x45beb64
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 1
+0xa738 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 3
+T 0xc908
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 1
+update: history index after is = 2
+0x66efd8 
+ 
+ pred: val bit is = 1
+N 0x66efdc
+update: GL fsm befor is = 0
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0xd62840 
+ 
+ pred: val bit is = 1
+N 0xd62844
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0x3285368 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 3
+T 0x11c
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0x3285368 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 0
+T 0x11c
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 2
+update: history index after is = 1
+0x26dfac 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 2
+N 0x26dfb0
+update: GL fsm befor is = 1
+update: GL fsm after is = 0
+update: global history index befor is = 1
+update: history index after is = 2
+0x67a90 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 2
+N 0x67a94
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 1
+0xadfc00 
+ 
+ pred: val bit is = 1
+N 0xadfc04
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0x45beb60 
+ 
+ pred: val bit is = 1
+N 0x45beb64
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0x45beb60 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 3
+T 0xdd3970
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0x67a90 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 3
+T 0x1fff4f0
+update: GL fsm befor is = 3
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0xf4594c 
+ 
+ pred: val bit is = 1
+N 0xf45950
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0xf4594c 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 1
+T 0xda90
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 2
+update: history index after is = 0
+0x3285368 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 2
+T 0x11c
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0x66efd8 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 2
+T 0x185c618
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 0
+update: history index after is = 0
+0xd62840 
+ 
+ pred: val bit is = 1
+N 0xd62844
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0xd62840 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 1
+T 0x8e77f84
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 1
+update: history index after is = 2
+0xadfc00 
+ 
+ pred: val bit is = 1
+N 0xadfc04
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 1
+0x6540 
+ 
+ pred: val bit is = 1
+N 0x6544
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0xa738 
+ 
+ pred: val bit is = 1
+N 0xa73c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x3285368 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 0
+T 0x11c
+update: GL fsm befor is = 3
+update: GL fsm after is = 3
+update: global history index befor is = 2
+update: history index after is = 1
+0x6540 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 1
+T 0xe44
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 1
+update: history index after is = 3
+0x399cb4 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 2
+T 0x213c278
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0xf4594c 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 0
+T 0xda90
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 3
+update: history index after is = 2
+0x108 
+ 
+ pred: val bit is = 1
+N 0x10c
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0x6540 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 0
+T 0xe44
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 0
+update: history index after is = 1
+0xd62840 
+ 
+ pred: val bit is = 1
+N 0xd62844
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0x399cb4 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 2
+T 0x213c278
+update: GL fsm befor is = 3
+update: GL fsm after is = 3
+update: global history index befor is = 3
+update: history index after is = 3
+0xf7d2e0 
+ 
+ pred: val bit is = 1
+N 0xf7d2e4
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0x6540 
+ 
+ pred: val bit is = 1
+N 0x6544
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x78fbec 
+ 
+ pred: val bit is = 1
+N 0x78fbf0
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0x66efd8 
+ 
+ pred: val bit is = 1
+N 0x66efdc
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0x6540 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 0
+T 0xe44
+update: GL fsm befor is = 3
+update: GL fsm after is = 3
+update: global history index befor is = 0
+update: history index after is = 1
+0x399cb4 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 0
+T 0x213c278
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0xf7d2e0 
+ 
+ pred: val bit is = 1
+N 0xf7d2e4
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 1
+0xcafc3c 
+ 
+ pred: val bit is = 1
+N 0xcafc40
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0xadfc00 
+ 
+ pred: val bit is = 1
+N 0xadfc04
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 1
+0xd62840 
+ 
+ pred: val bit is = 1
+N 0xd62844
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0xadfc00 
+ 
+ pred: val bit is = 1
+N 0xadfc04
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0xa738 
+ 
+ pred: val bit is = 1
+N 0xa73c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 1
+0x6540 
+ 
+ pred: val bit is = 1
+N 0x6544
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 2
+0xf7d2e0 
+ 
+ pred: val bit is = 1
+N 0xf7d2e4
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0x67a90 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 0
+T 0x1fff4f0
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 0
+update: history index after is = 0
+0xa738 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 2
+T 0xc908
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 0
+update: history index after is = 1
+0x108 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 3
+T 0x991228
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 1
+update: history index after is = 3
+0x78fbec 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 3
+pred: shared index is = 0
+N 0x78fbf0
+update: GL fsm befor is = 1
+update: GL fsm after is = 0
+update: global history index befor is = 3
+update: history index after is = 2
+0x399cb4 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 2
+pred: shared index is = 3
+N 0x399cb8
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 1
+0xcafc3c 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 2
+T 0x4875381c
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 1
+update: history index after is = 3
+0x3285368 
+ 
+ pred: val bit is = 1
+N 0x328536c
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+0x45beb60 
+ 
+ pred: val bit is = 1
+N 0x45beb64
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 2
+0x26dfac 
+ 
+ pred: val bit is = 1
+N 0x26dfb0
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 1
+0x45beb60 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 1
+pred: shared index is = 1
+T 0xdd3970
+update: GL fsm befor is = 2
+update: GL fsm after is = 1
+update: global history index befor is = 1
+update: history index after is = 2
+0xadfc00 
+ 
+ pred: val bit is = 1
+N 0xadfc04
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 2
+update: history index after is = 0
+0xf4594c 
+ 
+ pred: val bit is = 1
+N 0xf45950
+update: GL fsm befor is = 1
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0x67a90 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 0
+N 0x67a94
+update: GL fsm befor is = 1
+update: GL fsm after is = 0
+update: global history index befor is = 0
+update: history index after is = 0
+0xadfc00 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 0
+T 0xcce14
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0x45beb60 
+ 
+ pred: val bit is = 1
+N 0x45beb64
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 0
+update: history index after is = 0
+0x45beb60 
+ 
+ pred: val bit is = 1
+pred: LG global history is = 0
+pred: shared index is = 0
+T 0xdd3970
+update: GL fsm befor is = 2
+update: GL fsm after is = 3
+update: global history index befor is = 0
+update: history index after is = 1
+0xbdc 
+ 
+ pred: val bit is = 1
+N 0xbe0
+update: GL fsm befor is = 3
+update: GL fsm after is = 2
+update: global history index befor is = 1
+update: history index after is = 3
+0x108 
+ 
+ pred: val bit is = 1
+N 0x10c
+update: GL fsm befor is = 2
+update: GL fsm after is = 2
+update: global history index befor is = 3
+update: history index after is = 3
+flush_num: 95, br_num: 193, size: 522b

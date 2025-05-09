@@ -1,0 +1,69 @@
+0x10 
+ 
+ pred: val bit is = 0
+N 0x14
+update: global history index befor is = 0
+update: history index after is = 1
+0x10 
+ 
+ pred: val bit is = 1
+pred: shared index is = 5
+N 0x14
+update: global history index befor is = 1
+update: history index after is = 3
+0x10 
+ 
+ pred: val bit is = 1
+pred: shared index is = 7
+N 0x14
+update: global history index befor is = 3
+update: history index after is = 7
+0x10 
+ 
+ pred: val bit is = 1
+pred: shared index is = 3
+N 0x14
+update: global history index befor is = 7
+update: history index after is = 15
+0x10 
+ 
+ pred: val bit is = 1
+pred: shared index is = 11
+N 0x14
+update: global history index befor is = 15
+update: history index after is = 31
+0x14 
+ 
+ pred: val bit is = 0
+N 0x18
+update: global history index befor is = 31
+update: history index after is = 62
+0x14 
+ 
+ pred: val bit is = 1
+pred: shared index is = 59
+N 0x18
+update: global history index befor is = 62
+update: history index after is = 124
+0x14 
+ 
+ pred: val bit is = 1
+pred: shared index is = 121
+N 0x18
+update: global history index befor is = 124
+update: history index after is = 248
+0x14 
+ 
+ pred: val bit is = 1
+pred: shared index is = 253
+N 0x18
+update: global history index befor is = 248
+update: history index after is = 240
+0x14 
+ 
+ pred: val bit is = 1
+pred: shared index is = 245
+N 0x18
+update: global history index befor is = 240
+update: history index after is = 224
+flush_num: 5, br_num: 10, size: 634b

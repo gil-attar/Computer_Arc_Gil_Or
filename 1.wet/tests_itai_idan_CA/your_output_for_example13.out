@@ -1,0 +1,101 @@
+0x9960 
+ 
+ pred: val bit is = 0
+N 0x9964
+update: global history index befor is = 0
+update: history index after is = 1
+0xbc38 
+ 
+ pred: val bit is = 0
+N 0xbc3c
+update: global history index befor is = 1
+update: history index after is = 2
+0x9960 
+ 
+ pred: val bit is = 1
+pred: shared index is = 2
+T 0x208
+update: global history index befor is = 2
+update: history index after is = 0
+0x43c 
+ 
+ pred: val bit is = 0
+N 0x440
+update: global history index befor is = 0
+update: history index after is = 1
+0x8aaeb2c 
+ 
+ pred: val bit is = 0
+N 0x8aaeb30
+update: global history index befor is = 1
+update: history index after is = 3
+0x9b3c 
+ 
+ pred: val bit is = 1
+N 0x9b40
+update: global history index befor is = 3
+update: history index after is = 3
+0x9960 
+ 
+ pred: val bit is = 1
+pred: shared index is = 3
+T 0x208
+update: global history index befor is = 3
+update: history index after is = 2
+0x82557bd8 
+ 
+ pred: val bit is = 1
+N 0x82557bdc
+update: global history index befor is = 2
+update: history index after is = 0
+0x9f528 
+ 
+ pred: val bit is = 0
+N 0x9f52c
+update: global history index befor is = 0
+update: history index after is = 0
+0x9f528 
+ 
+ pred: val bit is = 1
+pred: shared index is = 0
+T 0xa50
+update: global history index befor is = 0
+update: history index after is = 1
+0x9bfcde74 
+ 
+ pred: val bit is = 0
+N 0x9bfcde78
+update: global history index befor is = 1
+update: history index after is = 3
+0xb40 
+ 
+ pred: val bit is = 1
+N 0xb44
+update: global history index befor is = 3
+update: history index after is = 3
+0xb0e4 
+ 
+ pred: val bit is = 0
+N 0xb0e8
+update: global history index befor is = 3
+update: history index after is = 2
+0xdf4 
+ 
+ pred: val bit is = 1
+N 0xdf8
+update: global history index befor is = 2
+update: history index after is = 0
+0x860c064 
+ 
+ pred: val bit is = 1
+N 0x860c068
+update: global history index befor is = 0
+update: history index after is = 1
+0xdf4 
+ 
+ pred: val bit is = 1
+pred: shared index is = 1
+T 0x9b8
+update: global history index befor is = 1
+update: history index after is = 2
+flush_num: 10, br_num: 16, size: 410b

@@ -10,21 +10,7 @@ extern "C" {
 
 #include <stdbool.h>
 #include <stdint.h>
-#include <math.h>
 
-#define MAX_HISTORY_SIZE 256
-#define LL 0
-#define LG 1
-#define GL 2
-#define GG 3
-#define SNT 0
-#define WNT 1
-#define WT 2
-#define ST 3
-
-#define NONE 0
-#define LSB 1
-#define MID 2
 
 
 
@@ -35,34 +21,7 @@ typedef struct {
 	unsigned size;		      // Theoretical allocated BTB and branch predictor size
 } SIM_stats;
 
-typedef struct {
-    unsigned prediction_arr[MAX_HISTORY_SIZE]; 
-	//each index in the array matches a specific history
-	//values: SNT WNT WT ST ( 0 1 2 3 )
-} PredictionTable;
 
-// BTB line (local history)
-typedef struct {
-    unsigned int line_pc;
-	unsigned int tag;    // identifying the branch
-	bool validation_bit;
-	unsigned int target;
-    char history_place; 
-	PredictionTable* pred_t;
-} BTB_line;
-
-//global variable 
-unsigned char hist_mask;
-unsigned char global_history;
-unsigned* global_fsm_table; //for GG/LG
-BTB_line* BTB_table; //local histories
-int BTB_size;
-int flush_count;
-int update_count;
-
-int status; //type of branch predictor (LL=0, LG=1, GL=2, GG=3)
-int isShared; //0 = none, 1 = lsb, 2 = mid
-int tagSize;
 
 /*************************************************************************/
 /* The following functions should be implemented in your bp.c (or .cpp) */

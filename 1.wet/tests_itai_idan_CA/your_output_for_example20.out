@@ -1,0 +1,292 @@
+0x97e9904 
+ 
+ pred: val bit is = 0
+N 0x97e9908
+update: local history index befor is = 0
+update: history index after is = 1
+0x44430 
+ 
+ pred: val bit is = 0
+N 0x44434
+update: local history index befor is = 0
+update: history index after is = 0
+0x2a3948 
+ 
+ pred: val bit is = 1
+N 0x2a394c
+update: local history index befor is = 0
+update: history index after is = 0
+0x44430 
+ 
+ pred: val bit is = 1
+N 0x44434
+update: local history index befor is = 0
+update: history index after is = 1
+0x2f8 
+ 
+ pred: val bit is = 1
+N 0x2fc
+update: local history index befor is = 1
+update: history index after is = 1
+0x878 
+ 
+ pred: val bit is = 1
+N 0x87c
+update: local history index befor is = 1
+update: history index after is = 0
+0x38c0 
+ 
+ pred: val bit is = 1
+N 0x38c4
+update: local history index befor is = 0
+update: history index after is = 1
+0x2c521ac 
+ 
+ pred: val bit is = 1
+N 0x2c521b0
+update: local history index befor is = 1
+update: history index after is = 0
+0x7abe83c 
+ 
+ pred: val bit is = 1
+N 0x7abe840
+update: local history index befor is = 0
+update: history index after is = 1
+0xa47f125c 
+ 
+ pred: val bit is = 1
+N 0xa47f1260
+update: local history index befor is = 1
+update: history index after is = 1
+0x44430 
+ 
+ pred: val bit is = 1
+N 0x44434
+update: local history index befor is = 1
+update: history index after is = 0
+0x8c1554 
+ 
+ pred: val bit is = 1
+N 0x8c1558
+update: local history index befor is = 1
+update: history index after is = 0
+0xf0d8 
+ 
+ pred: val bit is = 1
+N 0xf0dc
+update: local history index befor is = 0
+update: history index after is = 1
+0x878 
+ 
+ pred: val bit is = 1
+N 0x87c
+update: local history index befor is = 1
+update: history index after is = 1
+0x8316aa78 
+ 
+ pred: val bit is = 1
+N 0x8316aa7c
+update: local history index befor is = 1
+update: history index after is = 0
+0x998b04ac 
+ 
+ pred: val bit is = 1
+N 0x998b04b0
+update: local history index befor is = 0
+update: history index after is = 0
+0xf2dd34 
+ 
+ pred: val bit is = 1
+N 0xf2dd38
+update: local history index befor is = 0
+update: history index after is = 1
+0xa6d9d0 
+ 
+ pred: val bit is = 1
+N 0xa6d9d4
+update: local history index befor is = 0
+update: history index after is = 0
+0x38c0 
+ 
+ pred: val bit is = 1
+N 0x38c4
+update: local history index befor is = 0
+update: history index after is = 0
+0x75cc0 
+ 
+ pred: val bit is = 1
+N 0x75cc4
+update: local history index befor is = 0
+update: history index after is = 1
+0xa47f125c 
+ 
+ pred: val bit is = 1
+N 0xa47f1260
+update: local history index befor is = 1
+update: history index after is = 0
+0x38c0 
+ 
+ pred: val bit is = 1
+N 0x38c4
+update: local history index befor is = 1
+update: history index after is = 0
+0x7abe83c 
+ 
+ pred: val bit is = 1
+N 0x7abe840
+update: local history index befor is = 0
+update: history index after is = 0
+0x38c0 
+ 
+ pred: val bit is = 1
+pred: shared index is = 0
+N 0x38c4
+update: local history index befor is = 0
+update: history index after is = 0
+0x7abe83c 
+ 
+ pred: val bit is = 1
+pred: shared index is = 1
+N 0x7abe840
+update: local history index befor is = 0
+update: history index after is = 0
+0x48a8e8 
+ 
+ pred: val bit is = 1
+N 0x48a8ec
+update: local history index befor is = 0
+update: history index after is = 1
+0x25c91a6c 
+ 
+ pred: val bit is = 1
+N 0x25c91a70
+update: local history index befor is = 0
+update: history index after is = 1
+0x878 
+ 
+ pred: val bit is = 1
+N 0x87c
+update: local history index befor is = 1
+update: history index after is = 0
+0x7abe83c 
+ 
+ pred: val bit is = 1
+N 0x7abe840
+update: local history index befor is = 1
+update: history index after is = 1
+0x44430 
+ 
+ pred: val bit is = 1
+N 0x44434
+update: local history index befor is = 0
+update: history index after is = 1
+0x97e9904 
+ 
+ pred: val bit is = 1
+N 0x97e9908
+update: local history index befor is = 1
+update: history index after is = 1
+0xa6d9d0 
+ 
+ pred: val bit is = 1
+N 0xa6d9d4
+update: local history index befor is = 1
+update: history index after is = 1
+0xf2dd34 
+ 
+ pred: val bit is = 1
+N 0xf2dd38
+update: local history index befor is = 1
+update: history index after is = 1
+0x8316aa78 
+ 
+ pred: val bit is = 1
+N 0x8316aa7c
+update: local history index befor is = 1
+update: history index after is = 1
+0x600 
+ 
+ pred: val bit is = 1
+N 0x604
+update: local history index befor is = 1
+update: history index after is = 0
+0x75cc0 
+ 
+ pred: val bit is = 1
+N 0x75cc4
+update: local history index befor is = 0
+update: history index after is = 0
+0x25c91a6c 
+ 
+ pred: val bit is = 1
+N 0x25c91a70
+update: local history index befor is = 1
+update: history index after is = 0
+0xd8270 
+ 
+ pred: val bit is = 1
+N 0xd8274
+update: local history index befor is = 0
+update: history index after is = 0
+0x878 
+ 
+ pred: val bit is = 1
+N 0x87c
+update: local history index befor is = 0
+update: history index after is = 1
+0x48a8e8 
+ 
+ pred: val bit is = 1
+N 0x48a8ec
+update: local history index befor is = 1
+update: history index after is = 0
+0x3d84 
+ 
+ pred: val bit is = 1
+N 0x3d88
+update: local history index befor is = 0
+update: history index after is = 0
+0x600 
+ 
+ pred: val bit is = 1
+N 0x604
+update: local history index befor is = 0
+update: history index after is = 1
+0x59f5b8 
+ 
+ pred: val bit is = 1
+N 0x59f5bc
+update: local history index befor is = 1
+update: history index after is = 0
+0x48a8e8 
+ 
+ pred: val bit is = 1
+N 0x48a8ec
+update: local history index befor is = 0
+update: history index after is = 1
+0xa6d9d0 
+ 
+ pred: val bit is = 1
+N 0xa6d9d4
+update: local history index befor is = 1
+update: history index after is = 1
+0x3d84 
+ 
+ pred: val bit is = 1
+pred: shared index is = 0
+T 0x73d78cc
+update: local history index befor is = 0
+update: history index after is = 1
+0x878 
+ 
+ pred: val bit is = 1
+N 0x87c
+update: local history index befor is = 1
+update: history index after is = 0
+0x998b04ac 
+ 
+ pred: val bit is = 1
+N 0x998b04b0
+update: local history index befor is = 1
+update: history index after is = 1
+flush_num: 23, br_num: 48, size: 104b

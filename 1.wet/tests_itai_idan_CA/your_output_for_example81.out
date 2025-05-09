@@ -1,1153 +1,185 @@
-0x84e0 
- 
- pred: val bit is = 0
-N 0x84e4
-update: global history index befor is = 0
-update: history index after is = 1
-0x84e0 
- 
- pred: val bit is = 1
-pred: shared index is = 1
-T 0xaa0
-update: global history index befor is = 1
-update: history index after is = 3
-0x84e0 
- 
- pred: val bit is = 1
-pred: shared index is = 3
-T 0xaa0
-update: global history index befor is = 3
-update: history index after is = 6
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 6
-update: history index after is = 13
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 13
-update: history index after is = 27
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 27
-update: history index after is = 23
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 23
-update: history index after is = 14
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 14
-update: history index after is = 28
-0x2728 
- 
- pred: val bit is = 1
-pred: shared index is = 28
-T 0x10fd4
-update: global history index befor is = 28
-update: history index after is = 24
-0x2728 
- 
- pred: val bit is = 1
-pred: shared index is = 24
-T 0x10fd4
-update: global history index befor is = 24
-update: history index after is = 17
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 17
-update: history index after is = 2
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 2
-update: history index after is = 5
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 5
-update: history index after is = 11
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 11
-T 0x554
-update: global history index befor is = 11
-update: history index after is = 22
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 22
-update: history index after is = 12
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 12
-update: history index after is = 25
-0x2728 
- 
- pred: val bit is = 1
-pred: shared index is = 25
-T 0x10fd4
-update: global history index befor is = 25
-update: history index after is = 19
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 19
-update: history index after is = 7
-0x1926f5c 
- 
- pred: val bit is = 1
-pred: shared index is = 7
-T 0xb0f3c
-update: global history index befor is = 7
-update: history index after is = 14
-0x1926f5c 
- 
- pred: val bit is = 1
-pred: shared index is = 14
-T 0xb0f3c
-update: global history index befor is = 14
-update: history index after is = 28
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 28
-update: history index after is = 24
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 24
-update: history index after is = 16
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 16
-update: history index after is = 1
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 1
-update: history index after is = 3
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 3
-T 0x554
-update: global history index befor is = 3
-update: history index after is = 6
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 6
-update: history index after is = 12
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 12
-update: history index after is = 25
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 25
-update: history index after is = 18
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 18
-update: history index after is = 4
-0x84e0 
- 
- pred: val bit is = 1
-pred: shared index is = 4
-T 0xaa0
-update: global history index befor is = 4
-update: history index after is = 8
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 8
-update: history index after is = 17
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 17
-update: history index after is = 3
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 3
-update: history index after is = 6
-0x1926f5c 
- 
- pred: val bit is = 1
-pred: shared index is = 6
-T 0xb0f3c
-update: global history index befor is = 6
-update: history index after is = 12
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 12
-update: history index after is = 25
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 25
-update: history index after is = 18
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 18
-update: history index after is = 5
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 5
-update: history index after is = 10
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 10
-update: history index after is = 20
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 20
-T 0x554
-update: global history index befor is = 20
-update: history index after is = 9
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 9
-update: history index after is = 18
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 18
-update: history index after is = 4
-0x1926f5c 
- 
- pred: val bit is = 1
-pred: shared index is = 4
-T 0xb0f3c
-update: global history index befor is = 4
-update: history index after is = 9
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 9
-update: history index after is = 18
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 18
-update: history index after is = 5
-0x1926f5c 
- 
- pred: val bit is = 1
-pred: shared index is = 5
-T 0xb0f3c
-update: global history index befor is = 5
-update: history index after is = 11
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 11
-update: history index after is = 23
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 23
-update: history index after is = 14
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 14
-update: history index after is = 28
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 28
-update: history index after is = 25
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 25
-update: history index after is = 19
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 19
-update: history index after is = 7
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 7
-update: history index after is = 14
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 14
-update: history index after is = 29
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 29
-update: history index after is = 26
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 26
-update: history index after is = 20
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 20
-update: history index after is = 9
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 9
-update: history index after is = 18
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 18
-update: history index after is = 4
-0x1926f5c 
- 
- pred: val bit is = 1
-pred: shared index is = 4
-T 0xb0f3c
-update: global history index befor is = 4
-update: history index after is = 8
-0x1926f5c 
- 
- pred: val bit is = 1
-pred: shared index is = 8
-T 0xb0f3c
-update: global history index befor is = 8
-update: history index after is = 17
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 17
-update: history index after is = 3
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 3
-update: history index after is = 7
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 7
-update: history index after is = 14
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 14
-update: history index after is = 28
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 28
-update: history index after is = 25
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 25
-update: history index after is = 19
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 19
-update: history index after is = 7
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 7
-update: history index after is = 14
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 14
-update: history index after is = 29
-0x2728 
- 
- pred: val bit is = 1
-pred: shared index is = 29
-T 0x10fd4
-update: global history index befor is = 29
-update: history index after is = 26
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 26
-update: history index after is = 20
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 20
-update: history index after is = 9
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 9
-update: history index after is = 18
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 18
-update: history index after is = 4
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 4
-update: history index after is = 9
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 9
-update: history index after is = 18
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 18
-update: history index after is = 4
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 4
-update: history index after is = 9
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 9
-update: history index after is = 19
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 19
-update: history index after is = 6
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 6
-update: history index after is = 13
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 13
-update: history index after is = 27
-0x84e0 
- 
- pred: val bit is = 1
-pred: shared index is = 27
-T 0xaa0
-update: global history index befor is = 27
-update: history index after is = 22
-0x84e0 
- 
- pred: val bit is = 1
-pred: shared index is = 22
-T 0xaa0
-update: global history index befor is = 22
-update: history index after is = 12
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 12
-update: history index after is = 25
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 25
-update: history index after is = 18
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 18
-update: history index after is = 5
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 5
-update: history index after is = 11
-0x2728 
- 
- pred: val bit is = 1
-pred: shared index is = 11
-T 0x10fd4
-update: global history index befor is = 11
-update: history index after is = 22
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 22
-update: history index after is = 13
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 13
-update: history index after is = 27
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 27
-update: history index after is = 22
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 22
-update: history index after is = 12
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 12
-update: history index after is = 25
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 25
-update: history index after is = 18
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 18
-update: history index after is = 5
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 5
-update: history index after is = 11
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 11
-update: history index after is = 22
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 22
-update: history index after is = 12
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 12
-update: history index after is = 24
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 24
-update: history index after is = 17
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 17
-update: history index after is = 2
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 2
-update: history index after is = 5
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 5
-update: history index after is = 10
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 10
-update: history index after is = 20
-0x84e0 
- 
- pred: val bit is = 1
-pred: shared index is = 20
-T 0xaa0
-update: global history index befor is = 20
-update: history index after is = 8
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 8
-update: history index after is = 16
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 16
-update: history index after is = 1
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 1
-update: history index after is = 3
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 3
-update: history index after is = 7
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 7
-update: history index after is = 15
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 15
-update: history index after is = 31
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 31
-update: history index after is = 31
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 31
-update: history index after is = 30
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 30
-update: history index after is = 28
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 28
-T 0x554
-update: global history index befor is = 28
-update: history index after is = 24
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 24
-T 0x554
-update: global history index befor is = 24
-update: history index after is = 17
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 17
-T 0x554
-update: global history index befor is = 17
-update: history index after is = 3
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 3
-update: history index after is = 7
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 7
-update: history index after is = 15
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 15
-update: history index after is = 30
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 30
-T 0x554
-update: global history index befor is = 30
-update: history index after is = 28
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 28
-update: history index after is = 25
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 25
-update: history index after is = 19
-0x1926f5c 
- 
- pred: val bit is = 1
-pred: shared index is = 19
-T 0xb0f3c
-update: global history index befor is = 19
-update: history index after is = 7
-0x1926f5c 
- 
- pred: val bit is = 1
-pred: shared index is = 7
-T 0xb0f3c
-update: global history index befor is = 7
-update: history index after is = 14
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 14
-update: history index after is = 28
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 28
-update: history index after is = 24
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 24
-update: history index after is = 16
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 16
-update: history index after is = 0
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 0
-update: history index after is = 1
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 1
-T 0x554
-update: global history index befor is = 1
-update: history index after is = 2
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 2
-T 0x554
-update: global history index befor is = 2
-update: history index after is = 4
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 4
-T 0x554
-update: global history index befor is = 4
-update: history index after is = 9
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 9
-update: history index after is = 18
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 18
-update: history index after is = 4
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 4
-update: history index after is = 9
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 9
-N 0x11ec0
-update: global history index befor is = 9
-update: history index after is = 18
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 18
-update: history index after is = 5
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 5
-update: history index after is = 10
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 10
-update: history index after is = 20
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 20
-update: history index after is = 9
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 9
-N 0x11ec0
-update: global history index befor is = 9
-update: history index after is = 18
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 18
-update: history index after is = 4
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 4
-update: history index after is = 8
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 8
-T 0x554
-update: global history index befor is = 8
-update: history index after is = 17
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 17
-update: history index after is = 2
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 2
-update: history index after is = 4
-0x1926f5c 
- 
- pred: val bit is = 1
-pred: shared index is = 4
-T 0xb0f3c
-update: global history index befor is = 4
-update: history index after is = 8
-0x1926f5c 
- 
- pred: val bit is = 1
-pred: shared index is = 8
-T 0xb0f3c
-update: global history index befor is = 8
-update: history index after is = 16
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 16
-update: history index after is = 1
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 1
-update: history index after is = 3
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 3
-T 0x554
-update: global history index befor is = 3
-update: history index after is = 6
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 6
-update: history index after is = 12
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 12
-update: history index after is = 24
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 24
-update: history index after is = 17
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 17
-update: history index after is = 3
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 3
-update: history index after is = 6
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 6
-N 0x11ec0
-update: global history index befor is = 6
-update: history index after is = 13
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 13
-update: history index after is = 27
-0x84e0 
- 
- pred: val bit is = 1
-pred: shared index is = 27
-N 0x84e4
-update: global history index befor is = 27
-update: history index after is = 23
-0x84e0 
- 
- pred: val bit is = 1
-pred: shared index is = 23
-N 0x84e4
-update: global history index befor is = 23
-update: history index after is = 14
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 14
-update: history index after is = 29
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 29
-update: history index after is = 26
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 26
-N 0x11ec0
-update: global history index befor is = 26
-update: history index after is = 21
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 21
-update: history index after is = 11
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 11
-update: history index after is = 22
-0x84e0 
- 
- pred: val bit is = 1
-pred: shared index is = 22
-N 0x84e4
-update: global history index befor is = 22
-update: history index after is = 12
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 12
-update: history index after is = 25
-0x1926f5c 
- 
- pred: val bit is = 1
-pred: shared index is = 25
-T 0xb0f3c
-update: global history index befor is = 25
-update: history index after is = 18
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 18
-update: history index after is = 5
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 5
-N 0x11ec0
-update: global history index befor is = 5
-update: history index after is = 11
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 11
-N 0x11ec0
-update: global history index befor is = 11
-update: history index after is = 23
-0x11ebc 
- 
- pred: val bit is = 1
-pred: shared index is = 23
-N 0x11ec0
-update: global history index befor is = 23
-update: history index after is = 14
-0x84e0 
- 
- pred: val bit is = 1
-N 0x84e4
-update: global history index befor is = 14
-update: history index after is = 28
-0x84e0 
- 
- pred: val bit is = 1
-pred: shared index is = 28
-T 0xaa0
-update: global history index befor is = 28
-update: history index after is = 25
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 25
-update: history index after is = 19
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 19
-update: history index after is = 7
-0x2728 
- 
- pred: val bit is = 1
-pred: shared index is = 7
-N 0x272c
-update: global history index befor is = 7
-update: history index after is = 15
-0x2728 
- 
- pred: val bit is = 1
-pred: shared index is = 15
-T 0x10fd4
-update: global history index befor is = 15
-update: history index after is = 31
-0x11ebc 
- 
- pred: val bit is = 1
-N 0x11ec0
-update: global history index befor is = 31
-update: history index after is = 30
-0x1926f5c 
- 
- pred: val bit is = 1
-N 0x1926f60
-update: global history index befor is = 30
-update: history index after is = 28
-0x2728 
- 
- pred: val bit is = 1
-N 0x272c
-update: global history index befor is = 28
-update: history index after is = 24
+0x84e0 N 0x84e4
+0x84e0 T 0xaa0
+0x84e0 T 0xaa0
+0x11ebc N 0x11ec0
+0x2728 N 0x272c
+0x11ebc N 0x11ec0
+0x84e0 N 0x84e4
+0x2728 N 0x272c
+0x2728 T 0x10fd4
+0x2728 T 0x10fd4
+0x11ebc N 0x11ec0
+0x1926f5c N 0x1926f60
+0x11ebc N 0x11ec0
+0x11ebc T 0x554
+0x84e0 N 0x84e4
+0x2728 N 0x272c
+0x2728 T 0x10fd4
+0x1926f5c N 0x1926f60
+0x1926f5c T 0xb0f3c
+0x1926f5c T 0xb0f3c
+0x84e0 N 0x84e4
+0x2728 N 0x272c
+0x84e0 N 0x84e4
+0x11ebc N 0x11ec0
+0x11ebc T 0x554
+0x1926f5c N 0x1926f60
+0x2728 N 0x272c
+0x11ebc N 0x11ec0
+0x84e0 N 0x84e4
+0x84e0 T 0xaa0
+0x1926f5c N 0x1926f60
+0x2728 N 0x272c
+0x1926f5c N 0x1926f60
+0x1926f5c T 0xb0f3c
+0x11ebc N 0x11ec0
+0x1926f5c N 0x1926f60
+0x11ebc N 0x11ec0
+0x1926f5c N 0x1926f60
+0x11ebc N 0x11ec0
+0x11ebc T 0x554
+0x84e0 N 0x84e4
+0x1926f5c N 0x1926f60
+0x1926f5c T 0xb0f3c
+0x11ebc N 0x11ec0
+0x1926f5c N 0x1926f60
+0x1926f5c T 0xb0f3c
+0x2728 N 0x272c
+0x84e0 N 0x84e4
+0x11ebc N 0x11ec0
+0x2728 N 0x272c
+0x84e0 N 0x84e4
+0x11ebc N 0x11ec0
+0x84e0 N 0x84e4
+0x11ebc N 0x11ec0
+0x84e0 N 0x84e4
+0x11ebc N 0x11ec0
+0x2728 N 0x272c
+0x84e0 N 0x84e4
+0x1926f5c N 0x1926f60
+0x1926f5c T 0xb0f3c
+0x1926f5c T 0xb0f3c
+0x84e0 N 0x84e4
+0x2728 N 0x272c
+0x11ebc N 0x11ec0
+0x1926f5c N 0x1926f60
+0x11ebc N 0x11ec0
+0x2728 N 0x272c
+0x1926f5c N 0x1926f60
+0x11ebc N 0x11ec0
+0x2728 N 0x272c
+0x2728 T 0x10fd4
+0x84e0 N 0x84e4
+0x2728 N 0x272c
+0x11ebc N 0x11ec0
+0x2728 N 0x272c
+0x84e0 N 0x84e4
+0x11ebc N 0x11ec0
+0x84e0 N 0x84e4
+0x11ebc N 0x11ec0
+0x2728 N 0x272c
+0x11ebc N 0x11ec0
+0x2728 N 0x272c
+0x84e0 N 0x84e4
+0x84e0 T 0xaa0
+0x84e0 T 0xaa0
+0x1926f5c N 0x1926f60
+0x11ebc N 0x11ec0
+0x84e0 N 0x84e4
+0x2728 N 0x272c
+0x2728 T 0x10fd4
+0x84e0 N 0x84e4
+0x11ebc N 0x11ec0
+0x2728 N 0x272c
+0x11ebc N 0x11ec0
+0x84e0 N 0x84e4
+0x1926f5c N 0x1926f60
+0x84e0 N 0x84e4
+0x2728 N 0x272c
+0x1926f5c N 0x1926f60
+0x11ebc N 0x11ec0
+0x1926f5c N 0x1926f60
+0x11ebc N 0x11ec0
+0x2728 N 0x272c
+0x1926f5c N 0x1926f60
+0x11ebc N 0x11ec0
+0x84e0 N 0x84e4
+0x84e0 T 0xaa0
+0x11ebc N 0x11ec0
+0x84e0 N 0x84e4
+0x1926f5c N 0x1926f60
+0x2728 N 0x272c
+0x84e0 N 0x84e4
+0x2728 N 0x272c
+0x11ebc N 0x11ec0
+0x1926f5c N 0x1926f60
+0x11ebc N 0x11ec0
+0x11ebc T 0x554
+0x11ebc T 0x554
+0x11ebc T 0x554
+0x2728 N 0x272c
+0x84e0 N 0x84e4
+0x11ebc N 0x11ec0
+0x11ebc T 0x554
+0x2728 N 0x272c
+0x1926f5c N 0x1926f60
+0x1926f5c T 0xb0f3c
+0x1926f5c T 0xb0f3c
+0x2728 N 0x272c
+0x84e0 N 0x84e4
+0x1926f5c N 0x1926f60
+0x2728 N 0x272c
+0x11ebc N 0x11ec0
+0x11ebc T 0x554
+0x11ebc T 0x554
+0x11ebc T 0x554
+0x2728 N 0x272c
+0x1926f5c N 0x1926f60
+0x11ebc N 0x11ec0
+0x11ebc N 0x11ec0
+0x1926f5c N 0x1926f60
+0x84e0 N 0x84e4
+0x2728 N 0x272c
+0x11ebc N 0x11ec0
+0x11ebc N 0x11ec0
+0x1926f5c N 0x1926f60
+0x11ebc N 0x11ec0
+0x11ebc T 0x554
+0x2728 N 0x272c
+0x1926f5c N 0x1926f60
+0x1926f5c T 0xb0f3c
+0x1926f5c T 0xb0f3c
+0x2728 N 0x272c
+0x11ebc N 0x11ec0
+0x11ebc T 0x554
+0x2728 N 0x272c
+0x84e0 N 0x84e4
+0x11ebc N 0x11ec0
+0x2728 N 0x272c
+0x11ebc N 0x11ec0
+0x11ebc N 0x11ec0
+0x84e0 N 0x84e4
+0x84e0 N 0x84e4
+0x84e0 N 0x84e4
+0x2728 N 0x272c
+0x11ebc N 0x11ec0
+0x11ebc N 0x11ec0
+0x1926f5c N 0x1926f60
+0x84e0 N 0x84e4
+0x84e0 N 0x84e4
+0x1926f5c N 0x1926f60
+0x1926f5c T 0xb0f3c
+0x11ebc N 0x11ec0
+0x11ebc N 0x11ec0
+0x11ebc N 0x11ec0
+0x11ebc N 0x11ec0
+0x84e0 N 0x84e4
+0x84e0 T 0xaa0
+0x1926f5c N 0x1926f60
+0x2728 N 0x272c
+0x2728 N 0x272c
+0x2728 T 0x10fd4
+0x11ebc N 0x11ec0
+0x1926f5c N 0x1926f60
+0x2728 N 0x272c
 flush_num: 98, br_num: 184, size: 117b

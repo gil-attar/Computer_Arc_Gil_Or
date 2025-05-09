@@ -91,7 +91,7 @@ int get_shared_idx_fsm(uint32_t pc, unsigned char history){
 		fsm_idx = (history^(pc>>bits_shift)) & hist_mask; 
 	}
 	//DELETE
-	//printf("real index for fsm: %d\n", fsm_idx);
+//	printf("real index for fsm: %d\n", fsm_idx);
 	
 	return fsm_idx;
 }
@@ -256,7 +256,8 @@ bool BP_predict(uint32_t pc, uint32_t *dst){
 	int index = get_index(pc);
 	int curr_tag = get_tag(pc);
 	int prediction;
-	printf("\n \n pred: val bit is = %d\n", BTB_table[index].validation_bit);
+	//DELETE
+	// printf("\n \n pred: val bit is = %d\n", BTB_table[index].validation_bit);
 
 	//check if there is valid prediction
 	if (BTB_table[index].tag == curr_tag && BTB_table[index].validation_bit == true){
@@ -284,7 +285,7 @@ bool BP_predict(uint32_t pc, uint32_t *dst){
 		shared_index = get_shared_idx_fsm (pc,global_history);
 		prediction = BTB_table[index].pred_t->prediction_arr[shared_index];
 		//DELET
-		printf("pred: LG global history is = %d\n", global_history);
+		//printf("pred: LG global history is = %d\n", global_history);
 
 		//prediction = BTB_table[index].pred_t[global_history & hist_mask];
 	}
@@ -297,7 +298,7 @@ bool BP_predict(uint32_t pc, uint32_t *dst){
 		//prediction = global_fsm_table[global_history & hist_mask];
 	}
 	//DELET
-	printf("pred: shared index is = %d\n", shared_index);
+	//printf("pred: shared index is = %d\n", shared_index);
 	
 	if (prediction == WT || prediction == ST){
 		*dst = BTB_table[index].target;
@@ -341,13 +342,26 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 	
 	update_count++;
 	int index = get_index(pc);
+	//DELETE
+	//printf("index in btb = %d\n",index);
 	unsigned int curr_tag = get_tag(pc);
 	bool is_in = false;
 	if (curr_tag == BTB_table[index].tag && BTB_table[index].validation_bit == true)
 		is_in =true;
+	else{
+		if (status == LG || status == LL) {
+			BTB_table[index].history_place = 0 & (hist_mask);
+		}
+	}
+		
+//	else
+//		BTB_table[index].validation_bit = false;
+	//we need to replace the btb lines is is_in not true
+	//also, replace fsm state to default +/- 1.
 	
 	int history_index;
 	PredictionTable* pred_table = BTB_table[index].pred_t; // perhaps pred_t->prediction_arr
+	
 	switch (status) {
 		case GG:
 			history_index = get_shared_idx_fsm (pc,global_history);
@@ -369,7 +383,7 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 		case GL:
 			history_index = get_shared_idx_fsm (pc,global_history);
 			//DELETE
-			printf("update: GL fsm befor is = %d\n", pred_table->prediction_arr[history_index]);
+			//printf("update: GL fsm befor is = %d\n", pred_table->prediction_arr[history_index]);
 			if (is_in == true){
 				if (taken && pred_table->prediction_arr[history_index] < ST)
 					pred_table->prediction_arr[history_index]++;
@@ -377,22 +391,25 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 					pred_table->prediction_arr[history_index]--;
 			}
 			else{
-				pred_table->prediction_arr[history_index] = start_fsm_state;
+				if (taken && pred_table->prediction_arr[history_index] < ST)
+					pred_table->prediction_arr[history_index]=start_fsm_state++;
+				else if (!taken && pred_table->prediction_arr[history_index] > SNT)
+					pred_table->prediction_arr[history_index]=start_fsm_state--;
 			}
 			//DELETE
-			printf("update: GL fsm after is = %d\n", pred_table->prediction_arr[history_index]);
+			//printf("update: GL fsm after is = %d\n", pred_table->prediction_arr[history_index]);
 			break;
 
 		case LG:
 			history_index = get_shared_idx_fsm (pc,BTB_table[index].history_place);
 			//DELETE
 			//printf("update: LG fsm befor is = %d\n", global_fsm_table[history_index]);
-			//if (is_in == true){
+			if (is_in == true){
 				if (taken && global_fsm_table[history_index] < ST)
 					global_fsm_table[history_index]++;
 				else if (!taken && global_fsm_table[history_index] > SNT)
 					global_fsm_table[history_index]--;
-			//}
+			}
 
 			//DELETE
 			//printf("update: LG fsm after is = %d\n", global_fsm_table[history_index]);
@@ -414,7 +431,10 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 					pred_table->prediction_arr[history_index]--;
 			}
 			else{
-				pred_table->prediction_arr[history_index] = start_fsm_state;
+				if (taken && pred_table->prediction_arr[history_index] < ST)
+					pred_table->prediction_arr[history_index]=start_fsm_state++;
+				else if (!taken && pred_table->prediction_arr[history_index] > SNT)
+					pred_table->prediction_arr[history_index]=start_fsm_state--;
 			}
 			//DELETE
 			//printf("update: LG fsm after is = %d\n", pred_table->prediction_arr[history_index]);
@@ -432,22 +452,26 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 	// === Update History === not exactly sure how to do it, need to see what is going on
 	
 	
-	
+
 	if (status == GG || status == GL) {
 		//DELETE
-	printf("update: global history index befor is = %d\n", global_history);
+		//printf("update: global history index befor is = %d\n", global_history);
 		global_history = ((global_history << 1) | (taken ? 1 : 0)) & (hist_mask);
 		//DELETE
-	printf("update: history index after is = %d\n", global_history);
-	} else {
-		//DELETE
-	printf("update: local history index befor is = %d\n", BTB_table[index].history_place);
-		BTB_table[index].history_place = ((BTB_table[index].history_place << 1) | (taken ? 1 : 0)) & (hist_mask);
-		//DELETE
-		printf("update: history index after is = %d\n", BTB_table[index].history_place);
+		//printf("update: history index after is = %d\n", global_history);
+	} 
+	else {
+		if (is_in == true){
+			//DELETE
+			//printf("update: local history index befor is = %d\n", BTB_table[index].history_place);
+			BTB_table[index].history_place = ((BTB_table[index].history_place << 1) | (taken ? 1 : 0)) & (hist_mask);
+			//DELETE
+			//printf("update: history index after is = %d\n", BTB_table[index].history_place);
+		}
+		else{
+			BTB_table[index].history_place = 0 & (hist_mask);
+		}
 	}
-	
-
 }
 
 	

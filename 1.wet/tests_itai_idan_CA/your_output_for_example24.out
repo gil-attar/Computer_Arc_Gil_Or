@@ -1,788 +1,129 @@
-0x3983c 
- 
- pred: val bit is = 0
-N 0x39840
-update: local history index befor is = 0
-update: history index after is = 1
-0x7ac30f0 
- 
- pred: val bit is = 0
-N 0x7ac30f4
-update: local history index befor is = 0
-update: history index after is = 1
-0x3983c 
- 
- pred: val bit is = 1
-pred: shared index is = 14
-T 0xf2c89d4
-update: local history index befor is = 1
-update: history index after is = 3
-0x73a0d56c 
- 
- pred: val bit is = 1
-N 0x73a0d570
-update: local history index befor is = 3
-update: history index after is = 7
-0x437268 
- 
- pred: val bit is = 0
-N 0x43726c
-update: local history index befor is = 0
-update: history index after is = 0
-0x584cda18 
- 
- pred: val bit is = 1
-N 0x584cda1c
-update: local history index befor is = 0
-update: history index after is = 1
-0x421b0f78 
- 
- pred: val bit is = 1
-N 0x421b0f7c
-update: local history index befor is = 1
-update: history index after is = 3
-0xe736a78 
- 
- pred: val bit is = 1
-N 0xe736a7c
-update: local history index befor is = 3
-update: history index after is = 7
-0x584cda18 
- 
- pred: val bit is = 1
-N 0x584cda1c
-update: local history index befor is = 7
-update: history index after is = 14
-0x7ff920 
- 
- pred: val bit is = 1
-N 0x7ff924
-update: local history index befor is = 1
-update: history index after is = 2
-0xe736a78 
- 
- pred: val bit is = 1
-N 0xe736a7c
-update: local history index befor is = 14
-update: history index after is = 29
-0xc9e538 
- 
- pred: val bit is = 1
-N 0xc9e53c
-update: local history index befor is = 29
-update: history index after is = 58
-0x4f7a0dc 
- 
- pred: val bit is = 1
-N 0x4f7a0e0
-update: local history index befor is = 7
-update: history index after is = 15
-0x73a0d56c 
- 
- pred: val bit is = 1
-N 0x73a0d570
-update: local history index befor is = 15
-update: history index after is = 30
-0x5bb4 
- 
- pred: val bit is = 0
-N 0x5bb8
-update: local history index befor is = 0
-update: history index after is = 0
-0xc9e538 
- 
- pred: val bit is = 1
-pred: shared index is = 116
-T 0x2a4
-update: local history index befor is = 58
-update: history index after is = 116
-0x584cda18 
- 
- pred: val bit is = 1
-N 0x584cda1c
-update: local history index befor is = 116
-update: history index after is = 105
-0x7ff920 
- 
- pred: val bit is = 1
-pred: shared index is = 74
-T 0x4d0
-update: local history index befor is = 2
-update: history index after is = 4
-0xf79b0c 
- 
- pred: val bit is = 1
-N 0xf79b10
-update: local history index befor is = 30
-update: history index after is = 60
-0x3983c 
- 
- pred: val bit is = 1
-N 0x39840
-update: local history index befor is = 60
-update: history index after is = 120
-0x5bb4 
- 
- pred: val bit is = 1
-pred: shared index is = 109
-T 0xe9cf8
-update: local history index befor is = 0
-update: history index after is = 1
-0x3394 
- 
- pred: val bit is = 1
-N 0x3398
-update: local history index befor is = 1
-update: history index after is = 3
-0x1b28 
- 
- pred: val bit is = 1
-N 0x1b2c
-update: local history index befor is = 105
-update: history index after is = 82
-0xc9e538 
- 
- pred: val bit is = 1
-N 0xc9e53c
-update: local history index befor is = 82
-update: history index after is = 36
-0x5bb4 
- 
- pred: val bit is = 1
-N 0x5bb8
-update: local history index befor is = 3
-update: history index after is = 7
-0x73a0d56c 
- 
- pred: val bit is = 1
-N 0x73a0d570
-update: local history index befor is = 120
-update: history index after is = 112
-0x421b0f78 
- 
- pred: val bit is = 1
-N 0x421b0f7c
-update: local history index befor is = 36
-update: history index after is = 73
-0x69d4 
- 
- pred: val bit is = 1
-N 0x69d8
-update: local history index befor is = 7
-update: history index after is = 14
-0x1b28 
- 
- pred: val bit is = 1
-N 0x1b2c
-update: local history index befor is = 73
-update: history index after is = 18
-0xf79b0c 
- 
- pred: val bit is = 1
-N 0xf79b10
-update: local history index befor is = 112
-update: history index after is = 97
-0xf79b0c 
- 
- pred: val bit is = 1
-pred: shared index is = 34
-T 0x724
-update: local history index befor is = 97
-update: history index after is = 66
-0xef4 
- 
- pred: val bit is = 1
-N 0xef8
-update: local history index befor is = 14
-update: history index after is = 28
-0x3983c 
- 
- pred: val bit is = 1
-N 0x39840
-update: local history index befor is = 66
-update: history index after is = 5
-0xe736a78 
- 
- pred: val bit is = 1
-N 0xe736a7c
-update: local history index befor is = 18
-update: history index after is = 36
-0x19ab4c4 
- 
- pred: val bit is = 1
-N 0x19ab4c8
-update: local history index befor is = 28
-update: history index after is = 57
-0x69d4 
- 
- pred: val bit is = 1
-N 0x69d8
-update: local history index befor is = 57
-update: history index after is = 115
-0x7ff920 
- 
- pred: val bit is = 1
-pred: shared index is = 76
-T 0x4d0
-update: local history index befor is = 4
-update: history index after is = 8
-0xef4 
- 
- pred: val bit is = 1
-N 0xef8
-update: local history index befor is = 115
-update: history index after is = 102
-0xf79b0c 
- 
- pred: val bit is = 1
-N 0xf79b10
-update: local history index befor is = 5
-update: history index after is = 10
-0x5bb4 
- 
- pred: val bit is = 1
-N 0x5bb8
-update: local history index befor is = 102
-update: history index after is = 77
-0x235b8 
- 
- pred: val bit is = 1
-N 0x235bc
-update: local history index befor is = 36
-update: history index after is = 72
-0x3394 
- 
- pred: val bit is = 1
-N 0x3398
-update: local history index befor is = 77
-update: history index after is = 27
-0x7ff920 
- 
- pred: val bit is = 1
-pred: shared index is = 64
-T 0x4d0
-update: local history index befor is = 8
-update: history index after is = 16
-0xf5d608 
- 
- pred: val bit is = 1
-N 0xf5d60c
-update: local history index befor is = 72
-update: history index after is = 17
-0xef4 
- 
- pred: val bit is = 1
-N 0xef8
-update: local history index befor is = 27
-update: history index after is = 54
-0x4f7a0dc 
- 
- pred: val bit is = 1
-N 0x4f7a0e0
-update: local history index befor is = 10
-update: history index after is = 20
-0x421b0f78 
- 
- pred: val bit is = 1
-N 0x421b0f7c
-update: local history index befor is = 17
-update: history index after is = 35
-0x19ab4c4 
- 
- pred: val bit is = 1
-N 0x19ab4c8
-update: local history index befor is = 54
-update: history index after is = 109
-0x73a0d56c 
- 
- pred: val bit is = 1
-N 0x73a0d570
-update: local history index befor is = 20
-update: history index after is = 40
-0xe736a78 
- 
- pred: val bit is = 1
-N 0xe736a7c
-update: local history index befor is = 35
-update: history index after is = 71
-0x421b0f78 
- 
- pred: val bit is = 1
-N 0x421b0f7c
-update: local history index befor is = 71
-update: history index after is = 14
-0x7ff920 
- 
- pred: val bit is = 1
-pred: shared index is = 88
-T 0x4d0
-update: local history index befor is = 16
-update: history index after is = 33
-0xac28dc 
- 
- pred: val bit is = 1
-N 0xac28e0
-update: local history index befor is = 40
-update: history index after is = 80
-0xef4 
- 
- pred: val bit is = 1
-N 0xef8
-update: local history index befor is = 109
-update: history index after is = 90
-0x3394 
- 
- pred: val bit is = 1
-N 0x3398
-update: local history index befor is = 90
-update: history index after is = 52
-0x421b0f78 
- 
- pred: val bit is = 1
-pred: shared index is = 80
-T 0x78cfd80
-update: local history index befor is = 14
-update: history index after is = 28
-0xef4 
- 
- pred: val bit is = 1
-N 0xef8
-update: local history index befor is = 52
-update: history index after is = 105
-0x1b28 
- 
- pred: val bit is = 1
-N 0x1b2c
-update: local history index befor is = 28
-update: history index after is = 56
-0x421b0f78 
- 
- pred: val bit is = 1
-N 0x421b0f7c
-update: local history index befor is = 56
-update: history index after is = 112
-0x421b0f78 
- 
- pred: val bit is = 1
-pred: shared index is = 46
-T 0x78cfd80
-update: local history index befor is = 112
-update: history index after is = 96
-0xe736a78 
- 
- pred: val bit is = 1
-N 0xe736a7c
-update: local history index befor is = 96
-update: history index after is = 65
-0x73a0d56c 
- 
- pred: val bit is = 1
-N 0x73a0d570
-update: local history index befor is = 80
-update: history index after is = 32
-0x3394 
- 
- pred: val bit is = 1
-N 0x3398
-update: local history index befor is = 105
-update: history index after is = 82
-0xf5d608 
- 
- pred: val bit is = 1
-N 0xf5d60c
-update: local history index befor is = 65
-update: history index after is = 2
-0xf5d608 
- 
- pred: val bit is = 1
-pred: shared index is = 0
-T 0xea0
-update: local history index befor is = 2
-update: history index after is = 5
-0x4f7a0dc 
- 
- pred: val bit is = 1
-N 0x4f7a0e0
-update: local history index befor is = 32
-update: history index after is = 64
-0xd055a45c 
- 
- pred: val bit is = 1
-N 0xd055a460
-update: local history index befor is = 64
-update: history index after is = 0
-0x3394 
- 
- pred: val bit is = 1
-pred: shared index is = 55
-T 0x520
-update: local history index befor is = 82
-update: history index after is = 37
-0x6834 
- 
- pred: val bit is = 1
-N 0x6838
-update: local history index befor is = 37
-update: history index after is = 74
-0xef4 
- 
- pred: val bit is = 1
-N 0xef8
-update: local history index befor is = 74
-update: history index after is = 21
-0x7ff920 
- 
- pred: val bit is = 1
-pred: shared index is = 105
-T 0x4d0
-update: local history index befor is = 33
-update: history index after is = 67
-0xe736a78 
- 
- pred: val bit is = 1
-N 0xe736a7c
-update: local history index befor is = 5
-update: history index after is = 11
-0x1b28 
- 
- pred: val bit is = 1
-N 0x1b2c
-update: local history index befor is = 11
-update: history index after is = 22
-0x73a0d56c 
- 
- pred: val bit is = 1
-N 0x73a0d570
-update: local history index befor is = 0
-update: history index after is = 0
-0xd055a45c 
- 
- pred: val bit is = 1
-N 0xd055a460
-update: local history index befor is = 0
-update: history index after is = 0
-0xe736a78 
- 
- pred: val bit is = 1
-N 0xe736a7c
-update: local history index befor is = 22
-update: history index after is = 45
-0xf79b0c 
- 
- pred: val bit is = 1
-N 0xf79b10
-update: local history index befor is = 0
-update: history index after is = 1
-0xf79b0c 
- 
- pred: val bit is = 1
-pred: shared index is = 66
-T 0x724
-update: local history index befor is = 1
-update: history index after is = 3
-0x6834 
- 
- pred: val bit is = 1
-N 0x6838
-update: local history index befor is = 21
-update: history index after is = 43
-0x1b28 
- 
- pred: val bit is = 1
-N 0x1b2c
-update: local history index befor is = 45
-update: history index after is = 91
-0xf79b0c 
- 
- pred: val bit is = 1
-pred: shared index is = 64
-T 0x724
-update: local history index befor is = 3
-update: history index after is = 7
-0xac28dc 
- 
- pred: val bit is = 1
-N 0xac28e0
-update: local history index befor is = 7
-update: history index after is = 15
-0x3983c 
- 
- pred: val bit is = 1
-N 0x39840
-update: local history index befor is = 15
-update: history index after is = 30
-0x4f7a0dc 
- 
- pred: val bit is = 1
-N 0x4f7a0e0
-update: local history index befor is = 30
-update: history index after is = 60
-0x1b28 
- 
- pred: val bit is = 1
-pred: shared index is = 17
-T 0xb597164
-update: local history index befor is = 91
-update: history index after is = 55
-0x7ff920 
- 
- pred: val bit is = 1
-pred: shared index is = 11
-T 0x4d0
-update: local history index befor is = 67
-update: history index after is = 6
-0x19ab4c4 
- 
- pred: val bit is = 1
-N 0x19ab4c8
-update: local history index befor is = 43
-update: history index after is = 86
-0xe736a78 
- 
- pred: val bit is = 1
-N 0xe736a7c
-update: local history index befor is = 55
-update: history index after is = 111
-0xac28dc 
- 
- pred: val bit is = 1
-N 0xac28e0
-update: local history index befor is = 60
-update: history index after is = 121
-0xac28dc 
- 
- pred: val bit is = 1
-pred: shared index is = 78
-T 0x4510
-update: local history index befor is = 121
-update: history index after is = 114
-0x6834 
- 
- pred: val bit is = 1
-N 0x6838
-update: local history index befor is = 86
-update: history index after is = 44
-0x19ab4c4 
- 
- pred: val bit is = 1
-N 0x19ab4c8
-update: local history index befor is = 44
-update: history index after is = 88
-0x728 
- 
- pred: val bit is = 1
-N 0x72c
-update: local history index befor is = 111
-update: history index after is = 95
-0x421b0f78 
- 
- pred: val bit is = 1
-N 0x421b0f7c
-update: local history index befor is = 95
-update: history index after is = 62
-0xf5d608 
- 
- pred: val bit is = 1
-N 0xf5d60c
-update: local history index befor is = 62
-update: history index after is = 125
-0x4f7a0dc 
- 
- pred: val bit is = 1
-N 0x4f7a0e0
-update: local history index befor is = 114
-update: history index after is = 101
-0x728 
- 
- pred: val bit is = 1
-N 0x72c
-update: local history index befor is = 125
-update: history index after is = 123
-0xf5d608 
- 
- pred: val bit is = 1
-N 0xf5d60c
-update: local history index befor is = 123
-update: history index after is = 118
-0x584cda18 
- 
- pred: val bit is = 1
-N 0x584cda1c
-update: local history index befor is = 118
-update: history index after is = 108
-0x235b8 
- 
- pred: val bit is = 1
-N 0x235bc
-update: local history index befor is = 108
-update: history index after is = 89
-0x3983c 
- 
- pred: val bit is = 1
-N 0x39840
-update: local history index befor is = 101
-update: history index after is = 75
-0xc9e538 
- 
- pred: val bit is = 1
-N 0xc9e53c
-update: local history index befor is = 89
-update: history index after is = 50
-0x584cda18 
- 
- pred: val bit is = 1
-N 0x584cda1c
-update: local history index befor is = 50
-update: history index after is = 100
-0xf79b0c 
- 
- pred: val bit is = 1
-N 0xf79b10
-update: local history index befor is = 75
-update: history index after is = 22
-0x3983c 
- 
- pred: val bit is = 1
-N 0x39840
-update: local history index befor is = 22
-update: history index after is = 44
-0xe736a78 
- 
- pred: val bit is = 1
-N 0xe736a7c
-update: local history index befor is = 100
-update: history index after is = 73
-0xac28dc 
- 
- pred: val bit is = 1
-N 0xac28e0
-update: local history index befor is = 44
-update: history index after is = 88
-0xd055a45c 
- 
- pred: val bit is = 1
-N 0xd055a460
-update: local history index befor is = 88
-update: history index after is = 49
-0x7ac30f0 
- 
- pred: val bit is = 1
-N 0x7ac30f4
-update: local history index befor is = 6
-update: history index after is = 12
-0x6fc40 
- 
- pred: val bit is = 1
-N 0x6fc44
-update: local history index befor is = 12
-update: history index after is = 25
-0x584cda18 
- 
- pred: val bit is = 1
-N 0x584cda1c
-update: local history index befor is = 73
-update: history index after is = 18
-0xc9e538 
- 
- pred: val bit is = 1
-N 0xc9e53c
-update: local history index befor is = 18
-update: history index after is = 37
-0xef4 
- 
- pred: val bit is = 1
-N 0xef8
-update: local history index befor is = 88
-update: history index after is = 49
-0x1b28 
- 
- pred: val bit is = 1
-N 0x1b2c
-update: local history index befor is = 37
-update: history index after is = 74
-0x437268 
- 
- pred: val bit is = 1
-N 0x43726c
-update: local history index befor is = 74
-update: history index after is = 21
-0x1b28 
- 
- pred: val bit is = 1
-N 0x1b2c
-update: local history index befor is = 21
-update: history index after is = 43
-0x728 
- 
- pred: val bit is = 1
-N 0x72c
-update: local history index befor is = 43
-update: history index after is = 86
-0x19ab4c4 
- 
- pred: val bit is = 1
-N 0x19ab4c8
-update: local history index befor is = 49
-update: history index after is = 99
-0x6834 
- 
- pred: val bit is = 1
-N 0x6838
-update: local history index befor is = 99
-update: history index after is = 71
-0x421b0f78 
- 
- pred: val bit is = 1
-N 0x421b0f7c
-update: local history index befor is = 86
-update: history index after is = 44
-0x3394 
- 
- pred: val bit is = 1
-N 0x3398
-update: local history index befor is = 71
-update: history index after is = 15
-0x437268 
- 
- pred: val bit is = 1
-N 0x43726c
-update: local history index befor is = 44
-update: history index after is = 88
-0xe736a78 
- 
- pred: val bit is = 1
-N 0xe736a7c
-update: local history index befor is = 88
-update: history index after is = 48
-0x3983c 
- 
- pred: val bit is = 1
-N 0x39840
-update: local history index befor is = 49
-update: history index after is = 98
-0x1b28 
- 
- pred: val bit is = 1
-N 0x1b2c
-update: local history index befor is = 48
-update: history index after is = 96
-0x73a0d56c 
- 
- pred: val bit is = 1
-N 0x73a0d570
-update: local history index befor is = 98
-update: history index after is = 69
-0xc9e538 
- 
- pred: val bit is = 1
-N 0xc9e53c
-update: local history index befor is = 96
-update: history index after is = 64
-0x6fc40 
- 
- pred: val bit is = 1
-pred: shared index is = 9
-T 0xfd7a2c
-update: local history index befor is = 25
-update: history index after is = 50
-flush_num: 60, br_num: 128, size: 1280b
+0x3983c N 0x39840
+0x7ac30f0 N 0x7ac30f4
+0x3983c T 0xf2c89d4
+0x73a0d56c N 0x73a0d570
+0x437268 N 0x43726c
+0x584cda18 N 0x584cda1c
+0x421b0f78 N 0x421b0f7c
+0xe736a78 N 0xe736a7c
+0x584cda18 N 0x584cda1c
+0x7ff920 N 0x7ff924
+0xe736a78 N 0xe736a7c
+0xc9e538 N 0xc9e53c
+0x4f7a0dc N 0x4f7a0e0
+0x73a0d56c N 0x73a0d570
+0x5bb4 N 0x5bb8
+0xc9e538 N 0xc9e53c
+0x584cda18 N 0x584cda1c
+0x7ff920 N 0x7ff924
+0xf79b0c N 0xf79b10
+0x3983c N 0x39840
+0x5bb4 N 0x5bb8
+0x3394 N 0x3398
+0x1b28 N 0x1b2c
+0xc9e538 N 0xc9e53c
+0x5bb4 N 0x5bb8
+0x73a0d56c N 0x73a0d570
+0x421b0f78 N 0x421b0f7c
+0x69d4 N 0x69d8
+0x1b28 N 0x1b2c
+0xf79b0c N 0xf79b10
+0xf79b0c N 0xf79b10
+0xef4 N 0xef8
+0x3983c N 0x39840
+0xe736a78 N 0xe736a7c
+0x19ab4c4 N 0x19ab4c8
+0x69d4 N 0x69d8
+0x7ff920 N 0x7ff924
+0xef4 N 0xef8
+0xf79b0c N 0xf79b10
+0x5bb4 N 0x5bb8
+0x235b8 N 0x235bc
+0x3394 N 0x3398
+0x7ff920 N 0x7ff924
+0xf5d608 N 0xf5d60c
+0xef4 N 0xef8
+0x4f7a0dc N 0x4f7a0e0
+0x421b0f78 N 0x421b0f7c
+0x19ab4c4 N 0x19ab4c8
+0x73a0d56c N 0x73a0d570
+0xe736a78 N 0xe736a7c
+0x421b0f78 N 0x421b0f7c
+0x7ff920 N 0x7ff924
+0xac28dc N 0xac28e0
+0xef4 N 0xef8
+0x3394 N 0x3398
+0x421b0f78 N 0x421b0f7c
+0xef4 N 0xef8
+0x1b28 N 0x1b2c
+0x421b0f78 N 0x421b0f7c
+0x421b0f78 N 0x421b0f7c
+0xe736a78 N 0xe736a7c
+0x73a0d56c N 0x73a0d570
+0x3394 N 0x3398
+0xf5d608 N 0xf5d60c
+0xf5d608 N 0xf5d60c
+0x4f7a0dc N 0x4f7a0e0
+0xd055a45c N 0xd055a460
+0x3394 N 0x3398
+0x6834 N 0x6838
+0xef4 N 0xef8
+0x7ff920 T 0x4d0
+0xe736a78 N 0xe736a7c
+0x1b28 N 0x1b2c
+0x73a0d56c N 0x73a0d570
+0xd055a45c N 0xd055a460
+0xe736a78 N 0xe736a7c
+0xf79b0c N 0xf79b10
+0xf79b0c N 0xf79b10
+0x6834 N 0x6838
+0x1b28 N 0x1b2c
+0xf79b0c T 0x724
+0xac28dc N 0xac28e0
+0x3983c N 0x39840
+0x4f7a0dc N 0x4f7a0e0
+0x1b28 N 0x1b2c
+0x7ff920 T 0x4d0
+0x19ab4c4 N 0x19ab4c8
+0xe736a78 N 0xe736a7c
+0xac28dc N 0xac28e0
+0xac28dc N 0xac28e0
+0x6834 N 0x6838
+0x19ab4c4 N 0x19ab4c8
+0x728 N 0x72c
+0x421b0f78 N 0x421b0f7c
+0xf5d608 N 0xf5d60c
+0x4f7a0dc N 0x4f7a0e0
+0x728 N 0x72c
+0xf5d608 N 0xf5d60c
+0x584cda18 N 0x584cda1c
+0x235b8 N 0x235bc
+0x3983c N 0x39840
+0xc9e538 N 0xc9e53c
+0x584cda18 N 0x584cda1c
+0xf79b0c N 0xf79b10
+0x3983c N 0x39840
+0xe736a78 N 0xe736a7c
+0xac28dc N 0xac28e0
+0xd055a45c N 0xd055a460
+0x7ac30f0 N 0x7ac30f4
+0x6fc40 N 0x6fc44
+0x584cda18 N 0x584cda1c
+0xc9e538 N 0xc9e53c
+0xef4 N 0xef8
+0x1b28 N 0x1b2c
+0x437268 N 0x43726c
+0x1b28 N 0x1b2c
+0x728 N 0x72c
+0x19ab4c4 N 0x19ab4c8
+0x6834 N 0x6838
+0x421b0f78 N 0x421b0f7c
+0x3394 N 0x3398
+0x437268 N 0x43726c
+0xe736a78 N 0xe736a7c
+0x3983c N 0x39840
+0x1b28 N 0x1b2c
+0x73a0d56c N 0x73a0d570
+0xc9e538 N 0xc9e53c
+0x6fc40 T 0xfd7a2c
+flush_num: 58, br_num: 128, size: 1280b

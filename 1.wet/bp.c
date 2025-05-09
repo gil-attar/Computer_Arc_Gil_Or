@@ -62,6 +62,11 @@ int status; //type of branch predictor (LL=0, LG=1, GL=2, GG=3)
 int tagsize;
 int share_mod; //0 = none, 1 = lsb, 2 = mid
 
+
+//DELETE
+int cm = 0;
+
+
 // get_index: takes pc adress and maps it to a btb line for the branch
 
 //need to consider using share also - NEED FIX !!!
@@ -71,6 +76,10 @@ int get_index(uint32_t pc){
 	main_mask = main_mask >> (32 - 2 - bits_num);
 	int index = pc & main_mask;
 	index = index >>2;
+	
+	//DELETE
+	if (cm) printf("real index for BTB: %d\n", index);
+
 	return index;
 }
 
@@ -91,7 +100,7 @@ int get_shared_idx_fsm(uint32_t pc, unsigned char history){
 		fsm_idx = (history^(pc>>bits_shift)) & hist_mask; 
 	}
 	//DELETE
-//	printf("real index for fsm: %d\n", fsm_idx);
+	if (cm) printf("real index for fsm: %d\n", fsm_idx);
 	
 	return fsm_idx;
 }
@@ -106,15 +115,13 @@ unsigned int get_tag(uint32_t pc){
 
 	unsigned int tag = pc & left_mask & right_mask;
 	tag = tag >> num_zeros_left;
+	//DELETE
+	if (cm) printf("real tag for BTB: %d\n", tag);
 	return tag;
 }
 
 int BP_init(unsigned btbSize, unsigned historySize, unsigned tagSize, unsigned fsmState,
 			bool isGlobalHist, bool isGlobalTable, int Shared){
-	
-	/* ===TO DO===
-		> consider tag size
-	*/
 
 	//----config global variable----			
 	BTB_size = btbSize; 
@@ -257,10 +264,10 @@ bool BP_predict(uint32_t pc, uint32_t *dst){
 	int curr_tag = get_tag(pc);
 	int prediction;
 	//DELETE
-	// printf("\n \n pred: val bit is = %d\n", BTB_table[index].validation_bit);
+	if (cm) printf("\n \n pred: val bit is = %d\n", BTB_table[index].validation_bit);
 
 	//check if there is valid prediction
-	if (BTB_table[index].tag == curr_tag && BTB_table[index].validation_bit == true){
+	if (BTB_table[index].tag == curr_tag && BTB_table[index].validation_bit == true && BTB_table[index].line_pc == pc){
 		is_in = true;
 	}
 	
@@ -273,32 +280,33 @@ bool BP_predict(uint32_t pc, uint32_t *dst){
 	if (status == LL){
 		shared_index = get_shared_idx_fsm (pc,BTB_table[index].history_place);
 		prediction = BTB_table[index].pred_t->prediction_arr[shared_index];
+		
 		//prediction = BTB_table[index].pred_t[BTB_table[index].history_place & hist_mask];
 	}
 	else if (status == LG){
 		shared_index = get_shared_idx_fsm (pc,BTB_table[index].history_place);
 		prediction = global_fsm_table[shared_index];
+		
 
 		//prediction = global_fsm_table[BTB_table[index].history_place & hist_mask];
 	}
 	else if (status == GL){
 		shared_index = get_shared_idx_fsm (pc,global_history);
 		prediction = BTB_table[index].pred_t->prediction_arr[shared_index];
-		//DELET
-		//printf("pred: LG global history is = %d\n", global_history);
+		
 
 		//prediction = BTB_table[index].pred_t[global_history & hist_mask];
 	}
 	else { //(status == GG)
 		shared_index = get_shared_idx_fsm (pc,global_history);
 		prediction = global_fsm_table[shared_index];
-		//DELET
-		//printf("pred: GG global history is = %d\n", global_history);
+		
 
 		//prediction = global_fsm_table[global_history & hist_mask];
 	}
-	//DELET
-	//printf("pred: shared index is = %d\n", shared_index);
+	
+	//DELETE
+	if (cm) printf("pred: index went to in fsm is = %d\n", shared_index);
 	
 	if (prediction == WT || prediction == ST){
 		*dst = BTB_table[index].target;
@@ -311,34 +319,7 @@ bool BP_predict(uint32_t pc, uint32_t *dst){
 }
 
 
-	//first ver, might come in handy
-	/*
-	if (status == LL &&
-			(BTB_table[index].pred_t[BTB_table[index].(history_place&hist_mask)] == ST || BTB_table[index].pred_t[BTB_table[index].(history_place&hist_mask)] == WT)){  //perharps syntax isnt good
-			*dst = BTB_table[index].target;
-			return true;
-		}
-		//local hist global table
-		else if (status == LG &&
-			(global_fsm_table[BTB_table[index].(history_place&hist_mask)] == ST || global_fsm_table[BTB_table[index].(history_place&hist_mask)] == WT)){ 
-			*dst = BTB_table[index].target;
-			return true;
-		}
-		// global hist local table
-		else if (status == GL &&
-			(BTB_table[index].pred_t[global_history&hist_mask] == ST || BTB_table[index].pred_t[global_history&hist_mask] == WT)){	//perharps syntax isnt good
-			*dst = BTB_table[index].target;
-			return true;
-		}
-		else if (status == GG &&
-			(global_fsm_table[global_history&hist_mask] == ST || global_fsm_table[global_history&hist_mask] == WT)){
-			*dst = BTB_table[index].target;
-			return true;
-		}
-	}
-	*/
-
-void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
+/*void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 	
 	update_count++;
 	int index = get_index(pc);
@@ -346,21 +327,22 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 	//printf("index in btb = %d\n",index);
 	unsigned int curr_tag = get_tag(pc);
 	bool is_in = false;
+	PredictionTable* pred_table = BTB_table[index].pred_t; // perhaps pred_t->prediction_arr
+
 	if (curr_tag == BTB_table[index].tag && BTB_table[index].validation_bit == true)
 		is_in =true;
 	else{
 		if (status == LG || status == LL) {
 			BTB_table[index].history_place = 0 & (hist_mask);
 		}
+		if (status == GL || status == LL){
+			for(int j=0; j<MAX_HISTORY_SIZE; j++){
+				BTB_table[index].pred_t->prediction_arr[j] = start_fsm_state;
+			}
+		}
 	}
 		
-//	else
-//		BTB_table[index].validation_bit = false;
-	//we need to replace the btb lines is is_in not true
-	//also, replace fsm state to default +/- 1.
-	
 	int history_index;
-	PredictionTable* pred_table = BTB_table[index].pred_t; // perhaps pred_t->prediction_arr
 	
 	switch (status) {
 		case GG:
@@ -414,10 +396,6 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 			//DELETE
 			//printf("update: LG fsm after is = %d\n", global_fsm_table[history_index]);
 
-
-			// else{
-			// 	global_fsm_table[history_index] = start_fsm_state;
-			// }
 			break;
 
 		case LL:
@@ -450,8 +428,6 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 	BTB_table[index].line_pc = pc;
 	
 	// === Update History === not exactly sure how to do it, need to see what is going on
-	
-	
 
 	if (status == GG || status == GL) {
 		//DELETE
@@ -468,10 +444,151 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 			//DELETE
 			//printf("update: history index after is = %d\n", BTB_table[index].history_place);
 		}
-		else{
-			BTB_table[index].history_place = 0 & (hist_mask);
-		}
 	}
+}*/
+void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst) {
+    update_count++;
+    int index = get_index(pc);
+	//DELETE
+	if (cm) printf("update: index in btb = %d\n",index);
+    unsigned int curr_tag = get_tag(pc);
+    bool is_in = false;
+    PredictionTable* pred_table = BTB_table[index].pred_t;  // Maybe pred_t->prediction_arr?
+
+    // Check if the tag is already in BTB
+    if (curr_tag == BTB_table[index].tag && BTB_table[index].validation_bit == true && BTB_table[index].line_pc == pc) {
+        is_in = true;
+    } else {
+        // Initialize history and FSM for new entries
+        if (status == LG || status == LL) {
+            BTB_table[index].history_place = 0 & hist_mask;
+        }
+
+        if (status == GL || status == LL) {
+            for (int j = 0; j < MAX_HISTORY_SIZE; j++) {
+                BTB_table[index].pred_t->prediction_arr[j] = start_fsm_state;
+            }
+        }
+    }
+
+    int history_index;
+
+    // Handle prediction update based on status
+    switch (status) {
+        case GG: 
+            history_index = get_shared_idx_fsm(pc, global_history);
+			//DELETE
+			if (cm) printf("update: GG fsm befor is = %d\n", global_fsm_table[history_index]);
+            if (taken && global_fsm_table[history_index] < ST) {
+                global_fsm_table[history_index]++;
+            } else if (!taken && global_fsm_table[history_index] > SNT) {
+                global_fsm_table[history_index]--;
+            }
+			//DELETE
+			if (cm) printf("update: GG fsm after is = %d\n", global_fsm_table[history_index]);
+            break;
+
+        case GL:
+            history_index = get_shared_idx_fsm(pc, global_history);
+            //DELETE
+			if (cm) printf("update: GL fsm befor is = %d\n", pred_table->prediction_arr[history_index]);
+			
+			if (is_in) {
+                if (taken && pred_table->prediction_arr[history_index] < ST) {
+                    pred_table->prediction_arr[history_index]++;
+                } else if (!taken && pred_table->prediction_arr[history_index] > SNT) {
+                    pred_table->prediction_arr[history_index]--;
+                }
+            } else {
+                // For new entries, set to start_fsm_state + 1 or -1 based on the branch result
+                //pred_table->prediction_arr[history_index] = taken ? start_fsm_state + 1 : start_fsm_state - 1;
+				if (taken && start_fsm_state < ST) {
+                    pred_table->prediction_arr[history_index]= start_fsm_state + 1;
+                } else if (!taken && start_fsm_state > SNT) {
+                    pred_table->prediction_arr[history_index]= start_fsm_state - 1;
+                }
+            }
+			//DELETE
+			if (cm) printf("update: GL fsm after is = %d\n", pred_table->prediction_arr[history_index]);
+			
+            break;
+
+        case LG:
+            history_index = get_shared_idx_fsm(pc, BTB_table[index].history_place);
+            //DELETE
+			if (cm) printf("update: LG fsm befor is = %d\n", global_fsm_table[history_index]);
+			
+			//if (is_in) {
+                if (taken && global_fsm_table[history_index] < ST) {
+                    global_fsm_table[history_index]++;
+                } else if (!taken && global_fsm_table[history_index] > SNT) {
+                    global_fsm_table[history_index]--;
+                }
+          //  }
+			//DELETE
+			if (cm) printf("update: LG fsm after is = %d\n", global_fsm_table[history_index]);
+
+            break;
+
+        case LL:
+            history_index = get_shared_idx_fsm(pc, BTB_table[index].history_place);
+            //DELETE
+			if (cm) printf("update: LL fsm befor is = %d\n", pred_table->prediction_arr[history_index]);
+			
+			if (is_in) {
+                if (taken && pred_table->prediction_arr[history_index] < ST) {
+                    pred_table->prediction_arr[history_index]++;
+                } else if (!taken && pred_table->prediction_arr[history_index] > SNT) {
+                    pred_table->prediction_arr[history_index]--;
+                }
+            } else {
+                // For new entries, set to start_fsm_state + 1 or -1 based on the branch result
+                //pred_table->prediction_arr[history_index] = taken ? start_fsm_state + 1 : start_fsm_state - 1;
+				if (taken && start_fsm_state < ST) {
+                    pred_table->prediction_arr[history_index]= start_fsm_state + 1;
+                } else if (!taken && start_fsm_state > SNT) {
+                    pred_table->prediction_arr[history_index]= start_fsm_state - 1;
+                }
+			}
+            //DELETE
+			if (cm) printf("update: LL fsm after is = %d\n", pred_table->prediction_arr[history_index]);
+			
+			break;
+    }
+
+    // Flush if necessary based on prediction mismatches
+    if ((is_in == false && taken == true) || (taken == true && pred_dst == pc + 4) || (taken == false && pred_dst == targetPc)) {
+        flush_count++;
+    }
+
+    // Update the BTB line with the new tag, target, and validation bit
+    BTB_table[index].tag = curr_tag;
+    BTB_table[index].target = targetPc;
+    BTB_table[index].validation_bit = true;
+    BTB_table[index].line_pc = pc;
+
+    // Update history based on status (global or local)
+    if (status == GG || status == GL) {
+        //DELETE
+		if (cm) printf("update: global history index befor is = %d\n", global_history);
+		
+		global_history = ((global_history << 1) | (taken ? 1 : 0)) & hist_mask;
+    	//DELETE
+		if (cm) printf("update: global history index after is = %d\n", global_history);
+	
+	
+	
+	} else {
+        //if (is_in) {
+            //DELETE
+			if (cm) printf("update: local history index befor is = %d\n", BTB_table[index].history_place);
+			
+			BTB_table[index].history_place = ((BTB_table[index].history_place << 1) | (taken ? 1 : 0)) & hist_mask;
+        	//DELETE
+			if (cm) printf("update: history index after is = %d\n", BTB_table[index].history_place);
+		
+		//}
+    }
 }
 
 	
@@ -480,18 +597,11 @@ void BP_GetStats(SIM_stats *curStats){
 	curStats->br_num = update_count;
 	curStats->flush_num = flush_count;
 
-	//unsigned btb_size = 0;
-	//unsigned int predic_tables_size = 0;
-	//int byte_size = 8; //defiend because sizeof returns size in bytes
-
 	//calculate size of structs (BTB + Prediction Tables). pc+val-2bits00: 32 + 1 - 2 = 31
 	switch(status){
 		case LL:
 			//local history and fsm
 			curStats->size = BTB_size*(tagsize + 31 + history_size + 2*(1 << history_size));
-			//btb_size = byte_size*sizeof(BTB_line)*BTB_size; //ADD PADDING???
-			//predic_tables_size = byte_size*MAX_HISTORY_SIZE*sizeof(unsigned)*BTB_size; //each branch has table
-
 			//free willy
 			for(int i=0; i<BTB_size; i++){
 				//free fsm of each branch
@@ -504,10 +614,6 @@ void BP_GetStats(SIM_stats *curStats){
 		case LG:
 			//local history, global fsm
 			curStats->size = BTB_size*(tagsize + 31 + history_size) + 2*(1 << history_size);
-			//btb_size = byte_size*sizeof(BTB_line)*BTB_size;
-			//predic_tables_size = byte_size*MAX_HISTORY_SIZE*sizeof(unsigned); //one table
-
-
 			//And I'm freeeeeee, free fallin'
 			free(global_fsm_table);
 			free(BTB_table);
@@ -515,9 +621,6 @@ void BP_GetStats(SIM_stats *curStats){
 
 		case GL:
 			curStats->size = history_size + BTB_size*(tagsize + 31 + 2*(1 << history_size));
-			//btb_size = byte_size*sizeof(BTB_line)*BTB_size;
-			//predic_tables_size = byte_size*MAX_HISTORY_SIZE*sizeof(unsigned)*BTB_size;
-
 			//I want to break freeee
 			for(int i=0; i<BTB_size; i++){
 				//free fsm of each branch
@@ -528,16 +631,11 @@ void BP_GetStats(SIM_stats *curStats){
 		
 		case GG:
 		curStats->size = history_size + 2*(1 << history_size) + BTB_size*(tagsize + 31);
-		//btb_size = byte_size*sizeof(global_history);
-		//predic_tables_size = byte_size*MAX_HISTORY_SIZE*sizeof(unsigned); //one table
-
 		//FREEda Kahlo
 		free(global_fsm_table);
 		free(BTB_table);
 
 		break;
-	}
-	
-	//curStats->size = btb_size + predic_tables_size;
+	}	
 	return;
 }

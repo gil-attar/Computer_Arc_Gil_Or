@@ -69,7 +69,6 @@ int cm = 0;
 
 // get_index: takes pc adress and maps it to a btb line for the branch
 
-//need to consider using share also - NEED FIX !!!
 int get_index(uint32_t pc){
 	int bits_num = log2(BTB_size);
 	unsigned int main_mask = 0x0 - 1; //mask = 0xFF...
@@ -93,12 +92,16 @@ int get_shared_idx_fsm(uint32_t pc, unsigned char history){
 	}
 	if(share_mod ==1){
 	    bits_shift = 2;
-		fsm_idx = (history^(pc>>bits_shift)) & hist_mask; 
+		//fsm_idx = (history ^ (pc>>bits_shift)) & hist_mask;
+		fsm_idx = history ^ ((pc>>bits_shift) & hist_mask); 
 	}
 	if(share_mod ==2){
 	    bits_shift = 16;
-		fsm_idx = (history^(pc>>bits_shift)) & hist_mask; 
+		//fsm_idx = (history ^(pc>>bits_shift)) & hist_mask;
+		fsm_idx = history ^ ((pc>>bits_shift) & hist_mask); 
+
 	}
+	
 	//DELETE
 	if (cm) printf("real index for fsm: %d\n", fsm_idx);
 	
@@ -267,7 +270,8 @@ bool BP_predict(uint32_t pc, uint32_t *dst){
 	if (cm) printf("\n \n pred: val bit is = %d\n", BTB_table[index].validation_bit);
 
 	//check if there is valid prediction
-	if (BTB_table[index].tag == curr_tag && BTB_table[index].validation_bit == true && BTB_table[index].line_pc == pc){
+	//if (BTB_table[index].tag == curr_tag && BTB_table[index].validation_bit == true && BTB_table[index].line_pc == pc){
+	if (BTB_table[index].tag == curr_tag && BTB_table[index].validation_bit == true){
 		is_in = true;
 	}
 	
@@ -456,7 +460,8 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst) {
     PredictionTable* pred_table = BTB_table[index].pred_t;  // Maybe pred_t->prediction_arr?
 
     // Check if the tag is already in BTB
-    if (curr_tag == BTB_table[index].tag && BTB_table[index].validation_bit == true && BTB_table[index].line_pc == pc) {
+	//if (curr_tag == BTB_table[index].tag && BTB_table[index].validation_bit == true && BTB_table[index].line_pc == pc) {
+	if (curr_tag == BTB_table[index].tag && BTB_table[index].validation_bit == true) {
         is_in = true;
     } else {
         // Initialize history and FSM for new entries
@@ -557,9 +562,19 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst) {
     }
 
     // Flush if necessary based on prediction mismatches
-    if ((is_in == false && taken == true) || (taken == true && pred_dst == pc + 4) || (taken == false && pred_dst == targetPc)) {
-        flush_count++;
-    }
+    //if ((is_in == false && taken == true) || (taken == true && pred_dst == pc + 4) || (taken == false && pred_dst == targetPc)) {
+    //    flush_count++;
+    //}
+
+	uint32_t curr_dst = 0;
+	if (taken == true){
+		curr_dst = targetPc;
+	}
+	else{
+		curr_dst = pc + 4;
+	}
+    if (pred_dst != curr_dst)
+		flush_count++;
 
     // Update the BTB line with the new tag, target, and validation bit
     BTB_table[index].tag = curr_tag;

@@ -322,7 +322,7 @@ bool BP_predict(uint32_t pc, uint32_t *dst){
 	}
 }
 
-
+//old
 /*void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst){
 	
 	update_count++;
@@ -450,6 +450,8 @@ bool BP_predict(uint32_t pc, uint32_t *dst){
 		}
 	}
 }*/
+
+//new
 void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst) {
     update_count++;
     int index = get_index(pc);
@@ -460,7 +462,7 @@ void BP_update(uint32_t pc, uint32_t targetPc, bool taken, uint32_t pred_dst) {
     PredictionTable* pred_table = BTB_table[index].pred_t;  // Maybe pred_t->prediction_arr?
 
     // Check if the tag is already in BTB
-	//if (curr_tag == BTB_table[index].tag && BTB_table[index].validation_bit == true && BTB_table[index].line_pc == pc) {
+	//if (curr_tag == BTB_table[index].tag && BTB_table[index].validation_bit == true && BTB_table[index].tagget == targetPc) {
 	if (curr_tag == BTB_table[index].tag && BTB_table[index].validation_bit == true) {
         is_in = true;
     } else {

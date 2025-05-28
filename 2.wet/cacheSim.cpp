@@ -11,6 +11,38 @@ using std::cerr;
 using std::ifstream;
 using std::stringstream;
 
+//creates Cache struct and returns a pointer to it
+
+
+Cache* Cache_init(unsigned block_size, unsigned L1_size, unsigned L2_size,
+					unsigned L1_assoc, unsigned L2_assoc, unsigned L1_clocks
+					unsigned L2_clocks, unsigned write_alloc);
+
+
+typedef struct{
+	unsigned int adress; //adress of first item in the block
+	unsigned int tag;
+	unsigned int set;
+	bool dirty_bit;
+} Block;
+
+
+typedef struct{
+//cache level (L1/L2) struct holds a pointer to an array of blocks.
+// set 0: blocks[0,...,#W-1] | set1: blocks[#W,..,2#W-1]
+	Block* blocks;
+	unsigned write_allocate; // false: No Write Allocate | true: Write Allocate
+	double miss_rate; //to print use: %.03f
+	unsigned ways_num; //assoc_level
+	int access_time; //access time in clock cycles units
+	LRU* lru; //each cache level has it's own LRU
+} Cache_Level;
+
+typedef struct{
+	Cache_Level* L1;
+	Cache_Level* L2;
+} Cache;
+
 int main(int argc, char **argv) {
 
 	if (argc < 19) {
@@ -97,3 +129,53 @@ int main(int argc, char **argv) {
 
 	return 0;
 }
+
+
+Cache* Cache_init(unsigned block_size, unsigned L1_size, unsigned L2_size,
+	unsigned L1_assoc, unsigned L2_assoc, unsigned L1_clocks,unsigned L2_clocks,
+	unsigned write_alloc){
+/*the function returns pointer to a Cache struct. 
+ block_size:  <log2(size)>
+ L1_size, L2_size : <log2(size)>
+ L1_assoc, L2_assic: <number of ways>
+*/
+
+		/* TO DO:
+		  - check if blocks_num is true
+		  - add LRU to cache levels
+		  -add error handle
+		*/
+
+		Cache_Level* L1_p = malloc(sizeof(Cache_Level));
+		Cache_Level* L2_p = malloc(sizeof(Cache_Level));
+
+		int L1_blocks_num = (2^L1_size)/(8*2^block_size); //CHECK THIS!!!
+		int L2_blocks_num = (2^L2_size)/(8*2^block_size); //CHECK THIS!!!;
+
+		L1_p->blocks = malloc(L1_blocks_num*sizeof(Block));
+		L2_p->blocks = malloc(L2_blocks_num*sizeof(Block));
+	
+		L1_p->write_allocate = write_alloc;
+		L2_p->write_allocate = write_alloc;
+		
+		L1_p->miss_rate = 0;
+		L2_p->miss_rate = 0;
+
+		L1_p->ways_num = L1_assoc;
+		L2_p->ways_num = L2_assoc;
+		
+		L1_p->access_time = L1_clocks;
+		L2_p->access_time = L2_clocks;
+
+		//====NEED TO DEFINE LRU====
+		//L1_p->lru = ;
+		//L2_p->lru = ;
+	
+		Cache* Cache_p = malloc(sizeof(Cache));
+		Cache_p->L1 = L1_p;
+		Cache_p->L2 = L2_p;
+
+		return Cache_p;
+
+}
+

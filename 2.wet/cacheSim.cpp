@@ -204,7 +204,7 @@ int main(int argc, char **argv) {
 
 		//
 		//
-		//
+		// FOR OR:
 		// line is processed. it is in stringstream ss. need to parse it and put info in vars (can make functions to handle)
 		// unsigned int input_block_address = 0; // address of the block
 		// int read_write; // 0 for read, 1 for write

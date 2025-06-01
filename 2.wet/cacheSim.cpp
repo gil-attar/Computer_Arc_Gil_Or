@@ -13,6 +13,7 @@ using std::stringstream;
 
 
 //global variables
+int cm = 1;
 int commands_num = 0; //number of L1 accesses
 int L1_misses = 0; //number of L1 misses - same as L2 accesses
 int L2_misses = 0; //number of L2 misses - same as Mem accesses
@@ -26,20 +27,9 @@ unsigned int tag_mask_L2 = 0x0 - 1; //mask = 0xFF...
 int set_bits_L2;
 int tag_bits_L2;
 
-//declare functions
-//creates Cache struct and returns a pointer to it
-Cache* Cache_init(unsigned block_size, unsigned L1_size, unsigned L2_size,
-					unsigned L1_assoc, unsigned L2_assoc, unsigned L1_clocks,
-					unsigned L2_clocks, unsigned write_alloc);
-void update_lru(unsigned int** lru, int set_index, int accessed_way, int ways_num);
-int lru_way(unsigned int** lru, int set_index, int ways_num);
-void create_masks(); 
-
-
-
-
+//declare structs
 typedef struct{
-	unsigned int adress; //adress of first item in the block
+	//unsigned int adress; //adress of first item in the block
 	unsigned int tag;
 	bool dirty_bit;
 	bool valid; //valid bit - true if the block is valid, false if it is not
@@ -48,16 +38,17 @@ typedef struct{
 	//unsigned int set;
 } Block;
 
-
 typedef struct{
 //cache level (L1/L2) struct holds a pointer to an array of blocks.
 // set 0: blocks[0,...,#W-1] | set1: blocks[#W,..,2#W-1]
 	Block* blocks;
-	unsigned ways_num; //assoc_level
+	unsigned assoc; //assoc_level = log2(num of ways)
 	unsigned int set_mask; 
 	unsigned int tag_mask;
 	int set_bits;
 	int tag_bits;
+	int offset_bits;
+	int ways_num; //number of ways in the cache level
 	//gil documented
 	//unsigned write_allocate; // false: No Write Allocate | true: Write Allocate
 	//double miss_rate; //to print use: %.03f
@@ -72,11 +63,162 @@ typedef struct{
 	Cache_Level* L2;
 } Cache;
 
-void update_lru(Cache_Level* cache, int set_index, int accessed_way) {
-    int* lru_set = cache->lru[set_index];
-    int base = set_index * cache->ways_num;
-    int old_value = lru_set[accessed_way];
+// declare functions
+//creates Cache struct and returns a pointer to it
+Cache* Cache_init(unsigned block_size, unsigned L1_size, unsigned L2_size, unsigned L1_assoc,
+				  unsigned L2_assoc, unsigned L1_clocks, unsigned L2_clocks, unsigned write_alloc);
+void Cache_free(Cache* cache);
 
+void create_masks(unsigned block_bits, unsigned chache_bits, Cache_Level* cache);
+unsigned get_tag(unsigned adress, Cache_Level* cache);
+unsigned get_set(unsigned adress, Cache_Level* cache);
+
+void update_lru(Cache_Level* cache, int set_index, int accessed_way);
+int lru_way(Cache_Level* cache, int set_index);
+
+int search_way(Cache_Level* cache, unsigned int tag, unsigned int set);
+void insert_way(Cache_Level* cache, unsigned int tag, unsigned int set, int way);
+
+
+
+
+
+
+
+//------------------------------------------------------------------------------------------------------
+
+Cache* Cache_init(unsigned block_size, unsigned L1_size, unsigned L2_size,
+				  unsigned L1_assoc, unsigned L2_assoc, unsigned L1_clocks,unsigned L2_clocks,
+				  unsigned write_alloc){
+/*the function returns pointer to a Cache struct. 
+ block_size:  <log2(size)>
+ L1_size, L2_size : <log2(size)>
+ L1_assoc, L2_assoc: <log2(number of ways)>
+*/
+	/* TO DO:
+	  - check if blocks_num is true
+	  - add LRU to cache levels V
+	  -add error handle
+
+	*/
+	
+	Cache* Cache_p = (Cache*)malloc(sizeof(Cache));
+	Cache_p->L1 = (Cache_Level*)malloc(sizeof(Cache_Level));
+	Cache_p->L2 = (Cache_Level*)malloc(sizeof(Cache_Level));
+
+	Cache_p->L1->blocks_num = 1 << (L1_size - block_size); 
+	Cache_p->L2->blocks_num = 1 << (L2_size - block_size); 
+
+	Cache_p->L1->blocks = (Block*)malloc(Cache_p->L1->blocks_num*sizeof(Block));
+	Cache_p->L2->blocks = (Block*)malloc(Cache_p->L2->blocks_num*sizeof(Block));
+	
+	for (int i = 0; i < Cache_p->L1->blocks_num; i++) {
+    	Cache_p->L1->blocks[i].valid = false; // Mark as empty
+		Cache_p->L1->blocks[i].dirty_bit = false; // Initially not dirty
+	}
+	for (int i = 0; i < Cache_p->L2->blocks_num; i++) {
+    	Cache_p->L2->blocks[i].valid = false; // Mark as empty
+		Cache_p->L2->blocks[i].dirty_bit = false; // Initially not dirty
+	}
+
+	is_write_allocate = write_alloc;
+	
+	Cache_p->L1->assoc = L1_assoc;
+	Cache_p->L2->assoc = L2_assoc;
+	
+	Cache_p->L1->ways_num = 1 << L1_assoc; // ways_num = 2^assoc_level
+	Cache_p->L2->ways_num = 1 << L2_assoc; // ways_num = 2^assoc_level
+	
+	//function that sets: set_bits, offset_bits, tag_bits and masks
+	create_masks(block_size, L1_size, Cache_p->L1);
+	create_masks(block_size, L2_size, Cache_p->L2);
+
+
+	// LRU allocation and init - might need to use these 2 lines, compiler can do problems with malloc
+    //unsigned int num_sets_L1 = L1_p->blocks_num / L1_p->ways_num;
+    //unsigned int num_sets_L2 = L2_p->blocks_num / L2_p->ways_num;
+
+    Cache_p->L1->lru = (unsigned int**)malloc(Cache_p->L1->blocks_num * sizeof(unsigned int*));
+    for (int i = 0; i < Cache_p->L1->blocks_num; i++) {
+        Cache_p->L1->lru[i] = (unsigned int*)malloc(Cache_p->L1->ways_num * sizeof(unsigned int));
+        for (int j = 0; j < Cache_p->L1->ways_num; j++) {
+            Cache_p->L1->lru[i][j] = j; // perhaps ways_num - 1
+        }
+    }
+
+    Cache_p->L2->lru = (unsigned int**)malloc(Cache_p->L2->blocks_num * sizeof(unsigned int*));
+    for (int i = 0; i < Cache_p->L2->blocks_num; i++) {
+        Cache_p->L2->lru[i] = (unsigned int*)malloc(Cache_p->L2->ways_num * sizeof(unsigned int));
+        for (int j = 0; j < Cache_p->L2->ways_num; j++) {
+            Cache_p->L2->lru[i][j] = j; // perhaps ways_num - 1
+        }
+    }	
+	
+	return Cache_p;
+}
+
+void Cache_free(Cache* cache) {
+    if (!cache) return;
+
+    if (cache->L1) {
+        if (cache->L1->lru) {
+            for (int i = 0; i < cache->L1->blocks_num; i++) {
+                free(cache->L1->lru[i]);
+            }
+            free(cache->L1->lru);
+        }
+        free(cache->L1->blocks);
+        free(cache->L1);
+    }
+
+    if (cache->L2) {
+        if (cache->L2->lru) {
+            for (int i = 0; i < cache->L2->blocks_num; i++) {
+                free(cache->L2->lru[i]);
+            }
+            free(cache->L2->lru);
+        }
+        free(cache->L2->blocks);
+        free(cache->L2);
+    }
+
+    free(cache);
+}
+
+//------------------------------------------------------------------------------------------------------
+
+void create_masks(unsigned block_bits, unsigned cache_bits, Cache_Level* cache){
+	//function that gets user's parameters and pointer to cache.
+	//determines number of bits of set, tag and offset.
+	//it changes the masks to enable us to extract set and tag from each adress
+	unsigned assoc_bits = cache->assoc; //what is assoc bits? do we need to add int/ unsighned? or is it a field in cache level?
+	//find number of offset bits 
+	cache->offset_bits = block_bits; //block_size =block_bits = log2(block_size)
+	//find number of set bits and change masks accordingly
+	cache->set_bits = cache_bits - block_bits - assoc_bits; //chache_bits = cache_size = log2(c_Size)
+	cache->tag_bits = cache->offset_bits +cache->set_bits;
+	cache->tag_mask = (0x0 - 1) << (cache->set_bits+ cache->offset_bits); //0x0-1 = FFFF...
+	cache->set_mask = ((1u<<cache->set_bits) - 1u)<<cache->offset_bits;
+}
+
+unsigned get_tag(unsigned adress, Cache_Level* cache){
+	unsigned tag = (adress&(cache->tag_mask))>>(cache->offset_bits + cache->set_bits);
+	return tag;
+}
+
+unsigned get_set(unsigned adress, Cache_Level* cache){
+	//unsigned tag  = (addr & tag_mask) >> (offset_bits + set_bits);
+	unsigned set_index = (adress&(cache->set_mask))>>(cache->offset_bits);
+	return set_index;
+}
+
+//------------------------------------------------------------------------------------------------------
+
+void update_lru(Cache_Level* cache, unsigned int set_index, int accessed_way) {
+	if (cm) printf("in update_lru: set_index=%d, accessed_way=%d\n", set_index, accessed_way);
+    unsigned int* lru_set = cache->lru[set_index];
+    int base = set_index * cache->ways_num;
+    unsigned int old_value = lru_set[accessed_way];
     for (int i = 0; i < cache->ways_num; i++) {
         if (i == accessed_way) continue;
         if (!cache->blocks[base + i].valid) continue; // only valid blocks participate
@@ -85,73 +227,56 @@ void update_lru(Cache_Level* cache, int set_index, int accessed_way) {
             lru_set[i]--;
         }
     }
-
     lru_set[accessed_way] = cache->ways_num - 1;
 }
 
 int lru_way(Cache_Level* cache, int set_index) {
+	if (cm) printf("in lru_way: set_index=%d\n", set_index);
     int base = set_index * cache->ways_num;
-
     // look for invalid block (empty spot)
     for (int i = 0; i < cache->ways_num; i++) {
         if (!cache->blocks[base + i].valid) {
+			if (cm) printf("Found empty block at way %d in set %d\n", i, set_index);
             return i;
         }
     }
-
     // return block with LRU = 0
     for (int i = 0; i < cache->ways_num; i++) {
         if (cache->lru[set_index][i] == 0) {
+			if (cm) printf("Found LRU block at way %d in set %d\n", i, set_index);
             return i;
         }
     }
-
     return -1; // should not happen
 }
 
-
-//------------------------------------------------------------------------------------------------------
-//NEED
-int search_way(Cache_Level* level, unsigned int tag, unsigned int set_index) {
-	// Search for the tag in the specified set
-	for (int i = 0; i < level->ways_num; i++) {
-		if (level->blocks[set_index * level->ways_num + i].tag == tag) {
-			// Update LRU
-			update_lru(level->lru, set_index, i, level->ways_num);
-			return i; // Found in this way
-		}
-	}
-	return -1; // Not found
-}
-
-//NEEDS TO CALL UPDATE LRU + SET VALID AND DIRTY BITS
-int insert_way(Cache_Level* level, unsigned int tag, unsigned int set_index, unsigned int address) { 
-	// Insert a new way with the specified tag in the specified set
-	for (int i = 0; i < level->ways_num; i++) {
-		if (level->blocks[set_index * level->ways_num + i].tag == 0) {
-			// Found an empty way, insert here
-			level->blocks[set_index * level->ways_num + i].tag = tag;
-			level->blocks[set_index * level->ways_num + i].adress = address;
-			level->blocks[set_index * level->ways_num + i].dirty_bit = false; // Initially not dirty
-			update_lru(level->lru, set_index, i, level->ways_num);
-			return i; // Inserted successfully
-		}
-	}
-	// If no empty way found, we need to evict a way
-	int way_to_evict = lru_way(level->lru, set_index, level->ways_num);
-	if (way_to_evict != -1) {
-		// Evict the way
-		level->blocks[set_index * level->ways_num + way_to_evict].tag = tag;
-		level->blocks[set_index * level->ways_num + way_to_evict].adress = address;
-		level->blocks[set_index * level->ways_num + way_to_evict].dirty_bit = false; // Initially not dirty
-		update_lru(level->lru, set_index, way_to_evict, level->ways_num);
-		return way_to_evict; // Evicted and inserted successfully
-	}
-	return -1; // Error, no way could be inserted
-}
 //------------------------------------------------------------------------------------------------------
 
+int search_way(Cache_Level* cache, unsigned int tag, unsigned int set) {
+	if (cm) printf("in search_way: tag=%u, set=%d\n", tag, set);
+    for (int i = 0; i < cache->ways_num; i++) {
+        Block* blk = &cache->blocks[set * cache->ways_num + i];
+        if (blk->valid && blk->tag == tag) {
+            update_lru(cache, set, i);
+			if (cm) printf("search_way: Found block with tag %u in set %d at way %d\n", tag, set, i);
+            return i;
+        }
+    }
+	if (cm) printf("search_way: Block with tag %u not found in set %d\n", tag, set);
+    return -1;
+}
 
+void insert_way(Cache_Level* cache, unsigned int tag, unsigned int set, int way) {
+	if (cm) printf("in insert_way: tag=%u, set=%d, way=%d\n", tag, set, way);
+    Block* blk = &cache->blocks[set * cache->ways_num + way];
+    blk->tag = tag;
+    blk->valid = true;
+	blk->dirty_bit = false; // Initially not dirty, in write we will update manually
+    update_lru(cache, set, way);
+	if (cm) printf("end insert_way: Inserted block with tag %u in set %d at way %d\n", tag, set, way);
+}
+
+//------------------------------------------------------------------------------------------------------
 
 
 int main(int argc, char **argv) {
@@ -159,7 +284,7 @@ int main(int argc, char **argv) {
 	if (argc < 19) {
 		cerr << "Not enough arguments" << endl;
 		return 0;
-	}
+	} 
 
 	// Get input arguments
 	// File
@@ -201,28 +326,34 @@ int main(int argc, char **argv) {
 			return 0;
 		}
 	}
+	//===build Cache===
+	Cache* cache =  Cache_init(BSize, L1Size, L2Size, L1Assoc, L2Assoc, L1Cyc, L2Cyc, WrAlloc);
 
 	while (getline(file, line)) {
+		if (cm) printf("in while loop, line: %s\n", line.c_str());
 		commands_num++;
 		stringstream ss(line);
 		string address;
+		int r_w_flag; //R=0 | W=1
 		char operation = 0; // read (R) or write (W)
 		if (!(ss >> operation >> address)) {
 			// Operation appears in an Invalid format
 			cout << "Command Format error" << endl;
 			return 0;
 		}
-
+				
 		//------------------------------------------------------------------------------------------------------
 
 		//
 		//
 		// FOR OR:
 		// line is processed. it is in stringstream ss. need to parse it and put info in vars (can make functions to handle)
-		// unsigned int input_block_address = 0; // address of the block
-		// int read_write; // 0 for read, 1 for write
-		// unsigned int input_tag;
-		// unsigned int input_set; // will be the index in the blocks array
+		// unsigned int input_block_address = 0; // address of the block V (they did it - num)
+		// int r_w_flag; // 0 for read, 1 for write V (in r_w_flag)
+		// unsigned int input_tag_L1; V
+		// unsigned int input_tag_L2; V
+		// unsigned int input_set_L1; // will be the index in the blocks array V
+		// unsigned int input_set_L2; // will be the index in the blocks array V
 		// call init and make a cache struct
 		//
 		//
@@ -233,24 +364,37 @@ int main(int argc, char **argv) {
 		// DEBUG - remove this line
 		cout << "operation: " << operation;
 
+		if(operation == 'r'){
+			r_w_flag = 0;
+		}else if(operation == 'w'){
+			r_w_flag = 1;
+		}
+
 		string cutAddress = address.substr(2); // Removing the "0x" part of the address
 
 		// DEBUG - remove this line
 		cout << ", address (hex)" << cutAddress;
 
 		unsigned long int num = 0;
-		num = strtoul(cutAddress.c_str(), NULL, 16);
+		num = strtoul(cutAddress.c_str(), NULL, 16); //this is the adress unsigned
 
 		// DEBUG - remove this line
 		cout << " (dec) " << num << endl;
 
 
+		
+		unsigned int input_tag_L1 = get_tag(num, cache->L1);
+		unsigned int input_tag_L2 = get_tag(num, cache->L2);
+
+		unsigned int input_set_L1 =  get_set(num, cache->L1);
+		unsigned int input_set_L2 =  get_set(num, cache->L2);
+
 		bool in_L1 = true; // is the block in L1?
 		bool in_L2 = true; // is the block in L2?
 		
 		//call gils functions:
-		int way_L1 = search_way(cashe->L1); //fix inside ()
-		int way_L2 = search_way(cashe->L2);	//fix inside ()
+		int way_L1 = search_way(cache->L1, input_tag_L1, input_set_L1);
+		int way_L2 = search_way(cache->L2, input_tag_L2, input_set_L2);
 		if (way_L1 == -1){
 			in_L1 = false; // not in L1
 			L1_misses++;
@@ -260,30 +404,28 @@ int main(int argc, char **argv) {
 			}
 		}
 
-		if (read_write == 0){ //read
+		if (r_w_flag == 0){ //read
 			// just need to update lru - this is a simulation [inside of a simulation! (inside of another simulation!)].
 			// oh i forgot, i also need to bring the block to the cache if it is not there...
 			if (in_L1) {
-				update_lru(cashe->L1->lru, input_set, way_L1, cashe->L1->ways_num);
-				cashe->L1->blocks[input_set * cashe->L1->ways_num + way_L1].valid = true; // Mark the block as valid
+				update_lru(cache->L1, input_set_L1, way_L1); // update L1
+				cache->L1->blocks[input_set_L1 * cache->L1->ways_num + way_L1].valid = true; // Mark the block as valid
 			}
 			else if (in_L2) {
-				int way_to_delete_L1 = lru_way(cashe->L1->lru, input_set, cashe->L1->ways_num);
-				insert_way(cashe->L1, input_tag, input_set, way_to_delete_L1); //will call update lru on L1
-				update_lru(cashe->L2->lru, input_set, way_L2, cashe->L2->ways_num); //update L2
-				cashe->L1->blocks[input_set * cashe->L1->ways_num + way_to_delete_L1].valid = true; // Mark the block as valid in L1, insert might do it too
-				cashe->L2->blocks[input_set * cashe->L2->ways_num + way_L2].valid = true; // Mark the block as valid
-				
-
+				int way_to_delete_L1 = lru_way(cache->L1, input_set_L1);
+				insert_way(cache->L1, input_tag_L1, input_set_L1, way_to_delete_L1); // will call update lru on L1
+				update_lru(cache->L2, input_set_L2, way_L2); // update L2
+				cache->L1->blocks[input_set_L1 * cache->L1->ways_num + way_to_delete_L1].valid = true; // Mark the block as valid in L1, who cares that it also happend in insert_way?
+				cache->L2->blocks[input_set_L2 * cache->L2->ways_num + way_L2].valid = true; // Mark the block as valid, in case it was unvalid for some reason
 			}
 			else {
-   				int way_to_delete_L2 = lru_way(cashe->L2->lru, input_set, cashe->L2->ways_num);
-    			Block* victim_L2 = &cashe->L2->blocks[input_set * cashe->L2->ways_num + way_to_delete_L2];
+				int way_to_delete_L2 = lru_way(cache->L2, input_set_L2);
+    			Block* victim_L2 = &cache->L2->blocks[input_set_L2 * cache->L2->ways_num + way_to_delete_L2];
 				// if need to delete from L2, then also delete from L1 (if it exists)
 				if (victim_L2->valid) {
-					for (int i = 0; i < cashe->L1->ways_num; i++) {
-						Block* blk = &cashe->L1->blocks[input_set * cashe->L1->ways_num + i];
-						if (blk->valid && blk->tag == victim_L2->tag) {
+					for (int i = 0; i < cache->L1->ways_num; i++) {
+						Block* blk = &cache->L1->blocks[input_set_L1 * cache->L1->ways_num + i];
+						if (blk->valid && blk->tag == victim_L2->tag) { // check if it affect update lru
 							blk->valid = false;
 							break;
 						}
@@ -291,13 +433,13 @@ int main(int argc, char **argv) {
 				}
 				
 				// insert block to L2
-				insert_way(cashe->L2, input_tag, input_set, way_to_delete_L2); // will call update lru on L2
-				cashe->L2->blocks[input_set * cashe->L2->ways_num + way_to_delete_L2].valid = true; // insert might do it too
+				insert_way(cache->L2, input_tag_L2, input_set_L2, way_to_delete_L2); // will call update lru on L2
+				cache->L2->blocks[input_set_L2 * cache->L2->ways_num + way_to_delete_L2].valid = true; // insert might do it too
 
 				// insert block to L1
-				int way_to_delete_L1 = lru_way(cashe->L1->lru, input_set, cashe->L1->ways_num);
-				insert_way(cashe->L1, input_tag, input_set, way_to_delete_L1); // will call update lru on L1
-				cashe->L1->blocks[input_set * cashe->L1->ways_num + way_to_delete_L1].valid = true; // insert might do it too
+				int way_to_delete_L1 = lru_way(cache->L1, input_set_L1);
+				insert_way(cache->L1, input_tag_L1, input_set_L1, way_to_delete_L1); // will call update lru on L1
+				cache->L1->blocks[input_set_L1 * cache->L1->ways_num + way_to_delete_L1].valid = true; // insert might do it too
 			}
 
 		}
@@ -306,40 +448,41 @@ int main(int argc, char **argv) {
 			// write allocate
 			if (is_write_allocate) {
 				if (in_L1) {
-					update_lru(cashe->L1->lru, input_set, way_L1, cashe->L1->ways_num);
-					cashe->L1->blocks[input_set * cashe->L1->ways_num + way_L1].valid = true; // Mark the block as valid
-					cashe->L1->blocks[input_set * cashe->L1->ways_num + way_L1].dirty_bit = true; // Update dirty bit in L1
+					update_lru(cache->L1, input_set_L1, way_L1);
+					cache->L1->blocks[input_set_L1 * cache->L1->ways_num + way_L1].valid = true; // Mark the block as valid
+					cache->L1->blocks[input_set_L1 * cache->L1->ways_num + way_L1].dirty_bit = true; // Update dirty bit in L1
 				}
 				else if (in_L2) {
-					int way_to_delete_L1 = lru_way(cashe->L1->lru, input_set, cashe->L1->ways_num);
-					Block* victim_L1 = &cashe->L1->blocks[input_set * cashe->L1->ways_num + way_to_delete_L1];
+					int way_to_delete_L1 = lru_way(cache->L1, input_set_L1);
+					Block* victim_L1 = &cache->L1->blocks[input_set_L1 * cache->L1->ways_num + way_to_delete_L1];
 
 					if (victim_L1->valid && victim_L1->dirty_bit) {
 						// search for matching block in L2 (same set)
-						for (int i = 0; i < cashe->L2->ways_num; i++) {
-							Block* blk_L2 = &cashe->L2->blocks[input_set * cashe->L2->ways_num + i];
+						for (int i = 0; i < cache->L2->ways_num; i++) {
+							Block* blk_L2 = &cache->L2->blocks[input_set_L2 * cache->L2->ways_num + i];
 							if (blk_L2->valid && blk_L2->tag == victim_L1->tag) {
 								blk_L2->dirty_bit = true;  // write back to L2 the deleted block from L1
 								break;
 							}
 						}
 					}
-					insert_way(cashe->L1, input_tag, input_set, way_to_delete_L1); //will call update lru on L1
-					update_lru(cashe->L2->lru, input_set, way_L2, cashe->L2->ways_num); //update lru on L2
-					cashe->L1->blocks[input_set * cashe->L1->ways_num + way_to_delete_L1].valid = true; // Mark the block as valid in L1, insert might do it too
-					cashe->L1->blocks[input_set * cashe->L1->ways_num + way_to_delete_L1].dirty_bit = true; // Update dirty bit in L1
-					cashe->L2->blocks[input_set * cashe->L2->ways_num + way_L2].valid = true; // Mark the block as valid
+
+					insert_way(cache->L1, input_tag_L1, input_set_L1, way_to_delete_L1); //will call update lru on L1
+					update_lru(cache->L2, input_set_L2, way_L2); //update lru on L2
+					cache->L1->blocks[input_set_L1 * cache->L1->ways_num + way_to_delete_L1].valid = true; // Mark the block as valid in L1, insert might do it too
+					cache->L1->blocks[input_set_L1 * cache->L1->ways_num + way_to_delete_L1].dirty_bit = true; // Update dirty bit in L1
+					cache->L2->blocks[input_set_L2 * cache->L2->ways_num + way_L2].valid = true; // Mark the block as valid
 				}
 				else { //this is gonna be long....
 
 					// insert into L2
-					int way_to_delete_L2 = lru_way(cashe->L2->lru, input_set, cashe->L2->ways_num);
-					Block* victim_L2 = &cashe->L2->blocks[input_set * cashe->L2->ways_num + way_to_delete_L2];
+					int way_to_delete_L2 = lru_way(cache->L2, input_set_L2);
+					Block* victim_L2 = &cache->L2->blocks[input_set_L2 * cache->L2->ways_num + way_to_delete_L2];
 
 					if (victim_L2->valid) {
 						// invalidate matching L1 block (cuz inclusive)
-						for (int i = 0; i < cashe->L1->ways_num; i++) {
-							Block* blk_L1 = &cashe->L1->blocks[input_set * cashe->L1->ways_num + i];
+						for (int i = 0; i < cache->L1->ways_num; i++) {
+							Block* blk_L1 = &cache->L1->blocks[input_set_L1 * cache->L1->ways_num + i];
 							if (blk_L1->valid && blk_L1->tag == victim_L2->tag) {
 								if (blk_L1->dirty_bit == true) {
 									// Writeback to L2
@@ -356,37 +499,40 @@ int main(int argc, char **argv) {
 						}
 					}
 
-					insert_way(cashe->L2, input_tag, input_set, way_to_delete_L2); // insert to L2
-					cashe->L2->blocks[input_set * cashe->L2->ways_num + way_to_delete_L2].valid = true;
-					cashe->L2->blocks[input_set * cashe->L2->ways_num + way_to_delete_L2].dirty_bit = false; // since it's a write
+					insert_way(cache->L2, input_tag_L2, input_set_L2, way_to_delete_L2); // insert to L2
+					cache->L2->blocks[input_set_L2 * cache->L2->ways_num + way_to_delete_L2].valid = true;
+					cache->L2->blocks[input_set_L2 * cache->L2->ways_num + way_to_delete_L2].dirty_bit = false; // since it's a write
 
 					// insert into L1
-					int way_to_delete_L1 = lru_way(cashe->L1->lru, input_set, cashe->L1->ways_num);
-					Block* victim_L1 = &cashe->L1->blocks[input_set * cashe->L1->ways_num + way_to_delete_L1];
+					int way_to_delete_L1 = lru_way(cache->L1, input_set_L1);
+					Block* victim_L1 = &cache->L1->blocks[input_set_L1 * cache->L1->ways_num + way_to_delete_L1];
 
 					if (victim_L1->valid && victim_L1->dirty_bit) {
 						// Writeback to L2
-						for (int i = 0; i < cashe->L2->ways_num; i++) {
-							Block* blk_L2 = &cashe->L2->blocks[input_set * cashe->L2->ways_num + i];
+						for (int i = 0; i < cache->L2->ways_num; i++) {
+							Block* blk_L2 = &cache->L2->blocks[input_set_L2 * cache->L2->ways_num + i];
 							if (blk_L2->valid && blk_L2->tag == victim_L1->tag) {
 								blk_L2->dirty_bit = true;
 								break;
 							}
 						}
 					}
-					insert_way(cashe->L1, input_tag, input_set, way_to_delete_L1); // insert to L1
-					cashe->L1->blocks[input_set * cashe->L1->ways_num + way_to_delete_L1].valid = true;
-					cashe->L1->blocks[input_set * cashe->L1->ways_num + way_to_delete_L1].dirty_bit = true; // since it's a write
+
+					insert_way(cache->L1, input_tag_L1, input_set_L1, way_to_delete_L1); // insert to L1
+					cache->L1->blocks[input_set_L1 * cache->L1->ways_num + way_to_delete_L1].valid = true;
+					cache->L1->blocks[input_set_L1 * cache->L1->ways_num + way_to_delete_L1].dirty_bit = true; // since it's a write
 				}
 			}
 			
 			// write no allocate
 			else {
 				if (in_L1){
-					cashe->L1->blocks[input_set * cashe->L1->ways_num + way_L1].dirty_bit = true; // Update dirty bit in L1
+					cache->L1->blocks[input_set_L1 * cache->L1->ways_num + way_L1].dirty_bit = true; // Update dirty bit in L1
+					update_lru(cache->L1, input_set_L1, way_L1);
 				}
 				else if (in_L2) { // else cuz writeback
-					cashe->L2->blocks[input_set * cashe->L2->ways_num + way_L2].dirty_bit = true; // Update dirty bit in L2
+					cache->L2->blocks[input_set_L2 * cache->L2->ways_num + way_L2].dirty_bit = true; // Update dirty bit in L2
+					update_lru(cache->L2, input_set_L2, way_L2);
 				}
 				else {
 					//best case ever - write to memory, no need to update L1 or L2
@@ -404,116 +550,7 @@ int main(int argc, char **argv) {
 	printf("L2miss=%.03f ", L2MissRate);
 	printf("AccTimeAvg=%.03f\n", avgAccTime);
 
+	Cache_free(cache);
 	return 0;
 }
 
-
-Cache* Cache_init(unsigned block_size, unsigned L1_size, unsigned L2_size,
-				  unsigned L1_assoc, unsigned L2_assoc, unsigned L1_clocks,unsigned L2_clocks,
-				  unsigned write_alloc){
-/*the function returns pointer to a Cache struct. 
- block_size:  <log2(size)>
- L1_size, L2_size : <log2(size)>
- L1_assoc, L2_assic: <number of ways>
-*/
-
-		/* TO DO:
-		  - check if blocks_num is true
-		  - add LRU to cache levels
-		  -add error handle
-		*/
-
-	Cache_Level* L1_p = malloc(sizeof(Cache_Level));
-	Cache_Level* L2_p = malloc(sizeof(Cache_Level));
-
-	L1_p->blocks_num = (L1_size-block_size); //CHECK THIS!!! perhaps use: 1 << L1_size, might not need to devide by 8
-	L2_p->_blocks_num = (L2_size -block_size); //CHECK THIS!!!; perhaps use: 1 << L2_size, might not need to devide by 8
-
-	L1_p->blocks = malloc(L1_p->blocks_num*sizeof(Block));
-	L2_p->blocks = malloc(L2_p->blocks_num*sizeof(Block));
-	
-	//gil added
-	for (int i = 0; i < L1_p->blocks_num; i++) {
-    	L1_p->blocks[i].valid = false; // Mark as empty
-		L1_p->blocks[i].dirty_bit = false; // Initially not dirty
-	}
-	for (int i = 0; i < L2_p->blocks_num; i++) {
-    	L2_p->blocks[i].valid = false; // Mark as empty
-		L2_p->blocks[i].dirty_bit = false; // Initially not dirty
-	}
-
-
-	//gil added
-	is_write_allocate = write_alloc;
-	
-	//gil documented
-	//L1_p->write_allocate = write_alloc;
-	//L2_p->write_allocate = write_alloc;
-	
-	//gil documented
-	//L1_p->miss_rate = 0;
-	//L2_p->miss_rate = 0;
-
-	L1_p->ways_num = L1_assoc;
-	L2_p->ways_num = L2_assoc;
-	
-	//gil documented
-	//L1_p->access_time = L1_clocks;
-	//L2_p->access_time = L2_clocks;
-
-	//do we need to set everything to null??? - gil added
-
-
-	// LRU allocation and init - might need to use these 2 lines, compiler can do problems with malloc
-    //unsigned int num_sets_L1 = L1_p->blocks_num / L1_p->ways_num;
-    //unsigned int num_sets_L2 = L2_p->blocks_num / L2_p->ways_num;
-
-    L1_p->lru = malloc(L1_p->blocks_num * sizeof(unsigned int*));
-    for (int i = 0; i < L1_p->blocks_num; i++) {
-        L1_p->lru[i] = malloc(L1_p->ways_num * sizeof(unsigned int));
-        for (int j = 0; j < L1_p->ways_num; j++) {
-            L1_p->lru[i][j] = j;
-        }
-    }
-
-    L2_p->lru = malloc(L2_p->blocks_num * sizeof(unsigned int*));
-    for (int i = 0; i < L2_p->blocks_num; i++) {
-        L2_p->lru[i] = malloc(L2_p->ways_num * sizeof(unsigned int));
-        for (int j = 0; j < L2_p->ways_num; j++) {
-            L2_p->lru[i][j] = j;
-        }
-    }	
-	
-	Cache* Cache_p = malloc(sizeof(Cache));
-	Cache_p->L1 = L1_p;
-	Cache_p->L2 = L2_p;
-	
-	return Cache_p;
-}
-
-void create_masks(unsigned block_bits, unsigned chache_bits, unsigned assoc, Cache_Level* cache){
-	//function that gets user's parameters and pointer to cache.
-	//determines number of bits of set, tag and offset.
-	//it changes the masks to enable us to extract set and tag from each adress
-
-	//find number of offset bits 
-	cache->offset_bits = block_bits; //block_size =block_bits = log2(block_size)
-
-	
-	//find number of set bits and change masks accordingly
-	cache->set_bits = cache_bits - block_bits - assoc_bits; //chache_bits = cache_size = log2(c_Size)
-	cache->tag_bits = cache->offset_bits +cache->set_bits;
-	
-	cache->tag_mask_p = (0x0 - 1) << (cache->set_bits+ cache->offset_bits); //0x0-1 = FFFF...
-	cache->set_mask = ((1u<<cache->set_bits) - 1u)<<cache->offset_bits;
-
-
-}
-
-
-function get_tag()
-
-function get_set(){
-	///unsigned set_index = (addr & set_mask) >> offset_bits;
-	//unsigned tag  = (addr & tag_mask) >> (offset_bits + set_bits);
-}

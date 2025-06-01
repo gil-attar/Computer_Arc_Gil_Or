@@ -13,7 +13,7 @@ using std::stringstream;
 
 
 //global variables
-int cm = 1;
+int cm = 0;
 int commands_num = 0; //number of L1 accesses
 int L1_misses = 0; //number of L1 misses - same as L2 accesses
 int L2_misses = 0; //number of L2 misses - same as Mem accesses
@@ -233,8 +233,10 @@ void update_lru(Cache_Level* cache, unsigned int set_index, int accessed_way) {
 int lru_way(Cache_Level* cache, int set_index) {
 	if (cm) printf("in lru_way: set_index=%d\n", set_index);
     int base = set_index * cache->ways_num;
+	//printf("in lru_way: base=%d\n", base);
     // look for invalid block (empty spot)
     for (int i = 0; i < cache->ways_num; i++) {
+		//printf("accesing to cache->blocks[%d]\n", base + i);
         if (!cache->blocks[base + i].valid) {
 			if (cm) printf("Found empty block at way %d in set %d\n", i, set_index);
             return i;
@@ -242,12 +244,14 @@ int lru_way(Cache_Level* cache, int set_index) {
     }
     // return block with LRU = 0
     for (int i = 0; i < cache->ways_num; i++) {
+		//printf("accesing to cache->lru[set_idx = %d][i= %d] \n", set_index, i);
         if (cache->lru[set_index][i] == 0) {
 			if (cm) printf("Found LRU block at way %d in set %d\n", i, set_index);
             return i;
         }
     }
-    return -1; // should not happen
+    //fprintf(stderr,"lru_way: no valid victim, default 0\n");
+    return 0;
 }
 
 //------------------------------------------------------------------------------------------------------
@@ -362,7 +366,7 @@ int main(int argc, char **argv) {
 
 
 		// DEBUG - remove this line
-		cout << "operation: " << operation;
+		//cout << "operation: " << operation;
 
 		if(operation == 'r'){
 			r_w_flag = 0;
@@ -373,13 +377,13 @@ int main(int argc, char **argv) {
 		string cutAddress = address.substr(2); // Removing the "0x" part of the address
 
 		// DEBUG - remove this line
-		cout << ", address (hex)" << cutAddress;
+		//cout << ", address (hex)" << cutAddress;
 
 		unsigned long int num = 0;
 		num = strtoul(cutAddress.c_str(), NULL, 16); //this is the adress unsigned
 
 		// DEBUG - remove this line
-		cout << " (dec) " << num << endl;
+		//cout << " (dec) " << num << endl;
 
 
 		

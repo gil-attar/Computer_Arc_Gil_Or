@@ -17,6 +17,14 @@ int commands_num = 0; //number of L1 accesses
 int L1_misses = 0; //number of L1 misses - same as L2 accesses
 int L2_misses = 0; //number of L2 misses - same as Mem accesses
 int is_write_allocate = 0; //write allocate - 1 for true, 0 for false
+unsigned int set_mask_L1 = 0x0 - 1; //mask = 0xFF...
+unsigned int tag_mask_L1 = 0x0 - 1; //mask = 0xFF...
+int set_bits_L1;
+int tag_bits_L1;
+unsigned int set_mask_L2 = 0x0 - 1; //mask = 0xFF...
+unsigned int tag_mask_L2 = 0x0 - 1; //mask = 0xFF...
+int set_bits_L2;
+int tag_bits_L2;
 
 //declare functions
 //creates Cache struct and returns a pointer to it
@@ -25,6 +33,7 @@ Cache* Cache_init(unsigned block_size, unsigned L1_size, unsigned L2_size,
 					unsigned L2_clocks, unsigned write_alloc);
 void update_lru(unsigned int** lru, int set_index, int accessed_way, int ways_num);
 int lru_way(unsigned int** lru, int set_index, int ways_num);
+void create_masks(); 
 
 
 
@@ -45,6 +54,10 @@ typedef struct{
 // set 0: blocks[0,...,#W-1] | set1: blocks[#W,..,2#W-1]
 	Block* blocks;
 	unsigned ways_num; //assoc_level
+	unsigned int set_mask; 
+	unsigned int tag_mask;
+	int set_bits;
+	int tag_bits;
 	//gil documented
 	//unsigned write_allocate; // false: No Write Allocate | true: Write Allocate
 	//double miss_rate; //to print use: %.03f
@@ -413,8 +426,8 @@ Cache* Cache_init(unsigned block_size, unsigned L1_size, unsigned L2_size,
 	Cache_Level* L1_p = malloc(sizeof(Cache_Level));
 	Cache_Level* L2_p = malloc(sizeof(Cache_Level));
 
-	L1_p->blocks_num = (2^L1_size)/(8*2^block_size); //CHECK THIS!!! perhaps use: 1 << L1_size, might not need to devide by 8
-	L2_p->_blocks_num = (2^L2_size)/(8*2^block_size); //CHECK THIS!!!; perhaps use: 1 << L2_size, might not need to devide by 8
+	L1_p->blocks_num = (L1_size-block_size); //CHECK THIS!!! perhaps use: 1 << L1_size, might not need to devide by 8
+	L2_p->_blocks_num = (L2_size -block_size); //CHECK THIS!!!; perhaps use: 1 << L2_size, might not need to devide by 8
 
 	L1_p->blocks = malloc(L1_p->blocks_num*sizeof(Block));
 	L2_p->blocks = malloc(L2_p->blocks_num*sizeof(Block));
@@ -478,3 +491,29 @@ Cache* Cache_init(unsigned block_size, unsigned L1_size, unsigned L2_size,
 	return Cache_p;
 }
 
+void create_masks(unsigned block_bits, unsigned chache_bits, unsigned assoc, Cache_Level* cache){
+	//function that gets user's parameters and pointer to cache.
+	//determines number of bits of set, tag and offset.
+	//it changes the masks to enable us to extract set and tag from each adress
+
+	//find number of offset bits 
+	cache->offset_bits = block_bits; //block_size =block_bits = log2(block_size)
+
+	
+	//find number of set bits and change masks accordingly
+	cache->set_bits = cache_bits - block_bits - assoc_bits; //chache_bits = cache_size = log2(c_Size)
+	cache->tag_bits = cache->offset_bits +cache->set_bits;
+	
+	cache->tag_mask_p = (0x0 - 1) << (cache->set_bits+ cache->offset_bits); //0x0-1 = FFFF...
+	cache->set_mask = ((1u<<cache->set_bits) - 1u)<<cache->offset_bits;
+
+
+}
+
+
+function get_tag()
+
+function get_set(){
+	///unsigned set_index = (addr & set_mask) >> offset_bits;
+	//unsigned tag  = (addr & tag_mask) >> (offset_bits + set_bits);
+}

@@ -1,0 +1,212 @@
+in while loop, line: w 0x00000000
+operation: w, address (hex)00000000 (dec) 0
+input_tag_L1: 0, input_set_L1: 0
+input_tag_L2: 0, input_set_L2: 0
+cache number 1, in search_way: tag=0, set=0
+search_way: Block with tag 0 not found in set 0
+cache number 2, in search_way: tag=0, set=0
+search_way: Block with tag 0 not found in set 0
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+Found empty block at way 0 in set 0
+cache number 2, in insert_way: tag=0, set=0, way=0
+cache number 2, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: 
+index is [0], value is: 3 
+end insert_way: Inserted block with tag 0 in set 0 at way 0
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+Found empty block at way 0 in set 0
+cache number 1, in insert_way: tag=0, set=0, way=0
+cache number 1, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: 
+index is [0], value is: 1 
+end insert_way: Inserted block with tag 0 in set 0 at way 0
+in while loop, line: r 0x00010000
+operation: r, address (hex)00010000 (dec) 65536
+input_tag_L1: 8192, input_set_L1: 0
+input_tag_L2: 16384, input_set_L2: 0
+cache number 1, in search_way: tag=8192, set=0
+search_way: Block with tag 8192 not found in set 0
+cache number 2, in search_way: tag=16384, set=0
+search_way: Block with tag 16384 not found in set 0
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+Found empty block at way 1 in set 0
+cache number 2, in insert_way: tag=16384, set=0, way=1
+cache number 2, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: 
+index is [0], value is: 2 
+index is [1], value is: 3 
+end insert_way: Inserted block with tag 16384 in set 0 at way 1
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+Found empty block at way 1 in set 0
+cache number 1, in insert_way: tag=8192, set=0, way=1
+cache number 1, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: 
+index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8192 in set 0 at way 1
+in while loop, line: r 0x00020000
+operation: r, address (hex)00020000 (dec) 131072
+input_tag_L1: 16384, input_set_L1: 0
+input_tag_L2: 32768, input_set_L2: 0
+cache number 1, in search_way: tag=16384, set=0
+search_way: Block with tag 16384 not found in set 0
+cache number 2, in search_way: tag=32768, set=0
+search_way: Block with tag 32768 not found in set 0
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->blocks[2]
+Found empty block at way 2 in set 0
+cache number 2, in insert_way: tag=32768, set=0, way=2
+cache number 2, in update_lru: set_index=0, accessed_way=2
+Updated LRU set[0]: 
+index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+end insert_way: Inserted block with tag 32768 in set 0 at way 2
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 0 
+Found LRU block at way 0 in set 0
+cache number 1, in insert_way: tag=16384, set=0, way=0
+cache number 1, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: 
+index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 16384 in set 0 at way 0
+in while loop, line: r 0x00030000
+operation: r, address (hex)00030000 (dec) 196608
+input_tag_L1: 24576, input_set_L1: 0
+input_tag_L2: 49152, input_set_L2: 0
+cache number 1, in search_way: tag=24576, set=0
+search_way: Block with tag 24576 not found in set 0
+cache number 2, in search_way: tag=49152, set=0
+search_way: Block with tag 49152 not found in set 0
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+Found empty block at way 3 in set 0
+cache number 2, in insert_way: tag=49152, set=0, way=3
+cache number 2, in update_lru: set_index=0, accessed_way=3
+Updated LRU set[0]: 
+index is [0], value is: 0 
+index is [1], value is: 1 
+index is [2], value is: 2 
+index is [3], value is: 3 
+end insert_way: Inserted block with tag 49152 in set 0 at way 3
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 1 
+accesing to cache->lru[set_idx = 0][i= 1] = 0 
+Found LRU block at way 1 in set 0
+cache number 1, in insert_way: tag=24576, set=0, way=1
+cache number 1, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: 
+index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 24576 in set 0 at way 1
+in while loop, line: r 0x00040000
+operation: r, address (hex)00040000 (dec) 262144
+input_tag_L1: 32768, input_set_L1: 0
+input_tag_L2: 65536, input_set_L2: 0
+cache number 1, in search_way: tag=32768, set=0
+search_way: Block with tag 32768 not found in set 0
+cache number 2, in search_way: tag=65536, set=0
+search_way: Block with tag 65536 not found in set 0
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 0][i= 0] = 0 
+Found LRU block at way 0 in set 0
+cache number 2, in insert_way: tag=65536, set=0, way=0
+cache number 2, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: 
+index is [0], value is: 3 
+index is [1], value is: 0 
+index is [2], value is: 1 
+index is [3], value is: 2 
+end insert_way: Inserted block with tag 65536 in set 0 at way 0
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 0 
+Found LRU block at way 0 in set 0
+cache number 1, in insert_way: tag=32768, set=0, way=0
+cache number 1, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: 
+index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 32768 in set 0 at way 0
+in while loop, line: r 0x00000000
+operation: r, address (hex)00000000 (dec) 0
+input_tag_L1: 0, input_set_L1: 0
+input_tag_L2: 0, input_set_L2: 0
+cache number 1, in search_way: tag=0, set=0
+search_way: Block with tag 0 not found in set 0
+cache number 2, in search_way: tag=0, set=0
+search_way: Block with tag 0 not found in set 0
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 0][i= 0] = 3 
+accesing to cache->lru[set_idx = 0][i= 1] = 0 
+Found LRU block at way 1 in set 0
+cache number 2, in insert_way: tag=0, set=0, way=1
+cache number 2, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: 
+index is [0], value is: 2 
+index is [1], value is: 3 
+index is [2], value is: 0 
+index is [3], value is: 1 
+end insert_way: Inserted block with tag 0 in set 0 at way 1
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 1 
+accesing to cache->lru[set_idx = 0][i= 1] = 0 
+Found LRU block at way 1 in set 0
+cache number 1, in insert_way: tag=0, set=0, way=1
+cache number 1, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: 
+index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 0 in set 0 at way 1
+L1miss=1.000 L2miss=1.000 AccTimeAvg=16.000

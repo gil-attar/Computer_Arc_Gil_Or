@@ -1,0 +1,942 @@
+in while loop, line: r 0x10000000
+operation: r, address (hex)10000000 (dec) 268435456
+input_tag_L1: 8388608, input_set_L1: 0
+input_tag_L2: 4194304, input_set_L2: 0
+cache number 1, in search_way: tag=8388608, set=0
+search_way: Block with tag 8388608 not found in set 0
+cache number 2, in search_way: tag=4194304, set=0
+search_way: Block with tag 4194304 not found in set 0
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+Found empty block at way 0 in set 0
+cache number 2, in insert_way: tag=4194304, set=0, way=0
+cache number 2, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: index is [0], value is: 3 
+end insert_way: Inserted block with tag 4194304 in set 0 at way 0
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+Found empty block at way 0 in set 0
+cache number 1, in insert_way: tag=8388608, set=0, way=0
+cache number 1, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: index is [0], value is: 1 
+end insert_way: Inserted block with tag 8388608 in set 0 at way 0
+in while loop, line: r 0x10000010
+operation: r, address (hex)10000010 (dec) 268435472
+input_tag_L1: 8388608, input_set_L1: 1
+input_tag_L2: 4194304, input_set_L2: 1
+cache number 1, in search_way: tag=8388608, set=1
+search_way: Block with tag 8388608 not found in set 1
+cache number 2, in search_way: tag=4194304, set=1
+search_way: Block with tag 4194304 not found in set 1
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=1
+in lru_way: base=4
+accesing to cache->blocks[4]
+Found empty block at way 0 in set 1
+cache number 2, in insert_way: tag=4194304, set=1, way=0
+cache number 2, in update_lru: set_index=1, accessed_way=0
+Updated LRU set[1]: index is [0], value is: 3 
+end insert_way: Inserted block with tag 4194304 in set 1 at way 0
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+Found empty block at way 0 in set 1
+cache number 1, in insert_way: tag=8388608, set=1, way=0
+cache number 1, in update_lru: set_index=1, accessed_way=0
+Updated LRU set[1]: index is [0], value is: 1 
+end insert_way: Inserted block with tag 8388608 in set 1 at way 0
+in while loop, line: r 0x10000020
+operation: r, address (hex)10000020 (dec) 268435488
+input_tag_L1: 8388609, input_set_L1: 0
+input_tag_L2: 4194304, input_set_L2: 2
+cache number 1, in search_way: tag=8388609, set=0
+search_way: Block with tag 8388609 not found in set 0
+cache number 2, in search_way: tag=4194304, set=2
+search_way: Block with tag 4194304 not found in set 2
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=2
+in lru_way: base=8
+accesing to cache->blocks[8]
+Found empty block at way 0 in set 2
+cache number 2, in insert_way: tag=4194304, set=2, way=0
+cache number 2, in update_lru: set_index=2, accessed_way=0
+Updated LRU set[2]: index is [0], value is: 3 
+end insert_way: Inserted block with tag 4194304 in set 2 at way 0
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+Found empty block at way 1 in set 0
+cache number 1, in insert_way: tag=8388609, set=0, way=1
+cache number 1, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388609 in set 0 at way 1
+in while loop, line: r 0x10000030
+operation: r, address (hex)10000030 (dec) 268435504
+input_tag_L1: 8388609, input_set_L1: 1
+input_tag_L2: 4194304, input_set_L2: 3
+cache number 1, in search_way: tag=8388609, set=1
+search_way: Block with tag 8388609 not found in set 1
+cache number 2, in search_way: tag=4194304, set=3
+search_way: Block with tag 4194304 not found in set 3
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=3
+in lru_way: base=12
+accesing to cache->blocks[12]
+Found empty block at way 0 in set 3
+cache number 2, in insert_way: tag=4194304, set=3, way=0
+cache number 2, in update_lru: set_index=3, accessed_way=0
+Updated LRU set[3]: index is [0], value is: 3 
+end insert_way: Inserted block with tag 4194304 in set 3 at way 0
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+Found empty block at way 1 in set 1
+cache number 1, in insert_way: tag=8388609, set=1, way=1
+cache number 1, in update_lru: set_index=1, accessed_way=1
+Updated LRU set[1]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388609 in set 1 at way 1
+in while loop, line: r 0x10000040
+operation: r, address (hex)10000040 (dec) 268435520
+input_tag_L1: 8388610, input_set_L1: 0
+input_tag_L2: 4194305, input_set_L2: 0
+cache number 1, in search_way: tag=8388610, set=0
+search_way: Block with tag 8388610 not found in set 0
+cache number 2, in search_way: tag=4194305, set=0
+search_way: Block with tag 4194305 not found in set 0
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+Found empty block at way 1 in set 0
+cache number 2, in insert_way: tag=4194305, set=0, way=1
+cache number 2, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: index is [0], value is: 2 
+index is [1], value is: 3 
+end insert_way: Inserted block with tag 4194305 in set 0 at way 1
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 0 
+Found LRU block at way 0 in set 0
+cache number 1, in insert_way: tag=8388610, set=0, way=0
+cache number 1, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388610 in set 0 at way 0
+in while loop, line: r 0x10000050
+operation: r, address (hex)10000050 (dec) 268435536
+input_tag_L1: 8388610, input_set_L1: 1
+input_tag_L2: 4194305, input_set_L2: 1
+cache number 1, in search_way: tag=8388610, set=1
+search_way: Block with tag 8388610 not found in set 1
+cache number 2, in search_way: tag=4194305, set=1
+search_way: Block with tag 4194305 not found in set 1
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=1
+in lru_way: base=4
+accesing to cache->blocks[4]
+accesing to cache->blocks[5]
+Found empty block at way 1 in set 1
+cache number 2, in insert_way: tag=4194305, set=1, way=1
+cache number 2, in update_lru: set_index=1, accessed_way=1
+Updated LRU set[1]: index is [0], value is: 2 
+index is [1], value is: 3 
+end insert_way: Inserted block with tag 4194305 in set 1 at way 1
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 1][i= 0] = 0 
+Found LRU block at way 0 in set 1
+cache number 1, in insert_way: tag=8388610, set=1, way=0
+cache number 1, in update_lru: set_index=1, accessed_way=0
+Updated LRU set[1]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388610 in set 1 at way 0
+in while loop, line: r 0x10000060
+operation: r, address (hex)10000060 (dec) 268435552
+input_tag_L1: 8388611, input_set_L1: 0
+input_tag_L2: 4194305, input_set_L2: 2
+cache number 1, in search_way: tag=8388611, set=0
+search_way: Block with tag 8388611 not found in set 0
+cache number 2, in search_way: tag=4194305, set=2
+search_way: Block with tag 4194305 not found in set 2
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=2
+in lru_way: base=8
+accesing to cache->blocks[8]
+accesing to cache->blocks[9]
+Found empty block at way 1 in set 2
+cache number 2, in insert_way: tag=4194305, set=2, way=1
+cache number 2, in update_lru: set_index=2, accessed_way=1
+Updated LRU set[2]: index is [0], value is: 2 
+index is [1], value is: 3 
+end insert_way: Inserted block with tag 4194305 in set 2 at way 1
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 1 
+accesing to cache->lru[set_idx = 0][i= 1] = 0 
+Found LRU block at way 1 in set 0
+cache number 1, in insert_way: tag=8388611, set=0, way=1
+cache number 1, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388611 in set 0 at way 1
+in while loop, line: r 0x10000070
+operation: r, address (hex)10000070 (dec) 268435568
+input_tag_L1: 8388611, input_set_L1: 1
+input_tag_L2: 4194305, input_set_L2: 3
+cache number 1, in search_way: tag=8388611, set=1
+search_way: Block with tag 8388611 not found in set 1
+cache number 2, in search_way: tag=4194305, set=3
+search_way: Block with tag 4194305 not found in set 3
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=3
+in lru_way: base=12
+accesing to cache->blocks[12]
+accesing to cache->blocks[13]
+Found empty block at way 1 in set 3
+cache number 2, in insert_way: tag=4194305, set=3, way=1
+cache number 2, in update_lru: set_index=3, accessed_way=1
+Updated LRU set[3]: index is [0], value is: 2 
+index is [1], value is: 3 
+end insert_way: Inserted block with tag 4194305 in set 3 at way 1
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 1][i= 0] = 1 
+accesing to cache->lru[set_idx = 1][i= 1] = 0 
+Found LRU block at way 1 in set 1
+cache number 1, in insert_way: tag=8388611, set=1, way=1
+cache number 1, in update_lru: set_index=1, accessed_way=1
+Updated LRU set[1]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388611 in set 1 at way 1
+in while loop, line: r 0x10000080
+operation: r, address (hex)10000080 (dec) 268435584
+input_tag_L1: 8388612, input_set_L1: 0
+input_tag_L2: 4194306, input_set_L2: 0
+cache number 1, in search_way: tag=8388612, set=0
+search_way: Block with tag 8388612 not found in set 0
+cache number 2, in search_way: tag=4194306, set=0
+search_way: Block with tag 4194306 not found in set 0
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->blocks[2]
+Found empty block at way 2 in set 0
+cache number 2, in insert_way: tag=4194306, set=0, way=2
+cache number 2, in update_lru: set_index=0, accessed_way=2
+Updated LRU set[0]: index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+end insert_way: Inserted block with tag 4194306 in set 0 at way 2
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 0 
+Found LRU block at way 0 in set 0
+cache number 1, in insert_way: tag=8388612, set=0, way=0
+cache number 1, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388612 in set 0 at way 0
+in while loop, line: r 0x10000090
+operation: r, address (hex)10000090 (dec) 268435600
+input_tag_L1: 8388612, input_set_L1: 1
+input_tag_L2: 4194306, input_set_L2: 1
+cache number 1, in search_way: tag=8388612, set=1
+search_way: Block with tag 8388612 not found in set 1
+cache number 2, in search_way: tag=4194306, set=1
+search_way: Block with tag 4194306 not found in set 1
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=1
+in lru_way: base=4
+accesing to cache->blocks[4]
+accesing to cache->blocks[5]
+accesing to cache->blocks[6]
+Found empty block at way 2 in set 1
+cache number 2, in insert_way: tag=4194306, set=1, way=2
+cache number 2, in update_lru: set_index=1, accessed_way=2
+Updated LRU set[1]: index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+end insert_way: Inserted block with tag 4194306 in set 1 at way 2
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 1][i= 0] = 0 
+Found LRU block at way 0 in set 1
+cache number 1, in insert_way: tag=8388612, set=1, way=0
+cache number 1, in update_lru: set_index=1, accessed_way=0
+Updated LRU set[1]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388612 in set 1 at way 0
+in while loop, line: r 0x100000A0
+operation: r, address (hex)100000A0 (dec) 268435616
+input_tag_L1: 8388613, input_set_L1: 0
+input_tag_L2: 4194306, input_set_L2: 2
+cache number 1, in search_way: tag=8388613, set=0
+search_way: Block with tag 8388613 not found in set 0
+cache number 2, in search_way: tag=4194306, set=2
+search_way: Block with tag 4194306 not found in set 2
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=2
+in lru_way: base=8
+accesing to cache->blocks[8]
+accesing to cache->blocks[9]
+accesing to cache->blocks[10]
+Found empty block at way 2 in set 2
+cache number 2, in insert_way: tag=4194306, set=2, way=2
+cache number 2, in update_lru: set_index=2, accessed_way=2
+Updated LRU set[2]: index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+end insert_way: Inserted block with tag 4194306 in set 2 at way 2
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 1 
+accesing to cache->lru[set_idx = 0][i= 1] = 0 
+Found LRU block at way 1 in set 0
+cache number 1, in insert_way: tag=8388613, set=0, way=1
+cache number 1, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388613 in set 0 at way 1
+in while loop, line: r 0x100000B0
+operation: r, address (hex)100000B0 (dec) 268435632
+input_tag_L1: 8388613, input_set_L1: 1
+input_tag_L2: 4194306, input_set_L2: 3
+cache number 1, in search_way: tag=8388613, set=1
+search_way: Block with tag 8388613 not found in set 1
+cache number 2, in search_way: tag=4194306, set=3
+search_way: Block with tag 4194306 not found in set 3
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=3
+in lru_way: base=12
+accesing to cache->blocks[12]
+accesing to cache->blocks[13]
+accesing to cache->blocks[14]
+Found empty block at way 2 in set 3
+cache number 2, in insert_way: tag=4194306, set=3, way=2
+cache number 2, in update_lru: set_index=3, accessed_way=2
+Updated LRU set[3]: index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+end insert_way: Inserted block with tag 4194306 in set 3 at way 2
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 1][i= 0] = 1 
+accesing to cache->lru[set_idx = 1][i= 1] = 0 
+Found LRU block at way 1 in set 1
+cache number 1, in insert_way: tag=8388613, set=1, way=1
+cache number 1, in update_lru: set_index=1, accessed_way=1
+Updated LRU set[1]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388613 in set 1 at way 1
+in while loop, line: r 0x100000C0
+operation: r, address (hex)100000C0 (dec) 268435648
+input_tag_L1: 8388614, input_set_L1: 0
+input_tag_L2: 4194307, input_set_L2: 0
+cache number 1, in search_way: tag=8388614, set=0
+search_way: Block with tag 8388614 not found in set 0
+cache number 2, in search_way: tag=4194307, set=0
+search_way: Block with tag 4194307 not found in set 0
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+Found empty block at way 3 in set 0
+cache number 2, in insert_way: tag=4194307, set=0, way=3
+cache number 2, in update_lru: set_index=0, accessed_way=3
+Updated LRU set[0]: index is [0], value is: 0 
+index is [1], value is: 1 
+index is [2], value is: 2 
+index is [3], value is: 3 
+end insert_way: Inserted block with tag 4194307 in set 0 at way 3
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 0 
+Found LRU block at way 0 in set 0
+cache number 1, in insert_way: tag=8388614, set=0, way=0
+cache number 1, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388614 in set 0 at way 0
+in while loop, line: r 0x100000E0
+operation: r, address (hex)100000E0 (dec) 268435680
+input_tag_L1: 8388615, input_set_L1: 0
+input_tag_L2: 4194307, input_set_L2: 2
+cache number 1, in search_way: tag=8388615, set=0
+search_way: Block with tag 8388615 not found in set 0
+cache number 2, in search_way: tag=4194307, set=2
+search_way: Block with tag 4194307 not found in set 2
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=2
+in lru_way: base=8
+accesing to cache->blocks[8]
+accesing to cache->blocks[9]
+accesing to cache->blocks[10]
+accesing to cache->blocks[11]
+Found empty block at way 3 in set 2
+cache number 2, in insert_way: tag=4194307, set=2, way=3
+cache number 2, in update_lru: set_index=2, accessed_way=3
+Updated LRU set[2]: index is [0], value is: 0 
+index is [1], value is: 1 
+index is [2], value is: 2 
+index is [3], value is: 3 
+end insert_way: Inserted block with tag 4194307 in set 2 at way 3
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 1 
+accesing to cache->lru[set_idx = 0][i= 1] = 0 
+Found LRU block at way 1 in set 0
+cache number 1, in insert_way: tag=8388615, set=0, way=1
+cache number 1, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388615 in set 0 at way 1
+in while loop, line: r 0x100000F0
+operation: r, address (hex)100000F0 (dec) 268435696
+input_tag_L1: 8388615, input_set_L1: 1
+input_tag_L2: 4194307, input_set_L2: 3
+cache number 1, in search_way: tag=8388615, set=1
+search_way: Block with tag 8388615 not found in set 1
+cache number 2, in search_way: tag=4194307, set=3
+search_way: Block with tag 4194307 not found in set 3
+Block not found in L1
+Block not found in L2
+cache number 2, in lru_way: set_index=3
+in lru_way: base=12
+accesing to cache->blocks[12]
+accesing to cache->blocks[13]
+accesing to cache->blocks[14]
+accesing to cache->blocks[15]
+Found empty block at way 3 in set 3
+cache number 2, in insert_way: tag=4194307, set=3, way=3
+cache number 2, in update_lru: set_index=3, accessed_way=3
+Updated LRU set[3]: index is [0], value is: 0 
+index is [1], value is: 1 
+index is [2], value is: 2 
+index is [3], value is: 3 
+end insert_way: Inserted block with tag 4194307 in set 3 at way 3
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 1][i= 0] = 0 
+Found LRU block at way 0 in set 1
+cache number 1, in insert_way: tag=8388615, set=1, way=0
+cache number 1, in update_lru: set_index=1, accessed_way=0
+Updated LRU set[1]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388615 in set 1 at way 0
+in while loop, line: w 0x10000008
+operation: w, address (hex)10000008 (dec) 268435464
+input_tag_L1: 8388608, input_set_L1: 0
+input_tag_L2: 4194304, input_set_L2: 0
+cache number 1, in search_way: tag=8388608, set=0
+search_way: Block with tag 8388608 not found in set 0
+cache number 2, in search_way: tag=4194304, set=0
+cache number 2, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: index is [0], value is: 3 
+index is [1], value is: 0 
+index is [2], value is: 1 
+index is [3], value is: 2 
+search_way: Found block with tag 4194304 in set 0 at way 0
+Block not found in L1
+Block found in L2 at way 0
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 0 
+Found LRU block at way 0 in set 0
+cache number 1, in insert_way: tag=8388608, set=0, way=0
+cache number 1, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388608 in set 0 at way 0
+cache number 2, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: index is [0], value is: 3 
+index is [1], value is: 0 
+index is [2], value is: 1 
+index is [3], value is: 2 
+in while loop, line: w 0x1000001C
+operation: w, address (hex)1000001C (dec) 268435484
+input_tag_L1: 8388608, input_set_L1: 1
+input_tag_L2: 4194304, input_set_L2: 1
+cache number 1, in search_way: tag=8388608, set=1
+search_way: Block with tag 8388608 not found in set 1
+cache number 2, in search_way: tag=4194304, set=1
+cache number 2, in update_lru: set_index=1, accessed_way=0
+Updated LRU set[1]: index is [0], value is: 3 
+index is [1], value is: 1 
+index is [2], value is: 2 
+search_way: Found block with tag 4194304 in set 1 at way 0
+Block not found in L1
+Block found in L2 at way 0
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 1][i= 0] = 1 
+accesing to cache->lru[set_idx = 1][i= 1] = 0 
+Found LRU block at way 1 in set 1
+cache number 1, in insert_way: tag=8388608, set=1, way=1
+cache number 1, in update_lru: set_index=1, accessed_way=1
+Updated LRU set[1]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388608 in set 1 at way 1
+cache number 2, in update_lru: set_index=1, accessed_way=0
+Updated LRU set[1]: index is [0], value is: 3 
+index is [1], value is: 1 
+index is [2], value is: 2 
+in while loop, line: w 0x10000028
+operation: w, address (hex)10000028 (dec) 268435496
+input_tag_L1: 8388609, input_set_L1: 0
+input_tag_L2: 4194304, input_set_L2: 2
+cache number 1, in search_way: tag=8388609, set=0
+search_way: Block with tag 8388609 not found in set 0
+cache number 2, in search_way: tag=4194304, set=2
+cache number 2, in update_lru: set_index=2, accessed_way=0
+Updated LRU set[2]: index is [0], value is: 3 
+index is [1], value is: 0 
+index is [2], value is: 1 
+index is [3], value is: 2 
+search_way: Found block with tag 4194304 in set 2 at way 0
+Block not found in L1
+Block found in L2 at way 0
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 1 
+accesing to cache->lru[set_idx = 0][i= 1] = 0 
+Found LRU block at way 1 in set 0
+cache number 1, in insert_way: tag=8388609, set=0, way=1
+cache number 1, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388609 in set 0 at way 1
+cache number 2, in update_lru: set_index=2, accessed_way=0
+Updated LRU set[2]: index is [0], value is: 3 
+index is [1], value is: 0 
+index is [2], value is: 1 
+index is [3], value is: 2 
+in while loop, line: w 0x1000003C
+operation: w, address (hex)1000003C (dec) 268435516
+input_tag_L1: 8388609, input_set_L1: 1
+input_tag_L2: 4194304, input_set_L2: 3
+cache number 1, in search_way: tag=8388609, set=1
+search_way: Block with tag 8388609 not found in set 1
+cache number 2, in search_way: tag=4194304, set=3
+cache number 2, in update_lru: set_index=3, accessed_way=0
+Updated LRU set[3]: index is [0], value is: 3 
+index is [1], value is: 0 
+index is [2], value is: 1 
+index is [3], value is: 2 
+search_way: Found block with tag 4194304 in set 3 at way 0
+Block not found in L1
+Block found in L2 at way 0
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 1][i= 0] = 0 
+Found LRU block at way 0 in set 1
+cache number 1, in insert_way: tag=8388609, set=1, way=0
+cache number 1, in update_lru: set_index=1, accessed_way=0
+Updated LRU set[1]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388609 in set 1 at way 0
+cache number 2, in update_lru: set_index=3, accessed_way=0
+Updated LRU set[3]: index is [0], value is: 3 
+index is [1], value is: 0 
+index is [2], value is: 1 
+index is [3], value is: 2 
+in while loop, line: w 0x10000048
+operation: w, address (hex)10000048 (dec) 268435528
+input_tag_L1: 8388610, input_set_L1: 0
+input_tag_L2: 4194305, input_set_L2: 0
+cache number 1, in search_way: tag=8388610, set=0
+search_way: Block with tag 8388610 not found in set 0
+cache number 2, in search_way: tag=4194305, set=0
+cache number 2, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: index is [0], value is: 2 
+index is [1], value is: 3 
+index is [2], value is: 0 
+index is [3], value is: 1 
+search_way: Found block with tag 4194305 in set 0 at way 1
+Block not found in L1
+Block found in L2 at way 1
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 0 
+Found LRU block at way 0 in set 0
+cache number 1, in insert_way: tag=8388610, set=0, way=0
+cache number 1, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388610 in set 0 at way 0
+cache number 2, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: index is [0], value is: 2 
+index is [1], value is: 3 
+index is [2], value is: 0 
+index is [3], value is: 1 
+in while loop, line: w 0x1000005C
+operation: w, address (hex)1000005C (dec) 268435548
+input_tag_L1: 8388610, input_set_L1: 1
+input_tag_L2: 4194305, input_set_L2: 1
+cache number 1, in search_way: tag=8388610, set=1
+search_way: Block with tag 8388610 not found in set 1
+cache number 2, in search_way: tag=4194305, set=1
+cache number 2, in update_lru: set_index=1, accessed_way=1
+Updated LRU set[1]: index is [0], value is: 2 
+index is [1], value is: 3 
+index is [2], value is: 1 
+search_way: Found block with tag 4194305 in set 1 at way 1
+Block not found in L1
+Block found in L2 at way 1
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 1][i= 0] = 1 
+accesing to cache->lru[set_idx = 1][i= 1] = 0 
+Found LRU block at way 1 in set 1
+cache number 1, in insert_way: tag=8388610, set=1, way=1
+cache number 1, in update_lru: set_index=1, accessed_way=1
+Updated LRU set[1]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388610 in set 1 at way 1
+cache number 2, in update_lru: set_index=1, accessed_way=1
+Updated LRU set[1]: index is [0], value is: 2 
+index is [1], value is: 3 
+index is [2], value is: 1 
+in while loop, line: w 0x10000068
+operation: w, address (hex)10000068 (dec) 268435560
+input_tag_L1: 8388611, input_set_L1: 0
+input_tag_L2: 4194305, input_set_L2: 2
+cache number 1, in search_way: tag=8388611, set=0
+search_way: Block with tag 8388611 not found in set 0
+cache number 2, in search_way: tag=4194305, set=2
+cache number 2, in update_lru: set_index=2, accessed_way=1
+Updated LRU set[2]: index is [0], value is: 2 
+index is [1], value is: 3 
+index is [2], value is: 0 
+index is [3], value is: 1 
+search_way: Found block with tag 4194305 in set 2 at way 1
+Block not found in L1
+Block found in L2 at way 1
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 1 
+accesing to cache->lru[set_idx = 0][i= 1] = 0 
+Found LRU block at way 1 in set 0
+cache number 1, in insert_way: tag=8388611, set=0, way=1
+cache number 1, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388611 in set 0 at way 1
+cache number 2, in update_lru: set_index=2, accessed_way=1
+Updated LRU set[2]: index is [0], value is: 2 
+index is [1], value is: 3 
+index is [2], value is: 0 
+index is [3], value is: 1 
+in while loop, line: w 0x1000007C
+operation: w, address (hex)1000007C (dec) 268435580
+input_tag_L1: 8388611, input_set_L1: 1
+input_tag_L2: 4194305, input_set_L2: 3
+cache number 1, in search_way: tag=8388611, set=1
+search_way: Block with tag 8388611 not found in set 1
+cache number 2, in search_way: tag=4194305, set=3
+cache number 2, in update_lru: set_index=3, accessed_way=1
+Updated LRU set[3]: index is [0], value is: 2 
+index is [1], value is: 3 
+index is [2], value is: 0 
+index is [3], value is: 1 
+search_way: Found block with tag 4194305 in set 3 at way 1
+Block not found in L1
+Block found in L2 at way 1
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 1][i= 0] = 0 
+Found LRU block at way 0 in set 1
+cache number 1, in insert_way: tag=8388611, set=1, way=0
+cache number 1, in update_lru: set_index=1, accessed_way=0
+Updated LRU set[1]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388611 in set 1 at way 0
+cache number 2, in update_lru: set_index=3, accessed_way=1
+Updated LRU set[3]: index is [0], value is: 2 
+index is [1], value is: 3 
+index is [2], value is: 0 
+index is [3], value is: 1 
+in while loop, line: w 0x10000088
+operation: w, address (hex)10000088 (dec) 268435592
+input_tag_L1: 8388612, input_set_L1: 0
+input_tag_L2: 4194306, input_set_L2: 0
+cache number 1, in search_way: tag=8388612, set=0
+search_way: Block with tag 8388612 not found in set 0
+cache number 2, in search_way: tag=4194306, set=0
+cache number 2, in update_lru: set_index=0, accessed_way=2
+Updated LRU set[0]: index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+index is [3], value is: 0 
+search_way: Found block with tag 4194306 in set 0 at way 2
+Block not found in L1
+Block found in L2 at way 2
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 0 
+Found LRU block at way 0 in set 0
+cache number 1, in insert_way: tag=8388612, set=0, way=0
+cache number 1, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388612 in set 0 at way 0
+cache number 2, in update_lru: set_index=0, accessed_way=2
+Updated LRU set[0]: index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+index is [3], value is: 0 
+in while loop, line: w 0x1000009C
+operation: w, address (hex)1000009C (dec) 268435612
+input_tag_L1: 8388612, input_set_L1: 1
+input_tag_L2: 4194306, input_set_L2: 1
+cache number 1, in search_way: tag=8388612, set=1
+search_way: Block with tag 8388612 not found in set 1
+cache number 2, in search_way: tag=4194306, set=1
+cache number 2, in update_lru: set_index=1, accessed_way=2
+Updated LRU set[1]: index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+search_way: Found block with tag 4194306 in set 1 at way 2
+Block not found in L1
+Block found in L2 at way 2
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 1][i= 0] = 1 
+accesing to cache->lru[set_idx = 1][i= 1] = 0 
+Found LRU block at way 1 in set 1
+cache number 1, in insert_way: tag=8388612, set=1, way=1
+cache number 1, in update_lru: set_index=1, accessed_way=1
+Updated LRU set[1]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388612 in set 1 at way 1
+cache number 2, in update_lru: set_index=1, accessed_way=2
+Updated LRU set[1]: index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+in while loop, line: w 0x100000A8
+operation: w, address (hex)100000A8 (dec) 268435624
+input_tag_L1: 8388613, input_set_L1: 0
+input_tag_L2: 4194306, input_set_L2: 2
+cache number 1, in search_way: tag=8388613, set=0
+search_way: Block with tag 8388613 not found in set 0
+cache number 2, in search_way: tag=4194306, set=2
+cache number 2, in update_lru: set_index=2, accessed_way=2
+Updated LRU set[2]: index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+index is [3], value is: 0 
+search_way: Found block with tag 4194306 in set 2 at way 2
+Block not found in L1
+Block found in L2 at way 2
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 1 
+accesing to cache->lru[set_idx = 0][i= 1] = 0 
+Found LRU block at way 1 in set 0
+cache number 1, in insert_way: tag=8388613, set=0, way=1
+cache number 1, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388613 in set 0 at way 1
+cache number 2, in update_lru: set_index=2, accessed_way=2
+Updated LRU set[2]: index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+index is [3], value is: 0 
+in while loop, line: w 0x100000BC
+operation: w, address (hex)100000BC (dec) 268435644
+input_tag_L1: 8388613, input_set_L1: 1
+input_tag_L2: 4194306, input_set_L2: 3
+cache number 1, in search_way: tag=8388613, set=1
+search_way: Block with tag 8388613 not found in set 1
+cache number 2, in search_way: tag=4194306, set=3
+cache number 2, in update_lru: set_index=3, accessed_way=2
+Updated LRU set[3]: index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+index is [3], value is: 0 
+search_way: Found block with tag 4194306 in set 3 at way 2
+Block not found in L1
+Block found in L2 at way 2
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 1][i= 0] = 0 
+Found LRU block at way 0 in set 1
+cache number 1, in insert_way: tag=8388613, set=1, way=0
+cache number 1, in update_lru: set_index=1, accessed_way=0
+Updated LRU set[1]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388613 in set 1 at way 0
+cache number 2, in update_lru: set_index=3, accessed_way=2
+Updated LRU set[3]: index is [0], value is: 1 
+index is [1], value is: 2 
+index is [2], value is: 3 
+index is [3], value is: 0 
+in while loop, line: w 0x100000C8
+operation: w, address (hex)100000C8 (dec) 268435656
+input_tag_L1: 8388614, input_set_L1: 0
+input_tag_L2: 4194307, input_set_L2: 0
+cache number 1, in search_way: tag=8388614, set=0
+search_way: Block with tag 8388614 not found in set 0
+cache number 2, in search_way: tag=4194307, set=0
+cache number 2, in update_lru: set_index=0, accessed_way=3
+Updated LRU set[0]: index is [0], value is: 0 
+index is [1], value is: 1 
+index is [2], value is: 2 
+index is [3], value is: 3 
+search_way: Found block with tag 4194307 in set 0 at way 3
+Block not found in L1
+Block found in L2 at way 3
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 0 
+Found LRU block at way 0 in set 0
+cache number 1, in insert_way: tag=8388614, set=0, way=0
+cache number 1, in update_lru: set_index=0, accessed_way=0
+Updated LRU set[0]: index is [0], value is: 1 
+index is [1], value is: 0 
+end insert_way: Inserted block with tag 8388614 in set 0 at way 0
+cache number 2, in update_lru: set_index=0, accessed_way=3
+Updated LRU set[0]: index is [0], value is: 0 
+index is [1], value is: 1 
+index is [2], value is: 2 
+index is [3], value is: 3 
+in while loop, line: w 0x100000EC
+operation: w, address (hex)100000EC (dec) 268435692
+input_tag_L1: 8388615, input_set_L1: 0
+input_tag_L2: 4194307, input_set_L2: 2
+cache number 1, in search_way: tag=8388615, set=0
+search_way: Block with tag 8388615 not found in set 0
+cache number 2, in search_way: tag=4194307, set=2
+cache number 2, in update_lru: set_index=2, accessed_way=3
+Updated LRU set[2]: index is [0], value is: 0 
+index is [1], value is: 1 
+index is [2], value is: 2 
+index is [3], value is: 3 
+search_way: Found block with tag 4194307 in set 2 at way 3
+Block not found in L1
+Block found in L2 at way 3
+cache number 1, in lru_way: set_index=0
+in lru_way: base=0
+accesing to cache->blocks[0]
+accesing to cache->blocks[1]
+accesing to cache->lru[set_idx = 0][i= 0] = 1 
+accesing to cache->lru[set_idx = 0][i= 1] = 0 
+Found LRU block at way 1 in set 0
+cache number 1, in insert_way: tag=8388615, set=0, way=1
+cache number 1, in update_lru: set_index=0, accessed_way=1
+Updated LRU set[0]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388615 in set 0 at way 1
+cache number 2, in update_lru: set_index=2, accessed_way=3
+Updated LRU set[2]: index is [0], value is: 0 
+index is [1], value is: 1 
+index is [2], value is: 2 
+index is [3], value is: 3 
+in while loop, line: w 0x100000F8
+operation: w, address (hex)100000F8 (dec) 268435704
+input_tag_L1: 8388615, input_set_L1: 1
+input_tag_L2: 4194307, input_set_L2: 3
+cache number 1, in search_way: tag=8388615, set=1
+search_way: Block with tag 8388615 not found in set 1
+cache number 2, in search_way: tag=4194307, set=3
+cache number 2, in update_lru: set_index=3, accessed_way=3
+Updated LRU set[3]: index is [0], value is: 0 
+index is [1], value is: 1 
+index is [2], value is: 2 
+index is [3], value is: 3 
+search_way: Found block with tag 4194307 in set 3 at way 3
+Block not found in L1
+Block found in L2 at way 3
+cache number 1, in lru_way: set_index=1
+in lru_way: base=2
+accesing to cache->blocks[2]
+accesing to cache->blocks[3]
+accesing to cache->lru[set_idx = 1][i= 0] = 1 
+accesing to cache->lru[set_idx = 1][i= 1] = 0 
+Found LRU block at way 1 in set 1
+cache number 1, in insert_way: tag=8388615, set=1, way=1
+cache number 1, in update_lru: set_index=1, accessed_way=1
+Updated LRU set[1]: index is [0], value is: 0 
+index is [1], value is: 1 
+end insert_way: Inserted block with tag 8388615 in set 1 at way 1
+cache number 2, in update_lru: set_index=3, accessed_way=3
+Updated LRU set[3]: index is [0], value is: 0 
+index is [1], value is: 1 
+index is [2], value is: 2 
+index is [3], value is: 3 
+L1miss=1.000 L2miss=0.500 AccTimeAvg=31.000
